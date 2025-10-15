@@ -15,19 +15,20 @@ public class HelpeeAi : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public OffMeshLinkMoveMethod method = OffMeshLinkMoveMethod.Parabola;
     public float jumpDuration = 1.5f;
+    public float jumpHeight = 5.0f;
     public GameObject goal;
     private NavMeshAgent agent;
 
-    //private GameObject[] nodes;
+    //private GameObject[] goals;
     //private float moveTimer = 1f;
     //private float movingSpeed = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     IEnumerator Start()
     {
-        //nodes = GameObject.FindGameObjectsWithTag("PathNode");
+        //goals = GameObject.FindGameObjectsWithTag("HelpeeGoal");
         //int rand = UnityEngine.Random.Range(0, nodes.Length);
-        //agent.destination = nodes[rand].transform.position;
+        //agent.destination = FindClosestTagged("HelpeeGoal");
 
         agent = GetComponent<NavMeshAgent>();
         agent.destination = goal.transform.position;
@@ -40,7 +41,7 @@ public class HelpeeAi : MonoBehaviour
                 if (method == OffMeshLinkMoveMethod.NormalSpeed)
                     yield return StartCoroutine(NormalSpeed(agent));
                 else if (method == OffMeshLinkMoveMethod.Parabola)
-                    yield return StartCoroutine(Parabola(agent, 5.0f, jumpDuration));
+                    yield return StartCoroutine(Parabola(agent, jumpHeight, jumpDuration));
                 agent.CompleteOffMeshLink();
             }
             yield return null;
@@ -51,6 +52,27 @@ public class HelpeeAi : MonoBehaviour
     void Update()
     {
         //agent.SetDestination(target.transform.position);
+    }
+
+    public GameObject FindClosestTagged(string tag)
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag(tag);
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;    // Vector from this to target
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
     }
 
     IEnumerator NormalSpeed(NavMeshAgent agent)

@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: "T\xE4m\xE4 on testi."
     m_Metadata:
       m_Items: []
+  - m_Id: 710101946535936
+    m_Localized: 'Kieli:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: test_string
     m_Metadata:
       m_Items: []
+  - m_Id: 710101946535936
+    m_Key: lang_select
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

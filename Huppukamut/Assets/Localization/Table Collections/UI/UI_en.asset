@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: This is a test.
     m_Metadata:
       m_Items: []
+  - m_Id: 710101946535936
+    m_Localized: 'Language:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

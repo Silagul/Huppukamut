@@ -13,9 +13,12 @@ public enum OffMeshLinkMoveMethod
 public class HelpeeAi : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [Header("Jump")] // This adds a header to the editor view.
     public OffMeshLinkMoveMethod method = OffMeshLinkMoveMethod.Parabola;
     public float jumpDuration = 1.5f;
     public float jumpHeight = 5.0f;
+
     public GameObject goal;
     private NavMeshAgent agent;
 

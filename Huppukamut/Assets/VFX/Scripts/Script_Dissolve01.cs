@@ -16,7 +16,7 @@ public class Script_Dissolve01 : MonoBehaviour
     {
         float ElapsedTime = 0;
 
-        Material M_Smoke01 = GetComponent<Renderer>().material;
+        Material M_Smoke02 = GetComponent<Renderer>().material;
 
         while (ElapsedTime < DissolveDuration)
         {

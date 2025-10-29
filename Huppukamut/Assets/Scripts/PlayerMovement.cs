@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
@@ -13,16 +14,22 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump")]
     public float jumpForce = 10f;
     public float gravityScale = 3f;
-    public float coyoteTime = 0.1f;
-    public float jumpBufferTime = 0.1f;
-    public float variableJumpMultiplier = 0.5f;
+    public float fallGravityMultiplier = 2f; // stronger gravity when falling
+    public float coyoteTime = 0.1f;           // grace after leaving ground
+    public float jumpBufferTime = 0.1f;       // grace before hitting ground
 
-    [Header("World constraint")]
+    [Header("Ground Check")]
+    public Transform groundCheck;
+    public float groundRadius = 0.15f;
+    public LayerMask groundLayer;
+
+    [Header("World Constraint")]
     public float fixedZ = 0f;
 
     private Rigidbody rb;
     private Vector2 moveInput;
     private bool jumpPressed;
+    private bool isJumpHeld;
     private float coyoteTimer;
     private float jumpBufferTimer;
     private bool grounded;
@@ -32,30 +39,33 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
 
     void Update()
     {
-        // --- timers ---
-        if (grounded) coyoteTimer = coyoteTime;
-        else coyoteTimer -= Time.deltaTime;
-
+        // --- Input timing ---
         if (jumpPressed) jumpBufferTimer = jumpBufferTime;
         else jumpBufferTimer -= Time.deltaTime;
 
-        // --- jump ---
-        if (jumpBufferTimer > 0 && coyoteTimer > 0)
-        {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, 0);
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
-            jumpBufferTimer = 0;
-            coyoteTimer = 0;
-        }
+        // --- Ground check ---
+        grounded = Physics.CheckSphere(groundCheck.position, groundRadius, groundLayer);
 
-        // --- variable jump ---
-        if (rb.linearVelocity.y > 0 && !Keyboard.current.spaceKey.isPressed)
+        if (grounded)
+            coyoteTimer = coyoteTime;
+        else
+            coyoteTimer -= Time.deltaTime;
+
+        // --- Jump trigger ---
+        if (jumpBufferTimer > 0 && coyoteTimer > 0f)
         {
-            rb.AddForce(Vector3.down * (1f - variableJumpMultiplier) * Physics.gravity.y * Time.deltaTime, ForceMode.Acceleration);
+            Vector3 vel = rb.linearVelocity;
+            vel.y = 0f; // reset vertical velocity before jump
+            rb.linearVelocity = vel;
+
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+            jumpBufferTimer = 0f;
+            coyoteTimer = 0f;
         }
 
         // --- enforce 2.5D plane ---
@@ -68,45 +78,62 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // --- horizontal velocity ---
+        // --- horizontal movement (independent of grounded) ---
         float targetX = moveInput.x * moveSpeed;
-        float currentX = rb.linearVelocity.x;
         float accel = Mathf.Abs(targetX) > 0.01f ? acceleration : deceleration;
-        currentX = Mathf.MoveTowards(currentX, targetX, accel * Time.fixedDeltaTime);
-        rb.linearVelocity = new Vector3(currentX, rb.linearVelocity.y, 0);
+        float newX = Mathf.MoveTowards(rb.linearVelocity.x, targetX, accel * Time.fixedDeltaTime);
+        rb.linearVelocity = new Vector3(newX, rb.linearVelocity.y, 0f);
 
-        // --- gravity multiplier ---
-        if (!grounded)
+        // --- gravity control for variable jump ---
+        Vector3 extraGravity = Physics.gravity * (gravityScale - 1f);
+
+        if (rb.linearVelocity.y < 0f)
         {
-            Vector3 extraGravity = Physics.gravity * (gravityScale - 1f);
-            rb.AddForce(extraGravity, ForceMode.Acceleration);
+            // falling ? stronger gravity
+            extraGravity += Physics.gravity * (fallGravityMultiplier - 1f);
         }
-    }
-
-    void OnCollisionStay(Collision collision)
-    {
-        grounded = false;
-        foreach (var contact in collision.contacts)
+        else if (rb.linearVelocity.y > 0f && !isJumpHeld)
         {
-            if (Vector3.Angle(contact.normal, Vector3.up) < 45f)
-            {
-                grounded = true;
-                break;
-            }
+            // released jump early ? shorten jump
+            extraGravity += Physics.gravity * (fallGravityMultiplier - 1f);
         }
-    }
 
-    void OnCollisionExit(Collision collision)
-    {
-        grounded = false;
+        rb.AddForce(extraGravity, ForceMode.Acceleration);
     }
 
     // --- Input System callbacks ---
-    public void Move(InputAction.CallbackContext ctx) =>
+    public void Move(InputAction.CallbackContext ctx)
+    {
         moveInput = ctx.ReadValue<Vector2>();
+
+        // Flip character based on movement direction (optional)
+        if (moveInput.x != 0f)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Sign(moveInput.x) * Mathf.Abs(scale.x);
+            transform.localScale = scale;
+        }
+    }
 
     public void Jump(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed) jumpPressed = true;
+        if (ctx.performed)
+        {
+            jumpPressed = true;
+            isJumpHeld = true;
+        }
+        else if (ctx.canceled)
+        {
+            isJumpHeld = false;
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+        }
     }
 }

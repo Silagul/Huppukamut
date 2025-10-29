@@ -910,10 +910,18 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ae05d91b7eca87e4e93c096dc8a6f446, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c01f604a15dbed24981b84f3213cfa81, type: 2}
+      objectReference: {fileID: 2100000, guid: 8220640bf35420a4c87581ab2d25f75d, type: 2}
     - target: {fileID: 919132149155446097, guid: ae05d91b7eca87e4e93c096dc8a6f446, type: 3}
       propertyPath: m_Name
       value: House_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae05d91b7eca87e4e93c096dc8a6f446, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae05d91b7eca87e4e93c096dc8a6f446, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1093,7 +1101,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 3f93975853dcea545ad01d99d182bc39, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ff7b72cf70d83614fa2c8d5d58626e5b, type: 2}
+      objectReference: {fileID: 2100000, guid: 8220640bf35420a4c87581ab2d25f75d, type: 2}
     - target: {fileID: 919132149155446097, guid: 3f93975853dcea545ad01d99d182bc39, type: 3}
       propertyPath: m_Name
       value: Fence

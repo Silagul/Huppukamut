@@ -14,14 +14,14 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 2000
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses:
-  - SHADOWCASTER
   - MOTIONVECTORS
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -48,20 +48,20 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _OUTLINESOVERLAY: 0
-    - _OutlinesAcuteDepthStartDot: 0
-    - _OutlinesAcuteDepthThresholdMult: 1
-    - _OutlinesDepthStrength: 1
-    - _OutlinesDepthThreshold: 1
-    - _OutlinesDepthTightening: 7
-    - _OutlinesFarDepthStart: 1
-    - _OutlinesFarDepthThresholdMult: 1
-    - _OutlinesFarNormalStartDepth: 1
-    - _OutlinesFarNormalThresholdMult: 1
-    - _OutlinesNormalThreshold: 1
-    - _OutlinesNormalsStrength: 1
-    - _OutlinesNormalsThreshold: 1
-    - _OutlinesNormalsTightening: 1
-    - _OutlinesOutlineThreshold: 1
+    - _OutlinesAcuteDepthStartDot: 0.1
+    - _OutlinesAcuteDepthThresholdMult: 0.1
+    - _OutlinesDepthStrength: 0.1
+    - _OutlinesDepthThreshold: 0.1
+    - _OutlinesDepthTightening: 0.1
+    - _OutlinesFarDepthStart: 0.1
+    - _OutlinesFarDepthThresholdMult: 0.1
+    - _OutlinesFarNormalStartDepth: 0.1
+    - _OutlinesFarNormalThresholdMult: 0.1
+    - _OutlinesNormalThreshold: 0.1
+    - _OutlinesNormalsStrength: 0.1
+    - _OutlinesNormalsThreshold: 0.1
+    - _OutlinesNormalsTightening: 0.1
+    - _OutlinesOutlineThreshold: 0.1
     - _OutlinesThickness: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0

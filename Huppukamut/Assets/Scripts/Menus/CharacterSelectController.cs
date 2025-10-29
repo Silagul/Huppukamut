@@ -19,20 +19,29 @@ public class CharacterSelectController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        platform = GameObject.Find("Platform");
-        characters = GameObject.FindGameObjectsWithTag("Player");
+        rotationTimer = 0f;
+
         nameDisplay = GameObject.Find("CharName").GetComponent<TMPro.TextMeshProUGUI>();
         description = GameObject.Find("CharDescription").GetComponent<TMPro.TextMeshProUGUI>();
+
+        platform = GameObject.Find("Platform");
+
+        characters = GameObject.FindGameObjectsWithTag("Player");
         step = 360 / characters.Length;
-        rotationTimer = 0f;
         speed = step / rotationTime;
+
         characterData = new string[characters.Length, 2];
         for (int i = 0; i < characters.Length; i++)
         {
             characterData[i, 0] = characters[i].name;
             characterData[i, 1] = characters[i].name + " description";
+
+            characters[i].transform.position = platform.transform.position + new Vector3(0, 1.05f, -2.5f);
+            characters[i].transform.RotateAround(platform.transform.position, Vector3.up, step * i);
         }
+
         nameDisplay.text = characterData[0, 0];
+        description.text = characterData[0, 1];
 
         //characterData = { { "Character 1 name", "Character 1 description" }, { "Character 2 name", "Character 2 description" }, { "Character 3 name", "Character 3 description" }, { "Character 4 name", "Character 4 description" } };
     }
@@ -40,8 +49,6 @@ public class CharacterSelectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nameDisplay.text = characterData[current, 0]; 
-        
         rotationTimer -= Time.deltaTime;
         if (rotationTimer <= 0f)
         {
@@ -92,6 +99,8 @@ public class CharacterSelectController : MonoBehaviour
                     current++;
                 }
             }
+            nameDisplay.text = characterData[current, 0];
+            description.text = characterData[current, 1];
         }
     }
 }

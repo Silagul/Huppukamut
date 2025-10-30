@@ -36,8 +36,9 @@ public class CharacterSelectController : MonoBehaviour
             characterData[i, 0] = characters[i].name;
             characterData[i, 1] = characters[i].name + " description";
 
-            characters[i].transform.position = platform.transform.position + new Vector3(0, 1.05f, -2.5f);
+            characters[i].transform.position = platform.transform.position + new Vector3(0, 0.1f, -2.5f);
             characters[i].transform.RotateAround(platform.transform.position, Vector3.up, step * i);
+            characters[i].transform.RotateAround(characters[i].transform.position, Vector3.up, 180);
         }
 
         nameDisplay.text = characterData[0, 0];

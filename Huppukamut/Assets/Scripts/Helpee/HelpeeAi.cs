@@ -1,7 +1,8 @@
-using UnityEngine;
-using UnityEngine.AI;
 using System.Collections;
 using Unity.AI.Navigation;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public enum OffMeshLinkMoveMethod
 {
@@ -19,6 +20,8 @@ public class HelpeeAi : MonoBehaviour
     public float jumpDuration = 1.5f;
     public float jumpHeight = 5.0f;
 
+    [Header("References")]
+    public GameObject player;
     public GameObject goal;
     private NavMeshAgent agent;
 
@@ -32,9 +35,8 @@ public class HelpeeAi : MonoBehaviour
         //goals = GameObject.FindGameObjectsWithTag("HelpeeGoal");
         //int rand = UnityEngine.Random.Range(0, nodes.Length);
         //agent.destination = FindClosestTagged("HelpeeGoal");
-
+        player = GameObject.Find("Player");
         agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.transform.position;
 
         agent.autoTraverseOffMeshLink = true;
         while (true)
@@ -54,7 +56,11 @@ public class HelpeeAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //agent.SetDestination(target.transform.position);
+        Vector3 dist = player.transform.position - transform.position;
+        if(dist.magnitude <= 2)
+        {
+            agent.destination = goal.transform.position;
+        }
     }
 
     public GameObject FindClosestTagged(string tag)

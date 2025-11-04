@@ -325,7 +325,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 1524664951}
-  changer: {fileID: 0}
+  changer: {fileID: 1741970927}
 --- !u!114 &353439948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,6 +905,7 @@ MonoBehaviour:
   image1: {fileID: 21300000, guid: 794fd817fd1ac0a4fbf6f00f79c922da, type: 3}
   image2: {fileID: 21300000, guid: e76dfd5033010df42af72aab4c55d20a, type: 3}
   image3: {fileID: 21300000, guid: 87c002568091f254aa8a3778120c7fea, type: 3}
+  image4: {fileID: 21300000, guid: 33fcf578c6400a041b76203b8eda480f, type: 3}
   uiImage: {fileID: 0}
   changer: {fileID: 0}
 --- !u!114 &1665481379
@@ -1092,6 +1093,7 @@ MonoBehaviour:
   image1: {fileID: 21300000, guid: 794fd817fd1ac0a4fbf6f00f79c922da, type: 3}
   image2: {fileID: 21300000, guid: e76dfd5033010df42af72aab4c55d20a, type: 3}
   image3: {fileID: 21300000, guid: 87c002568091f254aa8a3778120c7fea, type: 3}
+  image4: {fileID: 21300000, guid: 33fcf578c6400a041b76203b8eda480f, type: 3}
   uiImage: {fileID: 1665481379}
   changer: {fileID: 1665481378}
 --- !u!1 &1749633043
@@ -1105,6 +1107,7 @@ GameObject:
   - component: {fileID: 1749633046}
   - component: {fileID: 1749633045}
   - component: {fileID: 1749633044}
+  - component: {fileID: 1749633047}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1186,6 +1189,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1749633047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749633043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class UIImageChanger : MonoBehaviour
     public Sprite image1;
     public Sprite image2;
     public Sprite image3;
+    public Sprite image4;
 
     public Image uiImage;
     public UIImageChanger changer;
@@ -27,6 +28,8 @@ public class UIImageChanger : MonoBehaviour
             uiImage.sprite = image2;
         else if (currentIndex == 2)
             uiImage.sprite = image3;
+        else if (currentIndex == 3)
+            uiImage.sprite = image4;
         else
         {
             uiImage.sprite = image1;

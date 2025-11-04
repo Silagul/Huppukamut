@@ -27,8 +27,22 @@ public class HealthBar : MonoBehaviour
         {
             changer.ChangeImage();
         }
+        else
+        {
+            if(health == 30)
+            {
+                changer.ChangeImage();
+            }
+            else
+            {
+                if(health == 0)
+                {
+                    changer.ChangeImage();
+                }
+            }
+        }
 
-        fill.color = gradient.Evaluate(slider.normalizedValue);
+            fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
 

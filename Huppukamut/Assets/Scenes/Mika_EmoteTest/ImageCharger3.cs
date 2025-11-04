@@ -7,7 +7,8 @@ public class UIImageChanger : MonoBehaviour
     public Sprite image2;
     public Sprite image3;
 
-    private Image uiImage;
+    public Image uiImage;
+    public UIImageChanger changer;
     private int currentIndex = 0;
 
     void Start()
@@ -18,6 +19,8 @@ public class UIImageChanger : MonoBehaviour
 
     public void ChangeImage()
     {
+
+
         currentIndex++;
 
         if (currentIndex == 1)

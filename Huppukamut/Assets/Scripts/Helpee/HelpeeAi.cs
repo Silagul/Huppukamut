@@ -56,32 +56,12 @@ public class HelpeeAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 dist = player.transform.position - transform.position;
-        if(dist.magnitude <= 2)
-        {
-            agent.destination = goal.transform.position;
-        }
+        //
     }
 
-    public GameObject FindClosestTagged(string tag)
+    public void SetDestination(GameObject destination)
     {
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag(tag);
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-
-        foreach (GameObject go in gos)
-        {
-            Vector3 diff = go.transform.position - position;    // Vector from this to target
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
-            {
-                closest = go;
-                distance = curDistance;
-            }
-        }
-        return closest;
+        agent.destination = destination.transform.position;
     }
 
     IEnumerator NormalSpeed(NavMeshAgent agent)

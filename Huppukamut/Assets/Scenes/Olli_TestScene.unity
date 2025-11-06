@@ -1221,7 +1221,19 @@ MonoBehaviour:
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 839399145}
+        m_TargetAssemblyTypeName: PlayerStamina, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
@@ -1298,7 +1310,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &839399140
@@ -1449,6 +1461,7 @@ MonoBehaviour:
   maxStamina: 100
   stamina: 0
   staminaDecayRate: 2
+  helpingStaminaCost: 20
 --- !u!1 &1015104197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,6 +3050,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3721631043959559733, guid: a8978a823bd30284fb6bf21aebb54d95, type: 3}
       propertyPath: m_Name
+      value: Helpee
+      objectReference: {fileID: 0}
+    - target: {fileID: 3721631043959559733, guid: a8978a823bd30284fb6bf21aebb54d95, type: 3}
+      propertyPath: m_TagString
       value: Helpee
       objectReference: {fileID: 0}
     - target: {fileID: 4522299061723708532, guid: a8978a823bd30284fb6bf21aebb54d95, type: 3}

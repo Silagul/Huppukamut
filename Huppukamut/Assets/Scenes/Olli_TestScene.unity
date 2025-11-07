@@ -3060,6 +3060,10 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 373539612}
+    - target: {fileID: 4522299061723708532, guid: a8978a823bd30284fb6bf21aebb54d95, type: 3}
+      propertyPath: staminaDecayRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8434696876332451464, guid: a8978a823bd30284fb6bf21aebb54d95, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.7

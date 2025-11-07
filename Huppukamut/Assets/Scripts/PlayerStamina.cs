@@ -58,6 +58,7 @@ public class PlayerStamina : MonoBehaviour
             if (stamina >= helpingStaminaCost)
             {
                 stamina -= helpingStaminaCost;
+                helpee.stamina += helpingStaminaCost;
                 helpee.SetDestination(helpee.goal);
             }
             else

@@ -20,10 +20,16 @@ public class HelpeeAi : MonoBehaviour
     public float jumpDuration = 1.5f;
     public float jumpHeight = 5.0f;
 
+    [Header("Stamina")]
+    public float stamina;
+    public float staminaDecayRate;
+
     [Header("References")]
     public GameObject player;
     public GameObject goal;
+
     private NavMeshAgent agent;
+    private Rigidbody rb;
 
     //private GameObject[] goals;
     //private float moveTimer = 1f;
@@ -36,6 +42,7 @@ public class HelpeeAi : MonoBehaviour
         //int rand = UnityEngine.Random.Range(0, nodes.Length);
         //agent.destination = FindClosestTagged("HelpeeGoal");
         player = GameObject.Find("Player");
+        rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
 
         agent.autoTraverseOffMeshLink = true;
@@ -56,7 +63,15 @@ public class HelpeeAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //
+        if (!agent.isOnOffMeshLink && stamina > 0 && agent.remainingDistance > 1)
+        {
+            stamina -= Time.deltaTime * staminaDecayRate;
+        }
+
+        if (stamina <= 0)
+        {
+            SetDestination(gameObject);
+        }
     }
 
     public void SetDestination(GameObject destination)

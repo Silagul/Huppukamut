@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerStamina : MonoBehaviour
 {
     public PlayerMovement playerMovement;
+    public Animator animator;
     public float maxStamina;
     public float stamina;
     public float staminaDecayRate;
@@ -17,11 +18,16 @@ public class PlayerStamina : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody>();
         stamina = maxStamina;
+
+        animator = transform.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("Stamina", stamina / maxStamina);
+        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x) / playerMovement.moveSpeed);
+
         if (rb.linearVelocity.x != 0f)
         {
             stamina -= Time.deltaTime * staminaDecayRate;
@@ -55,20 +61,26 @@ public class PlayerStamina : MonoBehaviour
 
         if ( h != null && h.TryGetComponent<HelpeeAi>(out HelpeeAi helpee))
         {
-            if (stamina >= helpingStaminaCost)
+            if (stamina >= helpingStaminaCost && helpee.stamina == 0)
             {
+                animator.SetTrigger("Helping");
                 stamina -= helpingStaminaCost;
                 helpee.stamina += helpingStaminaCost;
                 helpee.SetDestination(helpee.goal);
             }
             else
             {
-                print("Not enough stamina.");
+                print("It can't be helped.");
             }
         }
         else
         {
             print("No target found.");
         }
+    }
+
+    public void Jump(InputAction.CallbackContext ctx)
+    {
+        animator.SetTrigger("Jumping");
     }
 }

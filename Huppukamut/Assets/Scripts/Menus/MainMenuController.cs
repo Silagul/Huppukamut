@@ -16,8 +16,8 @@ public class MainMenuController : MonoBehaviour
     public float moveStep;
     public float rotateStep;
 
-    private Quaternion targetRotation = new Quaternion(0, 0, 0, 1);
-    private float ang = 0f;
+    //private Quaternion targetRotation = new Quaternion(0, 0, 0, 1);
+    //private float ang = 0f;
     private float distance = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -44,6 +44,7 @@ public class MainMenuController : MonoBehaviour
     {
         // Move our position a step closer to the target.
         Vector3 targetDirection = current.transform.position - cam.position;
+        Vector3 targetDirection2 = target.transform.position - cam.position;
         //float step = moveStep * Time.deltaTime; // calculate distance to move
         float step = (distance + 10) * Time.deltaTime; // calculate distance to move
         cam.position = Vector3.MoveTowards(cam.position, target.position, step);
@@ -52,7 +53,7 @@ public class MainMenuController : MonoBehaviour
         float singleStep = rotateStep * Time.deltaTime;
         if (current == mainMenu)
         {
-            if (targetDirection.sqrMagnitude <= 400)
+            if (targetDirection2.sqrMagnitude <= 121)
             {
                 Vector3 newDirection = Vector3.RotateTowards(cam.forward, targetDirection, singleStep * 1.5f, 0.0f);
                 cam.rotation = Quaternion.LookRotation(newDirection);
@@ -79,7 +80,7 @@ public class MainMenuController : MonoBehaviour
                 m.transform.Find("Canvas").gameObject.SetActive(true);
             }
         }
-        ang = Quaternion.Angle(cam.rotation, menu.transform.rotation);
+        //ang = Quaternion.Angle(cam.rotation, menu.transform.rotation);
         current = menu;
         target = menu.transform.Find("CameraTarget");
         Vector3 targetDirection = target.transform.position - cam.position;

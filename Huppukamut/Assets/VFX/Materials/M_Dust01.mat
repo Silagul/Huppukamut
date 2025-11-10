@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Smoke01
-  m_Shader: {fileID: -6465566751694194690, guid: d1456feee71f5f048a7bae79a2654bb3, type: 3}
+  m_Name: M_Dust01
+  m_Shader: {fileID: -6465566751694194690, guid: 9d1f29e4af11a914ab62665775277969, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -55,10 +55,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionStrength: 0.05
+    - _DistortionStrength: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ScrollSpeed: 0.1
+    - _ScrollSpeed: 0.3
     - _TwirlStrength: 3
     m_Colors:
     - _Color: {r: 0.4177198, g: 0.467762, b: 0.5943396, a: 1}

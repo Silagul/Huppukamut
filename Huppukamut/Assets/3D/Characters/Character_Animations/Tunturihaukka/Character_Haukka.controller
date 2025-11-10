@@ -302,7 +302,7 @@ BlendTree:
     m_Motion: {fileID: 7075728248287913522, guid: 26abf93d625752b438677e4f3209ff7b, type: 3}
     m_Threshold: 0.6666667
     m_Position: {x: 1, y: 1}
-    m_TimeScale: 1
+    m_TimeScale: 2
     m_CycleOffset: 0
     m_DirectBlendParameter: Stamina
     m_Mirror: 0
@@ -310,7 +310,7 @@ BlendTree:
     m_Motion: {fileID: 2822109539282074000, guid: 26abf93d625752b438677e4f3209ff7b, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 1}
-    m_TimeScale: 1
+    m_TimeScale: 2
     m_CycleOffset: 0
     m_DirectBlendParameter: Stamina
     m_Mirror: 0
@@ -320,7 +320,7 @@ BlendTree:
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
-  m_BlendType: 2
+  m_BlendType: 3
 --- !u!1101 &-1947547466552015196
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -579,7 +579,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Movent
+  m_Name: Movement
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

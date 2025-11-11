@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,8 @@ public class PlayerStamina : MonoBehaviour
     public float helpingStaminaCost;
 
     private Rigidbody rb;
+    private bool gliding = false;
+    private bool canGlide = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,10 +30,28 @@ public class PlayerStamina : MonoBehaviour
     {
         animator.SetFloat("Stamina", stamina / maxStamina);
         animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x) / playerMovement.moveSpeed);
+        animator.SetFloat("VertVel", Mathf.InverseLerp(-12f, 12f, rb.linearVelocity.y * -1));
+        animator.SetBool("InAir", !playerMovement.grounded);
 
         if (rb.linearVelocity.x != 0f)
         {
             stamina -= Time.deltaTime * staminaDecayRate;
+        }
+
+        if (playerMovement.grounded)
+        {
+            gliding = false;
+            canGlide = true;
+            animator.SetBool("Gliding", false);
+        }
+
+        if (gliding)
+        {
+            playerMovement.fallGravityMultiplier = 1f;
+        }
+        else
+        {
+            playerMovement.fallGravityMultiplier = 4f;
         }
     }
 
@@ -79,8 +100,37 @@ public class PlayerStamina : MonoBehaviour
         }
     }
 
-    public void Jump(InputAction.CallbackContext ctx)
+    public void Sprint(InputAction.CallbackContext ctx)
     {
-        animator.SetTrigger("Jumping");
+        if (!playerMovement.grounded)
+        {
+            if (ctx.performed && canGlide)
+            {
+                gliding = true;
+                animator.SetBool("Gliding", true);
+            }
+            else if (ctx.canceled)
+            {
+                gliding = false;
+                animator.SetBool("Gliding", false);
+            }
+            else if (canGlide)
+            {
+                stamina -= 5;
+                rb.AddForce(Vector3.up * (playerMovement.jumpForce / 2), ForceMode.VelocityChange);
+                if (transform.localScale.x == 1)
+                {
+                    rb.AddForce(Vector3.right * (playerMovement.jumpForce * 0.75f), ForceMode.VelocityChange);
+                }
+                else
+                {
+                    rb.AddForce(Vector3.left * (playerMovement.jumpForce * 0.75f), ForceMode.VelocityChange);
+                }
+
+                gliding = true;
+                canGlide = false;
+                animator.SetBool("Gliding", true);
+            }
+        }
     }
 }

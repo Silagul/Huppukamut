@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundRadius = 0.15f;
     public LayerMask groundLayer;
+    public bool grounded;
 
     [Header("World Constraint")]
     public float fixedZ = 0f;
@@ -32,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumpHeld;
     private float coyoteTimer;
     private float jumpBufferTimer;
-    private bool grounded;
 
     void Awake()
     {

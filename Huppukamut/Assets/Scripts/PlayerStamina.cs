@@ -28,11 +28,6 @@ public class PlayerStamina : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Stamina", stamina / maxStamina);
-        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x) / playerMovement.moveSpeed);
-        animator.SetFloat("VertVel", Mathf.InverseLerp(-12f, 12f, rb.linearVelocity.y * -1));
-        animator.SetBool("InAir", !playerMovement.grounded);
-
         if (rb.linearVelocity.x != 0f)
         {
             stamina -= Time.deltaTime * staminaDecayRate;
@@ -86,7 +81,7 @@ public class PlayerStamina : MonoBehaviour
             {
                 animator.SetTrigger("Helping");
                 stamina -= helpingStaminaCost;
-                helpee.stamina += helpingStaminaCost;
+                helpee.stamina = helpee.maxStamina;
                 helpee.SetDestination(helpee.goal);
             }
             else

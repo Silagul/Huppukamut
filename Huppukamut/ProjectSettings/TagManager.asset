@@ -6,6 +6,7 @@ TagManager:
   tags:
   - VFX
   - Helpee
+  - Collectible
   layers:
   - Default
   - TransparentFX

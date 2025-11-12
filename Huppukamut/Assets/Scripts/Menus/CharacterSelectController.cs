@@ -1,12 +1,17 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterSelectController : MonoBehaviour
 {
     public GameObject platform;
     public GameObject[] characters;
     public TMPro.TextMeshProUGUI nameDisplay;
+    public TMPro.TextMeshProUGUI nameDisplay2;
     public TMPro.TextMeshProUGUI description;
+    public TMPro.TextMeshProUGUI abilityName;
+    public TMPro.TextMeshProUGUI abilityDescription;
+    public Image abilityIcon;
     public string[,] characterData;
     public int current = 0;
     public bool clockwise;
@@ -21,8 +26,13 @@ public class CharacterSelectController : MonoBehaviour
     {
         rotationTimer = 0f;
 
-        nameDisplay = GameObject.Find("CharName").GetComponent<TMPro.TextMeshProUGUI>();
+        nameDisplay = GameObject.Find("CharName1").GetComponent<TMPro.TextMeshProUGUI>();
+        nameDisplay2 = GameObject.Find("CharName2").GetComponent<TMPro.TextMeshProUGUI>();
         description = GameObject.Find("CharDescription").GetComponent<TMPro.TextMeshProUGUI>();
+
+        abilityName = GameObject.Find("AbilityName").GetComponent<TMPro.TextMeshProUGUI>();
+        abilityDescription = GameObject.Find("AbilityDescription").GetComponent<TMPro.TextMeshProUGUI>();
+        abilityIcon = GameObject.Find("AbilityIcon").GetComponent<Image>();
 
         platform = GameObject.Find("Platform");
 
@@ -33,6 +43,11 @@ public class CharacterSelectController : MonoBehaviour
         characterData = new string[characters.Length, 2];
         for (int i = 0; i < characters.Length; i++)
         {
+            if (characters[i].TryGetComponent<Animator>(out Animator animator))
+            {
+                animator.SetFloat("Stamina", 1);
+            }
+
             characterData[i, 0] = characters[i].name;
             characterData[i, 1] = characters[i].name + " description";
 
@@ -41,8 +56,22 @@ public class CharacterSelectController : MonoBehaviour
             characters[i].transform.RotateAround(characters[i].transform.position, Vector3.up, 180);
         }
 
-        nameDisplay.text = characterData[0, 0];
-        description.text = characterData[0, 1];
+        if (characters[0].TryGetComponent<CharacterData>(out CharacterData cd))
+        {
+            nameDisplay.text = cd.charName;
+            nameDisplay2.text = cd.charName;
+            description.text = cd.description;
+
+            abilityName.text = cd.abilityName;
+            abilityDescription.text = cd.abilityDescription;
+            abilityIcon.sprite = cd.abilityIcon;
+        }
+        else
+        {
+            nameDisplay.text = characterData[0, 0];
+            nameDisplay2.text = characterData[0, 0];
+            description.text = characterData[0, 1];
+        }
 
         //characterData = { { "Character 1 name", "Character 1 description" }, { "Character 2 name", "Character 2 description" }, { "Character 3 name", "Character 3 description" }, { "Character 4 name", "Character 4 description" } };
     }
@@ -100,8 +129,35 @@ public class CharacterSelectController : MonoBehaviour
                     current++;
                 }
             }
-            nameDisplay.text = characterData[current, 0];
-            description.text = characterData[current, 1];
+
+            if (characters[current].TryGetComponent<CharacterData>(out CharacterData cd))
+            {
+                nameDisplay.text = cd.charName;
+                nameDisplay2.text = cd.charName;
+                description.text = cd.description;
+
+                abilityName.text = cd.abilityName;
+                abilityDescription.text = cd.abilityDescription;
+                abilityIcon.sprite = cd.abilityIcon;
+            }
+            else
+            {
+                nameDisplay.text = characterData[current, 0];
+                nameDisplay2.text = characterData[current, 0];
+                description.text = characterData[current, 1];
+            }
+        }
+    }
+
+    public void SelectCharacter()
+    {
+        if (characters[current].TryGetComponent<Animator>(out Animator animator))
+        {
+            animator.SetTrigger("Pose");
+        }
+        else
+        {
+            //
         }
     }
 }

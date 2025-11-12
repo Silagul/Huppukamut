@@ -21,6 +21,7 @@ public class HelpeeAi : MonoBehaviour
     public float jumpHeight = 5.0f;
 
     [Header("Stamina")]
+    public float maxStamina;
     public float stamina;
     public float staminaDecayRate;
 
@@ -28,7 +29,7 @@ public class HelpeeAi : MonoBehaviour
     public GameObject player;
     public GameObject goal;
 
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     private Rigidbody rb;
 
     //private GameObject[] goals;
@@ -72,6 +73,13 @@ public class HelpeeAi : MonoBehaviour
         {
             SetDestination(gameObject);
         }
+
+        /*if (rb.linearVelocity.x != 0f)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Sign(rb.linearVelocity.x) * Mathf.Abs(scale.x);
+            transform.localScale = scale;
+        }*/
     }
 
     public void SetDestination(GameObject destination)

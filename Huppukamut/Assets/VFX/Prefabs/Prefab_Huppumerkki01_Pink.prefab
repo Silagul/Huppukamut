@@ -62,10 +62,60 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 629256c2cb1659e43b2f953ac5e3650a, type: 2}
     - target: {fileID: 919132149155446097, guid: 0741ab58f85ab2143bdaeed174982898, type: 3}
       propertyPath: m_Name
-      value: Prefab_Huppumerkki_Pink01
+      value: Prefab_Huppumerkki01_Pink
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0741ab58f85ab2143bdaeed174982898, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3465527609673052619}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0741ab58f85ab2143bdaeed174982898, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7139315737662746569}
   m_SourcePrefab: {fileID: 100100000, guid: 0741ab58f85ab2143bdaeed174982898, type: 3}
+--- !u!1 &8352075478426512914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0741ab58f85ab2143bdaeed174982898, type: 3}
+  m_PrefabInstance: {fileID: 9163103082636235587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3465527609673052619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352075478426512914}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.1819162, y: 4.7443624, z: 0.20000026}
+  m_Center: {x: 0.10482478, y: 2.4017236, z: -0.00000012293458}
+--- !u!114 &7139315737662746569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352075478426512914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b67cbf7b99dc4dbd4935435a494fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  movement: 1.5
+  speed: 2
+  recoveryAmount: 20
+  size: 0.2
+  budgetUsage: 0
+  particleEffect: {fileID: 8521067203194105879, guid: 9489f8017a2c88d4db53942fd9dc4491, type: 3}

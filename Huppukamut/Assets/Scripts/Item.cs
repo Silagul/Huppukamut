@@ -5,6 +5,8 @@ public class Item : MonoBehaviour
     public float movement;
     public float speed;
     public float recoveryAmount;
+    public float size;
+    public float budgetUsage;
     public GameObject particleEffect;
 
     private float current;
@@ -14,6 +16,7 @@ public class Item : MonoBehaviour
     void Start()
     {
         current = 0;
+        transform.localScale = new Vector3(size, size, size);
     }
 
     // Update is called once per frame

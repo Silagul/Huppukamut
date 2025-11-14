@@ -142,5 +142,5 @@ MonoBehaviour:
   speed: 2
   recoveryAmount: 20
   size: 0.2
-  budgetUsage: 0
+  budgetUsage: 1
   particleEffect: {fileID: 8521067203194105879, guid: 9489f8017a2c88d4db53942fd9dc4491, type: 3}

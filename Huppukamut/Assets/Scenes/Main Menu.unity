@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3e140ff9ea5bf844aac8aa2ff399d179, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 14609831439825d40b98acf5da5bf05e, type: 2}
     - target: {fileID: 919132149155446097, guid: 3e140ff9ea5bf844aac8aa2ff399d179, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_arcanekone (1)
@@ -1053,6 +1057,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6f02cfa40199f52458038711f8192c4a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b02b4c91267dbc74ca53ee96b197dadb, type: 2}
     - target: {fileID: 919132149155446097, guid: 6f02cfa40199f52458038711f8192c4a, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_poyta
@@ -2019,6 +2027,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ee5c439cf918ad6419fa777d96c6f260, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 94c46fee33dd6db4bb99d4d46feb8cd1, type: 2}
     - target: {fileID: 919132149155446097, guid: ee5c439cf918ad6419fa777d96c6f260, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_sohva
@@ -2278,6 +2290,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c1f3ad561aa109e4d809727e8edb7604, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 70f33076080a1414093ac1eb192fb68f, type: 2}
     - target: {fileID: 919132149155446097, guid: c1f3ad561aa109e4d809727e8edb7604, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_tennispoyta
@@ -2727,6 +2743,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0367328f786fe44459f392964180cbcf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 733e02ff5960d8642a919b9061974aa9, type: 2}
     - target: {fileID: 919132149155446097, guid: 0367328f786fe44459f392964180cbcf, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_kirjahylly
@@ -3375,6 +3395,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3e140ff9ea5bf844aac8aa2ff399d179, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 14609831439825d40b98acf5da5bf05e, type: 2}
     - target: {fileID: 919132149155446097, guid: 3e140ff9ea5bf844aac8aa2ff399d179, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_arcanekone
@@ -3615,6 +3639,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3182b3ae848aa6345bc781a71c5d02aa, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fb14271a3804abe47a58ed765d3903b7, type: 2}
     - target: {fileID: 919132149155446097, guid: 3182b3ae848aa6345bc781a71c5d02aa, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_tvtaso
@@ -4944,6 +4972,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ee5c439cf918ad6419fa777d96c6f260, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 94c46fee33dd6db4bb99d4d46feb8cd1, type: 2}
     - target: {fileID: 919132149155446097, guid: ee5c439cf918ad6419fa777d96c6f260, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_sohva (1)
@@ -5353,6 +5385,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9973e1d138d9e014da162f999f4a89b8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6a43b6db30da41145a5ec6e4ad76efe1, type: 2}
     - target: {fileID: 919132149155446097, guid: 9973e1d138d9e014da162f999f4a89b8, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_pc
@@ -5639,6 +5675,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a5ad7bb8a62db6140b5075d6da0dd263, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e759a4b844760cd47b83fff191dcdcb5, type: 2}
     - target: {fileID: 919132149155446097, guid: a5ad7bb8a62db6140b5075d6da0dd263, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_sohvapoyta
@@ -6288,6 +6328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ee5c439cf918ad6419fa777d96c6f260, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 94c46fee33dd6db4bb99d4d46feb8cd1, type: 2}
     - target: {fileID: 919132149155446097, guid: ee5c439cf918ad6419fa777d96c6f260, type: 3}
       propertyPath: m_Name
       value: huppukamut_Mara_mainmenu_sohva (2)

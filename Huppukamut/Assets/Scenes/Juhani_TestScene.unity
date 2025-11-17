@@ -505,6 +505,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737c6a619973e2e4ea79f35836b8da04, type: 3}
+--- !u!1 &480688246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+  m_PrefabInstance: {fileID: 1884643770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &480688247
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480688246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: e1b0d4a07c5692d43861109ae98635ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &621361135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1050,6 +1077,70 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dc0cb5b125a50841a3104ea72933b7e, type: 3}
+--- !u!1001 &1884643770
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5513334
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.211837
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: m_Name
+      value: Character_Peippo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054384744519023714, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eaab8bc4f3f401542b5075143f33ce85, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 480688247}
+  m_SourcePrefab: {fileID: 100100000, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
 --- !u!1001 &2085383052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1191,3 +1282,4 @@ SceneRoots:
   - {fileID: 818752208}
   - {fileID: 2091838882}
   - {fileID: 1020139754}
+  - {fileID: 1884643770}

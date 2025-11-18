@@ -7,15 +7,14 @@ public class ItemDistribution : MonoBehaviour
     public GameObject[] itemPositions;
     public float budget;
 
+    private float totalValue = 0;
     private GameObject temp = null;
     private GameObject[] filled;
-    //private GameObject[] items = null;
+    private GameObject[] items = null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-        float totalValue = 0;
         itemPositions = GameObject.FindGameObjectsWithTag("ItemPosition");
         filled = new GameObject[itemPositions.Length];
         for (int o = 0; o < filled.Length; o++)
@@ -23,6 +22,67 @@ public class ItemDistribution : MonoBehaviour
             filled[o] = null;
         }
 
+        //FirstVersion();
+        SecondVersion();
+
+        print("Leftover budget: " + (budget - totalValue));
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //
+    }
+
+    public void FirstVersion()
+    {
+        float maxValuePerItem = budget / itemPositions.Length;
+
+        int a = 0;
+        foreach (GameObject item in itemPrefabs)
+        {
+            float b = item.GetComponent<Item>().budgetUsage;
+            if (b <= maxValuePerItem)
+            {
+                a++;
+            }
+        }
+
+        items = new GameObject[a];
+        int c = 0;
+        foreach (GameObject item in itemPrefabs)
+        {
+            float b = item.GetComponent<Item>().budgetUsage;
+            if (b <= maxValuePerItem)
+            {
+                items[c] = item;
+                c++;
+            }
+        }
+
+        for (int p = 0; p < itemPositions.Length; p++)
+        {
+            for (float i = budget; i > 0;)
+            {
+                int z = (int)Mathf.Ceil(Random.Range(0f, items.Length - 1));
+                Item b = items[z].GetComponent<Item>();
+                if (i >= b.budgetUsage)
+                {
+                    Instantiate(items[z], itemPositions[p].transform.position, Quaternion.identity);
+                    i -= b.budgetUsage;
+                    totalValue += b.budgetUsage;
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+    }
+
+    public void SecondVersion()
+    {
         // Step 1: Find the item with the largest budgetUsage.
         temp = FindLargestValueBelow(itemPrefabs, budget);
 
@@ -80,58 +140,6 @@ public class ItemDistribution : MonoBehaviour
         }
 
         // Step 6: Loop steps 2-5 until budget is zero.
-
-        /*
-        float maxValuePerItem = budget / itemPositions.Length;
-
-        int a = 0;
-        foreach (GameObject item in itemPrefabs)
-        {
-            float b = item.GetComponent<Item>().budgetUsage;
-            if (b <= maxValuePerItem)
-            {
-                a++;
-            }
-        }
-
-        items = new GameObject[a];
-        int c = 0;
-        foreach (GameObject item in itemPrefabs)
-        {
-            float b = item.GetComponent<Item>().budgetUsage;
-            if (b <= maxValuePerItem)
-            {
-                items[c] = item;
-                c++;
-            }
-        }
-
-        for (int p = 0; p < itemPositions.Length; p++)
-        {
-            for (float i = budget; i > 0;)
-            {
-                int z = (int)Mathf.Ceil(Random.Range(0f, items.Length - 1));
-                Item b = items[z].GetComponent<Item>();
-                if (i >= b.budgetUsage)
-                {
-                    Instantiate(items[z], itemPositions[p].transform.position, Quaternion.identity);
-                    i -= b.budgetUsage;
-                    totalValue += b.budgetUsage;
-                    break;
-                }
-                else
-                {
-                    continue;
-                }
-            }
-        }*/
-        print("Leftover budget: " + (budget - totalValue));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //
     }
 
     public GameObject FindLargestValueBelow(GameObject[] items, float previousMax)

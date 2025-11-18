@@ -39,10 +39,26 @@ public class PlayerStamina : MonoBehaviour
             canGlide = true;
             animator.SetBool("Gliding", false);
         }
+    }
 
+    private void FixedUpdate()
+    {
         if (gliding)
         {
             playerMovement.fallGravityMultiplier = 1f;
+            if (rb.linearVelocity.x < 0)
+            {
+                rb.AddForce(Vector3.up * Time.fixedDeltaTime * 15, ForceMode.VelocityChange);
+            }
+            
+            if (transform.localScale.x == 1)
+            {
+                rb.AddForce(Vector3.right * Time.fixedDeltaTime * 30, ForceMode.VelocityChange);
+            }
+            else
+            {
+                rb.AddForce(Vector3.left * Time.fixedDeltaTime * 30, ForceMode.VelocityChange);
+            }
         }
         else
         {
@@ -112,7 +128,7 @@ public class PlayerStamina : MonoBehaviour
             else if (canGlide)
             {
                 stamina -= 5;
-                rb.AddForce(Vector3.up * (playerMovement.jumpForce / 2), ForceMode.VelocityChange);
+                /*rb.AddForce(Vector3.up * (playerMovement.jumpForce / 2), ForceMode.VelocityChange);
                 if (transform.localScale.x == 1)
                 {
                     rb.AddForce(Vector3.right * (playerMovement.jumpForce * 0.75f), ForceMode.VelocityChange);
@@ -120,7 +136,7 @@ public class PlayerStamina : MonoBehaviour
                 else
                 {
                     rb.AddForce(Vector3.left * (playerMovement.jumpForce * 0.75f), ForceMode.VelocityChange);
-                }
+                }*/
 
                 gliding = true;
                 canGlide = false;

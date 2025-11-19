@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterSelectController : MonoBehaviour
 {
     public GameObject platform;
     public GameObject[] characters;
+    public PlayerChoices playerChoices;
     public TMPro.TextMeshProUGUI nameDisplay;
     public TMPro.TextMeshProUGUI nameDisplay2;
     public TMPro.TextMeshProUGUI description;
@@ -17,6 +19,9 @@ public class CharacterSelectController : MonoBehaviour
     public bool clockwise;
     public bool spinning = false;
     public float rotationTime;
+    public float selectDelay;
+    private float selectTimer;
+    private bool ticking = false;
     private float rotationTimer;
     private float step;
     private float speed;
@@ -25,6 +30,7 @@ public class CharacterSelectController : MonoBehaviour
     void Start()
     {
         rotationTimer = 0f;
+        selectTimer = selectDelay;
 
         nameDisplay = GameObject.Find("CharName1").GetComponent<TMPro.TextMeshProUGUI>();
         nameDisplay2 = GameObject.Find("CharName2").GetComponent<TMPro.TextMeshProUGUI>();
@@ -72,8 +78,6 @@ public class CharacterSelectController : MonoBehaviour
             nameDisplay2.text = characterData[0, 0];
             description.text = characterData[0, 1];
         }
-
-        //characterData = { { "Character 1 name", "Character 1 description" }, { "Character 2 name", "Character 2 description" }, { "Character 3 name", "Character 3 description" }, { "Character 4 name", "Character 4 description" } };
     }
 
     // Update is called once per frame
@@ -97,6 +101,16 @@ public class CharacterSelectController : MonoBehaviour
                     character.transform.RotateAround(platform.transform.position, Vector3.up, -1 * speed * Time.deltaTime);
                 }
             }
+        }
+
+        if (ticking)
+        {
+            selectTimer -= Time.deltaTime;
+        }
+
+        if (selectTimer <= 0f)
+        {
+            LoadLevel("Level1");
         }
     }
 
@@ -159,5 +173,12 @@ public class CharacterSelectController : MonoBehaviour
         {
             //
         }
+        playerChoices.SetCharacterName(characters[current].gameObject.name);
+        ticking = true;
+    }
+
+    public void LoadLevel(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 }

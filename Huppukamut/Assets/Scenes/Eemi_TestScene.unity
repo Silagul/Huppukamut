@@ -740,6 +740,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+  grounded: 0
   fixedZ: 0
 --- !u!136 &256168987
 CapsuleCollider:

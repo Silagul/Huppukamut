@@ -1390,6 +1390,28 @@ MonoBehaviour:
   abilityName: DASH
   abilityDescription: Press SHIFT to dash forward.
   abilityIcon: {fileID: 21300000, guid: 780b962b64b78b1478bf5d98e050267b, type: 3}
+--- !u!95 &506959583
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506959580}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e458f5caa64de6f4f8aa979b9555a57a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &515299227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2947,6 +2969,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8f4ed5ba64c0f24db094b50ea7e085a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 506959582}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8f4ed5ba64c0f24db094b50ea7e085a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 506959583}
   m_SourcePrefab: {fileID: 100100000, guid: c8f4ed5ba64c0f24db094b50ea7e085a, type: 3}
 --- !u!1 &1389998705
 GameObject:

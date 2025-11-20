@@ -56,15 +56,18 @@ public class PlayerStamina : MonoBehaviour
 
         if (playerMovement.grounded)
         {
-            gliding = false;
             canGlide = true;
-            animator.SetBool("Gliding", false);
+            if (animator.GetParameter(6).name == "Gliding")
+            {
+                gliding = false;
+                animator.SetBool("Gliding", false);
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if (gliding)
+        if (animator.GetParameter(6).name == "Gliding" && gliding)
         {
             playerMovement.fallGravityMultiplier = 1f;
             if (rb.linearVelocity.x < 0)
@@ -134,34 +137,59 @@ public class PlayerStamina : MonoBehaviour
 
     public void Sprint(InputAction.CallbackContext ctx)
     {
-        if (!playerMovement.grounded)
+        if (animator.GetParameter(6).name == "Gliding")
+        {
+            if (!playerMovement.grounded)
+            {
+                if (ctx.performed && canGlide)
+                {
+                    gliding = true;
+                    animator.SetBool("Gliding", true);
+                }
+                else if (ctx.canceled)
+                {
+                    gliding = false;
+                    animator.SetBool("Gliding", false);
+                }
+                else if (canGlide)
+                {
+                    stamina -= 5;
+
+                    gliding = true;
+                    canGlide = false;
+                    animator.SetBool("Gliding", true);
+                }
+            }
+        }
+
+        if (animator.GetParameter(6).name == "Dash")
         {
             if (ctx.performed && canGlide)
             {
                 gliding = true;
-                animator.SetBool("Gliding", true);
+                animator.SetBool("Dash", true);
             }
             else if (ctx.canceled)
             {
                 gliding = false;
-                animator.SetBool("Gliding", false);
+                animator.SetBool("Dash", false);
             }
             else if (canGlide)
             {
                 stamina -= 5;
-                /*rb.AddForce(Vector3.up * (playerMovement.jumpForce / 2), ForceMode.VelocityChange);
+                rb.AddForce(Vector3.up * (playerMovement.jumpForce * 0.3f), ForceMode.VelocityChange);
                 if (transform.localScale.x == 1)
                 {
-                    rb.AddForce(Vector3.right * (playerMovement.jumpForce * 0.75f), ForceMode.VelocityChange);
+                    rb.AddForce(Vector3.right * (playerMovement.jumpForce * 1f), ForceMode.VelocityChange);
                 }
                 else
                 {
-                    rb.AddForce(Vector3.left * (playerMovement.jumpForce * 0.75f), ForceMode.VelocityChange);
-                }*/
+                    rb.AddForce(Vector3.left * (playerMovement.jumpForce * 1f), ForceMode.VelocityChange);
+                }
 
                 gliding = true;
                 canGlide = false;
-                animator.SetBool("Gliding", true);
+                animator.SetBool("Dash", true);
             }
         }
     }

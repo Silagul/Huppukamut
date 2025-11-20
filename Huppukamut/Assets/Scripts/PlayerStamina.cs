@@ -6,6 +6,8 @@ public class PlayerStamina : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public Animator animator;
+    public GameObject[] characters;
+    public PlayerChoices playerChoices;
     public float maxStamina;
     public float stamina;
     public float staminaDecayRate;
@@ -22,7 +24,26 @@ public class PlayerStamina : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         stamina = maxStamina;
 
-        animator = transform.GetComponentInChildren<Animator>();
+        Animator[] animators = transform.GetComponentsInChildren<Animator>();
+        characters = new GameObject[animators.Length];
+
+        for (int i = 0; i < animators.Length; i++)
+        {
+            characters[i] = animators[i].gameObject;
+        }
+
+        foreach (GameObject character in characters)
+        {
+            if (character.gameObject.name != playerChoices.characterName)
+            {
+                character.SetActive(false);
+            }
+            else
+            {
+                animator = character.GetComponent<Animator>();
+            }
+        }
+        //animator = transform.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame

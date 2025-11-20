@@ -475,7 +475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 26abf93d625752b438677e4f3209ff7b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 26abf93d625752b438677e4f3209ff7b, type: 3}
       propertyPath: m_TagString
@@ -2717,6 +2717,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStamina
   playerMovement: {fileID: 0}
   animator: {fileID: 0}
+  characters: []
+  playerChoices: {fileID: 11400000, guid: ef336de8cfe00024a96ff2e776dbe108, type: 2}
   maxStamina: 100
   stamina: 0
   staminaDecayRate: 2

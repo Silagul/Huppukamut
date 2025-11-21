@@ -26,6 +26,22 @@ MonoBehaviour:
     m_Localized: 'Kieli:'
     m_Metadata:
       m_Items: []
+  - m_Id: 11228930632986624
+    m_Localized: Aloita peli
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11229378827923456
+    m_Localized: Linkit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11229447253798912
+    m_Localized: Asetukset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11229511007219712
+    m_Localized: "Tekjij\xE4t"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

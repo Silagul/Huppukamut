@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2508422424053360571}
   - component: {fileID: 8868985174337351025}
   m_Layer: 0
-  m_Name: VFX_DustCloud01
+  m_Name: VFX_DustCloud_Jump01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

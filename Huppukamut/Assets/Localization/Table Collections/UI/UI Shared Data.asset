@@ -47,6 +47,38 @@ MonoBehaviour:
     m_Key: Volume_scale
     m_Metadata:
       m_Items: []
+  - m_Id: 12709207997820928
+    m_Key: Resume_button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12709255259238400
+    m_Key: Paused_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12710963301462016
+    m_Key: Ingame_help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711423567605760
+    m_Key: How_to
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711780821643264
+    m_Key: Pause_button1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711815722446848
+    m_Key: Pause_button2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711835557310464
+    m_Key: Pause_button3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711880314728448
+    m_Key: Pause_button4
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

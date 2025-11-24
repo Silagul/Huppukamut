@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 8f;
     public float acceleration = 20f;
     public float deceleration = 25f;
+    public float originalDeceleration;
 
     [Header("Jump")]
     public float jumpForce = 10f;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float fallGravityMultiplier = 2f; // stronger gravity when falling
     public float coyoteTime = 0.1f;           // grace after leaving ground
     public float jumpBufferTime = 0.1f;       // grace before hitting ground
+    public float originalFallGravityMultiplier;
 
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        originalDeceleration = deceleration;
+        originalFallGravityMultiplier = fallGravityMultiplier;
     }
 
     void Update()

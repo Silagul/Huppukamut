@@ -50,6 +50,42 @@ MonoBehaviour:
     m_Localized: Volume
     m_Metadata:
       m_Items: []
+  - m_Id: 12709207997820928
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12709255259238400
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12710963301462016
+    m_Localized: 'Move - WASD
+
+      Jump - Space
+
+      Special Skill - ??'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711423567605760
+    m_Localized: HOW TO...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711780821643264
+    m_Localized: GAME PAUSED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711815722446848
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711835557310464
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711880314728448
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

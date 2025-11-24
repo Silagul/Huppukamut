@@ -50,6 +50,38 @@ MonoBehaviour:
     m_Localized: "\xC4\xE4ni"
     m_Metadata:
       m_Items: []
+  - m_Id: 12709207997820928
+    m_Localized: Jatka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12709255259238400
+    m_Localized: Tauko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12710963301462016
+    m_Localized: "Liiku - WASD\nHypp\xE4\xE4 - V\xE4lily\xF6nti\nErikoiskyky - ???"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711423567605760
+    m_Localized: MITEN...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711780821643264
+    m_Localized: PELI KESKEYTETTY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711815722446848
+    m_Localized: Jatka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711835557310464
+    m_Localized: Asetukset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711880314728448
+    m_Localized: Lopeta
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

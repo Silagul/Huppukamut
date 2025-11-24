@@ -4,32 +4,42 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class StaminaBarImage : MonoBehaviour
 {
-    [Header("Visual Settings")]
-    [Range(0f, 1f)]
-    public float fillAmount = 1f;                // Current fill (0–1)
-    public Gradient gradient = new Gradient();   // Color changes from full → empty
+    [Header("Visuals")]
+    public Gradient staminaGradient = new Gradient();
 
-    [Header("Auto-Reference")]
-    public PlayerStamina playerStamina;          // Optional: auto-found if empty
+    [Header("References (auto-found if empty)")]
+    public RawImage fillRawImage;     // The RawImage child we want to color
+    public PlayerStamina playerStamina;
 
-    private Image fillImage;
+    private Image maskImage;          // The Image component on THIS GameObject (for fill amount)
     private float maxStamina;
 
     private void Awake()
     {
-        // This script should be on the Fill Image (the one inside the Mask)
-        fillImage = GetComponent<Image>();
-        fillImage.type = Image.Type.Filled;
-        fillImage.fillMethod = Image.FillMethod.Horizontal;
-        fillImage.fillOrigin = 0; // Left to right (0 = left, 1 = right, 2 = bottom, 3 = top)
+        // Get the Image component on this GameObject (required for fill)
+        maskImage = GetComponent<Image>();
 
-        // Default nice gradient: Green → Yellow → Red
-        if (gradient.colorKeys.Length == 0)
+        // Auto-find the RawImage child
+        if (fillRawImage == null)
         {
-            gradient.SetKeys(
+            fillRawImage = GetComponentInChildren<RawImage>();
+            
+            // Optional: more specific search if you have multiple RawImages
+            // fillRawImage = transform.Find("Fill")?.GetComponent<RawImage>();
+        }
+
+        // Configure the mask/fill Image
+        maskImage.type = Image.Type.Filled;
+        maskImage.fillMethod = Image.FillMethod.Horizontal;
+        maskImage.fillOrigin = 0;
+
+        // Default gradient if none set
+        if (staminaGradient.colorKeys.Length == 0)
+        {
+            staminaGradient.SetKeys(
                 new GradientColorKey[] {
                     new GradientColorKey(Color.green, 0f),
-                    new GradientColorKey(Color.yellow, 0.5f),
+                    new GradientColorKey(new Color(1f, 0.8f, 0f), 0.5f),
                     new GradientColorKey(Color.red, 1f)
                 },
                 new GradientAlphaKey[] { new GradientAlphaKey(1f, 0f), new GradientAlphaKey(1f, 1f) }
@@ -39,47 +49,49 @@ public class StaminaBarImage : MonoBehaviour
 
     private void Start()
     {
-        // Auto-find PlayerStamina if not assigned
         if (playerStamina == null)
-            playerStamina = FindObjectOfType<PlayerStamina>();
+            playerStamina = FindFirstObjectByType<PlayerStamina>();
 
         if (playerStamina == null)
         {
-            Debug.LogError("[StaminaBarImage] No PlayerStamina found in scene!");
+            Debug.LogError("[StaminaBarImage] PlayerStamina not found!");
             enabled = false;
             return;
         }
 
         maxStamina = playerStamina.maxStamina;
-        UpdateBar(playerStamina.stamina);
+        UpdateStaminaVisual(playerStamina.stamina);
     }
 
     private void Update()
     {
         if (playerStamina != null)
-            UpdateBar(playerStamina.stamina);
+            UpdateStaminaVisual(playerStamina.stamina);
     }
 
-    private void UpdateBar(float currentStamina)
+    private void UpdateStaminaVisual(float currentStamina)
     {
-        currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
-        fillAmount = currentStamina / maxStamina;
+        if (maskImage == null || fillRawImage == null) return;
 
-        fillImage.fillAmount = fillAmount;
-        fillImage.color = gradient.Evaluate(1f - fillAmount); // 1 = full (green), 0 = empty (red)
+        float normalized = Mathf.Clamp01(currentStamina / maxStamina);
+
+        // Update fill amount on the parent Image (the mask)
+        maskImage.fillAmount = normalized;
+
+        // Update color on the CHILD RawImage using gradient (1 - normalized = red when low)
+        fillRawImage.color = staminaGradient.Evaluate(1f - normalized);
     }
 
-    // Optional: Smooth fill animation
+    // Optional: Smooth fill version
     /*
+    private float targetFill = 1f;
     private void Update()
     {
-        if (playerStamina == null) return;
+        if (playerStamina == null || maskImage == null || fillRawImage == null) return;
 
-        float target = playerStamina.stamina / maxStamina;
-        fillAmount = Mathf.Lerp(fillAmount, target, Time.deltaTime * 8f);
-
-        fillImage.fillAmount = fillAmount;
-        fillImage.color = gradient.Evaluate(1f - fillAmount);
+        targetFill = Mathf.Clamp01(playerStamina.stamina / maxStamina);
+        maskImage.fillAmount = Mathf.Lerp(maskImage.fillAmount, targetFill, Time.deltaTime * 10f);
+        fillRawImage.color = staminaGradient.Evaluate(1f - maskImage.fillAmount);
     }
     */
 }

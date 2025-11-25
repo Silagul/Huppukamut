@@ -12,10 +12,12 @@ public class PlayerStamina : MonoBehaviour
     public float stamina;
     public float staminaDecayRate;
     public float helpingStaminaCost;
+    public float skillCooldownTime;
 
     private Rigidbody rb;
     private bool gliding = false;
     private bool canGlide = true;
+    private float skillCooldownTimer = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -62,7 +64,19 @@ public class PlayerStamina : MonoBehaviour
                 gliding = false;
                 animator.SetBool("Gliding", false);
             }
+            if (animator.GetParameter(6).name == "Stomp")
+            {
+                gliding = false;
+                animator.SetBool("Stomp", false);
+                rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
+            }
         }
+
+        /*skillCooldownTimer -= Time.deltaTime;
+        if (skillCooldownTimer < 0 && playerMovement.grounded)
+        {
+            canGlide = true;
+        }*/
     }
 
     private void FixedUpdate()
@@ -70,7 +84,7 @@ public class PlayerStamina : MonoBehaviour
         if (animator.GetParameter(6).name == "Gliding" && gliding)
         {
             playerMovement.fallGravityMultiplier = 1f;
-            if (rb.linearVelocity.x < 0)
+            if (rb.linearVelocity.y < 0)
             {
                 rb.AddForce(Vector3.up * Time.fixedDeltaTime * 15, ForceMode.VelocityChange);
             }
@@ -84,9 +98,14 @@ public class PlayerStamina : MonoBehaviour
                 rb.AddForce(Vector3.left * Time.fixedDeltaTime * 30, ForceMode.VelocityChange);
             }
         }
+        else if (animator.GetParameter(6).name == "Dash" && gliding)
+        {
+            playerMovement.deceleration = 0;
+        }
         else
         {
-            playerMovement.fallGravityMultiplier = 4f;
+            playerMovement.fallGravityMultiplier = playerMovement.originalFallGravityMultiplier;
+            playerMovement.deceleration = playerMovement.originalDeceleration;
         }
     }
 
@@ -190,6 +209,32 @@ public class PlayerStamina : MonoBehaviour
                 gliding = true;
                 canGlide = false;
                 animator.SetBool("Dash", true);
+            }
+        }
+
+        if (animator.GetParameter(6).name == "Stomp")
+        {
+            if (!playerMovement.grounded)
+            {
+                if (ctx.performed && canGlide)
+                {
+                    gliding = true;
+                    animator.SetBool("Stomp", true);
+                }
+                /*else if (ctx.canceled)
+                {
+                    gliding = false;
+                    animator.SetBool("Stomp", false);
+                }*/
+                else if (canGlide)
+                {
+                    stamina -= 5;
+                    rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+                    rb.AddForce(Vector3.down * (playerMovement.jumpForce * 0.8f), ForceMode.VelocityChange);
+                    gliding = true;
+                    canGlide = false;
+                    animator.SetBool("Stomp", true);
+                }
             }
         }
     }

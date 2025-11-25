@@ -2218,6 +2218,28 @@ MonoBehaviour:
   abilityNameEn: STOMP
   abilityDescriptionEn: Slam down [ SPACE ] to break objects.
   abilityIcon: {fileID: 21300000, guid: 612e60202ac6a6f4baeb92e30f797fce, type: 3}
+--- !u!95 &982278993
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982278990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f20dc49d04e22b4795e7fb33bfdfbb0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1038025053
 GameObject:
   m_ObjectHideFlags: 0
@@ -3905,7 +3927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0d59490643c52ba41aac1b2eb0e3af94, type: 3}
       propertyPath: m_Name
-      value: vesinokkaelain
+      value: Character_Vesinokkaelain
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0d59490643c52ba41aac1b2eb0e3af94, type: 3}
       propertyPath: m_TagString
@@ -3922,6 +3944,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d59490643c52ba41aac1b2eb0e3af94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 982278992}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d59490643c52ba41aac1b2eb0e3af94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 982278993}
   m_SourcePrefab: {fileID: 100100000, guid: 0d59490643c52ba41aac1b2eb0e3af94, type: 3}
 --- !u!1 &1811753660
 GameObject:

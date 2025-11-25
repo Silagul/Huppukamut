@@ -51,7 +51,15 @@ public class Item : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<PlayerStamina>(out PlayerStamina playerStamina))
         {
+            /*if (playerStamina.stamina <= playerStamina.maxStamina - recoveryAmount)
+            {
+                //
+            }*/
             playerStamina.stamina += recoveryAmount;
+            if (playerStamina.stamina > playerStamina.maxStamina)
+            {
+                playerStamina.stamina = playerStamina.maxStamina;
+            }
             GameObject effect = Instantiate(particleEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

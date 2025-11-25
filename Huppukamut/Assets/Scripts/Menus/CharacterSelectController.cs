@@ -110,7 +110,7 @@ public class CharacterSelectController : MonoBehaviour
 
         if (selectTimer <= 0f)
         {
-            LoadLevel("Level1");
+            LoadLevel("Level1_copy");
         }
     }
 

@@ -90,4 +90,9 @@ public class MainMenuController : MonoBehaviour
         //print(ang + " degrees");
         //print(distance + " units length");
     }
+
+    public void LoadLevel(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 }

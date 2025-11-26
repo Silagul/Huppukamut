@@ -30,6 +30,7 @@ public class HelpeeAi : MonoBehaviour
     public GameObject goal;
 
     public NavMeshAgent agent;
+    private CapsuleCollider capsuleCollider;
     private Rigidbody rb;
 
     //private GameObject[] goals;
@@ -45,6 +46,8 @@ public class HelpeeAi : MonoBehaviour
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
+        capsuleCollider.excludeLayers = LayerMask.GetMask("Default");
 
         agent.autoTraverseOffMeshLink = true;
         while (true)

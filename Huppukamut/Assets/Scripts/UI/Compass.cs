@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 
@@ -18,12 +19,18 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Vector3 targetDirection = goal.transform.position - player.transform.position;
-        Vector3 targetDirection = FindClosestTagged("Helpee").transform.position - player.transform.position;
+        //GameObject target = goal;
+        GameObject target = FindClosestTagged("Helpee");
+        if (target == null)
+        {
+            target = goal;
+        }
+
+        Vector3 targetDirection = target.transform.position - player.transform.position;
 
         float angle = Vector3.Angle(new Vector3(targetDirection.x, targetDirection.y, 0), Vector3.up);
 
-        if (goal.transform.position.x > player.transform.position.x)
+        if (target.transform.position.x > player.transform.position.x)
         {
             angle *= -1;
         }
@@ -41,12 +48,15 @@ public class Compass : MonoBehaviour
 
         foreach (GameObject go in gos)
         {
-            Vector3 diff = go.transform.position - position;    // Vector from this to target
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < 4 && curDistance < distance)
+            if (go.TryGetComponent<HelpeeAi>(out HelpeeAi h))
             {
-                closest = go;
-                distance = curDistance;
+                Vector3 diff = go.transform.position - position;    // Vector from this to target
+                float curDistance = diff.sqrMagnitude;
+                if (curDistance < distance && h.stamina <= 0)
+                {
+                    closest = go;
+                    distance = curDistance;
+                }
             }
         }
         return closest;

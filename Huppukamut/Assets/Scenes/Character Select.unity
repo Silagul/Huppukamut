@@ -2896,7 +2896,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2a1e77c1bef577e4f85b0e789b3dd853, type: 2}
     - target: {fileID: 919132149155446097, guid: 06a329757bf64c142b662f3d98506f96, type: 3}
       propertyPath: m_Name
-      value: Character_Reef_shark
+      value: Character_Hai
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 06a329757bf64c142b662f3d98506f96, type: 3}
       propertyPath: m_TagString
@@ -2909,6 +2909,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 06a329757bf64c142b662f3d98506f96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1298693325}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 06a329757bf64c142b662f3d98506f96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1298693326}
   m_SourcePrefab: {fileID: 100100000, guid: 06a329757bf64c142b662f3d98506f96, type: 3}
 --- !u!1 &1298693324 stripped
 GameObject:
@@ -2941,6 +2944,28 @@ MonoBehaviour:
   abilityNameEn: DASH
   abilityDescriptionEn: Press SHIFT to dash forward.
   abilityIcon: {fileID: 21300000, guid: 780b962b64b78b1478bf5d98e050267b, type: 3}
+--- !u!95 &1298693326
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298693324}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: bd47da6ab74566c4287f2957b3572c4b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1334183639
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4128,7 +4128,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453248968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4136,7 +4136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -131.6, y: 0}
+  m_AnchoredPosition: {x: -126.7, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453248970
@@ -4159,16 +4159,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name 1
+  m_text: 'Janina Korpela
 
-    Name 2
+    Jordan Wright
 
-    Name 3
+    Sallamaari Sarivaara
 
-    Name 4'
+    Name
+    4'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 27cda6e5823c5704194bdb87891ba6be, type: 2}
-  m_sharedMaterial: {fileID: 2818850602952216487, guid: 27cda6e5823c5704194bdb87891ba6be, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ec9ebd7700350d40a5f0a5e472c5543, type: 2}
+  m_sharedMaterial: {fileID: 3079785559894100645, guid: 7ec9ebd7700350d40a5f0a5e472c5543, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4192,8 +4193,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4301,16 +4302,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Role 1
+  m_text: 'Artist
 
-    Role 2
+    Artist
 
-    Role 3
+    3D Artist
 
     Role 4'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 27cda6e5823c5704194bdb87891ba6be, type: 2}
-  m_sharedMaterial: {fileID: 2818850602952216487, guid: 27cda6e5823c5704194bdb87891ba6be, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ec9ebd7700350d40a5f0a5e472c5543, type: 2}
+  m_sharedMaterial: {fileID: 3079785559894100645, guid: 7ec9ebd7700350d40a5f0a5e472c5543, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4334,8 +4335,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6418,12 +6419,12 @@ MonoBehaviour:
 
     Name 6
 
-    Name 7
+    Mika Flyktman
 
-    Name 8'
+    Olli Roihupalo'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 27cda6e5823c5704194bdb87891ba6be, type: 2}
-  m_sharedMaterial: {fileID: 2818850602952216487, guid: 27cda6e5823c5704194bdb87891ba6be, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ec9ebd7700350d40a5f0a5e472c5543, type: 2}
+  m_sharedMaterial: {fileID: 3079785559894100645, guid: 7ec9ebd7700350d40a5f0a5e472c5543, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6447,8 +6448,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6565,12 +6566,12 @@ MonoBehaviour:
 
     Role 6
 
-    Role 7
+    Programmer
 
-    Role 8'
+    Programmer'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 27cda6e5823c5704194bdb87891ba6be, type: 2}
-  m_sharedMaterial: {fileID: 2818850602952216487, guid: 27cda6e5823c5704194bdb87891ba6be, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ec9ebd7700350d40a5f0a5e472c5543, type: 2}
+  m_sharedMaterial: {fileID: 3079785559894100645, guid: 7ec9ebd7700350d40a5f0a5e472c5543, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6594,8 +6595,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

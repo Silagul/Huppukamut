@@ -82,6 +82,90 @@ MonoBehaviour:
     m_Localized: Lopeta
     m_Metadata:
       m_Items: []
+  - m_Id: 13782885994442752
+    m_Localized: 'Janina Korpela
+
+      Graafikko
+
+      Hahmo suunnittelu
+
+      UI
+      Suunnittelu/Grafiikka
+
+      3D Teksturointi'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783599583965184
+    m_Localized: "Jordan Wright\nGraafikko\n3D Mallinnus\nPartikkeli VFX\nJ\xE4lkik\xE4sittely"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783627731939328
+    m_Localized: "Sallamaari Sarivaara\nGraafikko\n3D Mallinnus\nHahmon Riggaus\nKentt\xE4suunnittelu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783654642593792
+    m_Localized: "Mika Flyktman\nOhjelmoija\nK\xE4ytt\xF6liittym\xE4 ohjelmointi\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783687794372608
+    m_Localized: "Olli Roihupalo\nOhjelmoija\nPeli-, Hahmo- ja K\xE4ytt\xF6liittym\xE4
+      ohjelmointi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783711014039552
+    m_Localized: 'Eemi Komulainen
+
+      Ohjelmoija
+
+      Peliohjelmointi'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783727669620736
+    m_Localized: 'Aapeli Nieminen
+
+      Graafikko
+
+      3D Mallinnus
+
+      Hahmon
+      Riggaus'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783742186106880
+    m_Localized: "Jenna S\xE4yn\xE4joki\nGraafikko\n2D Grafiikka\n3D Mallinnus /
+      Teksturointi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783754672549888
+    m_Localized: 'Juhani Partanen
+
+      Tuottaja
+
+      3D Mallinnus
+
+      Hahmo
+      Riggaus / Animaatio'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13786842292662272
+    m_Localized: 'Huppu
+
+      Huolehtivat nuoret hanke
+
+      Jyri Blomqvist
+
+      ja
+
+      Jenni
+      Tenkula'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13786812840259584
+    m_Localized: 'Musiikki:
+
+      Noksumon'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

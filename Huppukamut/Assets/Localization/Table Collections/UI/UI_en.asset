@@ -86,6 +86,115 @@ MonoBehaviour:
     m_Localized: Quit
     m_Metadata:
       m_Items: []
+  - m_Id: 13782885994442752
+    m_Localized: 'Janina Korpela
+
+      Artist
+
+      Character Design
+
+      UI
+      Design/Art
+
+      3D Texturing'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783599583965184
+    m_Localized: 'Jordan Wright
+
+      Artist
+
+      3D Modeling
+
+      Particle
+      VFX
+
+      Post Processing'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783627731939328
+    m_Localized: 'Sallamaari Sarivaara
+
+      Artist
+
+      3D Modeling
+
+      Character
+      Rigging
+
+      Level Design'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783654642593792
+    m_Localized: 'Mika Flyktman
+
+      Programmer
+
+      UI Programming
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783687794372608
+    m_Localized: 'Olli Roihupalo
+
+      Programmer
+
+      Gameplay, Character and
+      UI Programming'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783711014039552
+    m_Localized: 'Eemi Komulainen
+
+      Programmer
+
+      Gameplay Programming'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783727669620736
+    m_Localized: 'Aapeli Nieminen
+
+      Artist
+
+      3D Modeling
+
+      Character
+      Rigging'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783742186106880
+    m_Localized: "Jenna S\xE4yn\xE4joki\nArtist\n2D Art\n3D Modeling / Texturing"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13783754672549888
+    m_Localized: 'Juhani Partanen
+
+      Producer
+
+      3D modeling
+
+      Character
+      Rigging / Animation'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13786842292662272
+    m_Localized: 'Huppu
+
+      "Huolehtivat nuoret" project
+
+      Jyri Blomqvist
+
+      and
+
+      Jenni
+      Tenkula'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13786812840259584
+    m_Localized: "Music by \nNoksumon"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

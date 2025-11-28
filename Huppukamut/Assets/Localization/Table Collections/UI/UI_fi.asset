@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 11545330169819136
-    m_Localized: "\xC4\xE4ni"
+    m_Localized: "\xC4\xE4nenvoimakkuus"
     m_Metadata:
       m_Items: []
   - m_Id: 12709207997820928
@@ -59,7 +59,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12710963301462016
-    m_Localized: "Liiku - WASD\nHypp\xE4\xE4 - V\xE4lily\xF6nti\nErikoiskyky - ???"
+    m_Localized: "Liiku - WASD\nHypp\xE4\xE4 - V\xE4lily\xF6nti\nErikoiskyky - Vaihto"
     m_Metadata:
       m_Items: []
   - m_Id: 12711423567605760
@@ -85,6 +85,7 @@ MonoBehaviour:
   - m_Id: 13782885994442752
     m_Localized: 'Janina Korpela
 
+
       Graafikko
 
       Hahmo suunnittelu
@@ -96,24 +97,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 13783599583965184
-    m_Localized: "Jordan Wright\nGraafikko\n3D Mallinnus\nPartikkeli VFX\nJ\xE4lkik\xE4sittely"
+    m_Localized: "Jordan Wright\n\nGraafikko\n3D Mallinnus\nPartikkeli VFX\nJ\xE4lkik\xE4sittely"
     m_Metadata:
       m_Items: []
   - m_Id: 13783627731939328
-    m_Localized: "Sallamaari Sarivaara\nGraafikko\n3D Mallinnus\nHahmon Riggaus\nKentt\xE4suunnittelu"
+    m_Localized: "Sallamaari Sarivaara\n\nGraafikko\n3D Mallinnus\nHahmon Riggaus\nKentt\xE4suunnittelu"
     m_Metadata:
       m_Items: []
   - m_Id: 13783654642593792
-    m_Localized: "Mika Flyktman\nOhjelmoija\nK\xE4ytt\xF6liittym\xE4 ohjelmointi\n"
+    m_Localized: "Mika Flyktman\n\nOhjelmoija\nK\xE4ytt\xF6liittym\xE4 ohjelmointi\n"
     m_Metadata:
       m_Items: []
   - m_Id: 13783687794372608
-    m_Localized: "Olli Roihupalo\nOhjelmoija\nPeli-, Hahmo- ja K\xE4ytt\xF6liittym\xE4
+    m_Localized: "Olli Roihupalo\n\nOhjelmoija\nPeli-, Hahmo- ja K\xE4ytt\xF6liittym\xE4
       ohjelmointi"
     m_Metadata:
       m_Items: []
   - m_Id: 13783711014039552
     m_Localized: 'Eemi Komulainen
+
 
       Ohjelmoija
 
@@ -122,6 +124,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 13783727669620736
     m_Localized: 'Aapeli Nieminen
+
 
       Graafikko
 
@@ -132,12 +135,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 13783742186106880
-    m_Localized: "Jenna S\xE4yn\xE4joki\nGraafikko\n2D Grafiikka\n3D Mallinnus /
-      Teksturointi"
+    m_Localized: "Jenna S\xE4yn\xE4joki\n\nGraafikko\n2D Grafiikka\n3D Mallinnus
+      / Teksturointi"
     m_Metadata:
       m_Items: []
   - m_Id: 13783754672549888
     m_Localized: 'Juhani Partanen
+
 
       Tuottaja
 
@@ -150,20 +154,17 @@ MonoBehaviour:
   - m_Id: 13786842292662272
     m_Localized: 'Huppu
 
-      Huolehtivat nuoret hanke
+      Huolehtivat Nuoret -hanke
+
 
       Jyri Blomqvist
-
-      ja
 
       Jenni
       Tenkula'
     m_Metadata:
       m_Items: []
   - m_Id: 13786812840259584
-    m_Localized: 'Musiikki:
-
-      Noksumon'
+    m_Localized: "Musiikki:\n\nSanteri Lehtim\xE4ki"
     m_Metadata:
       m_Items: []
   - m_Id: 14089527920111616

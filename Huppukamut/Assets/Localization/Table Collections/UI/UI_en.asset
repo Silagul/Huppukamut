@@ -63,7 +63,7 @@ MonoBehaviour:
 
       Jump - Space
 
-      Special Skill - ??'
+      Special Skill - Shift'
     m_Metadata:
       m_Items: []
   - m_Id: 12711423567605760
@@ -89,6 +89,7 @@ MonoBehaviour:
   - m_Id: 13782885994442752
     m_Localized: 'Janina Korpela
 
+
       Artist
 
       Character Design
@@ -101,6 +102,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 13783599583965184
     m_Localized: 'Jordan Wright
+
 
       Artist
 
@@ -115,6 +117,7 @@ MonoBehaviour:
   - m_Id: 13783627731939328
     m_Localized: 'Sallamaari Sarivaara
 
+
       Artist
 
       3D Modeling
@@ -128,6 +131,7 @@ MonoBehaviour:
   - m_Id: 13783654642593792
     m_Localized: 'Mika Flyktman
 
+
       Programmer
 
       UI Programming
@@ -138,6 +142,7 @@ MonoBehaviour:
   - m_Id: 13783687794372608
     m_Localized: 'Olli Roihupalo
 
+
       Programmer
 
       Gameplay, Character and
@@ -147,6 +152,7 @@ MonoBehaviour:
   - m_Id: 13783711014039552
     m_Localized: 'Eemi Komulainen
 
+
       Programmer
 
       Gameplay Programming'
@@ -154,6 +160,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 13783727669620736
     m_Localized: 'Aapeli Nieminen
+
 
       Artist
 
@@ -164,11 +171,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 13783742186106880
-    m_Localized: "Jenna S\xE4yn\xE4joki\nArtist\n2D Art\n3D Modeling / Texturing"
+    m_Localized: "Jenna S\xE4yn\xE4joki\n\nArtist\n2D Art\n3D Modeling / Texturing"
     m_Metadata:
       m_Items: []
   - m_Id: 13783754672549888
     m_Localized: 'Juhani Partanen
+
 
       Producer
 
@@ -181,18 +189,17 @@ MonoBehaviour:
   - m_Id: 13786842292662272
     m_Localized: 'Huppu
 
-      "Huolehtivat nuoret" project
+      "Huolehtivat Nuoret" project
+
 
       Jyri Blomqvist
-
-      and
 
       Jenni
       Tenkula'
     m_Metadata:
       m_Items: []
   - m_Id: 13786812840259584
-    m_Localized: "Music by \nNoksumon"
+    m_Localized: "Music by\n\nSanteri Lehtim\xE4ki"
     m_Metadata:
       m_Items: []
   - m_Id: 14089527920111616

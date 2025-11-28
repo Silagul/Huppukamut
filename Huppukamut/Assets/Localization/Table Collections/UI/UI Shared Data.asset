@@ -123,6 +123,10 @@ MonoBehaviour:
     m_Key: Huppu
     m_Metadata:
       m_Items: []
+  - m_Id: 14089527920111616
+    m_Key: settings_language
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

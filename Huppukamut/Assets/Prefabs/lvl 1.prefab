@@ -606,7 +606,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c68a22a181b30c3469090b6587c61aa9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1d9e83ce72fbba14f87e6ed82adbb5be, type: 2}
+      objectReference: {fileID: 2100000, guid: 63aff5b34134ac04ca5251af0bcdeaf0, type: 2}
     - target: {fileID: 919132149155446097, guid: c68a22a181b30c3469090b6587c61aa9, type: 3}
       propertyPath: m_Name
       value: huppukamut_pariovi2 (6)
@@ -1127,7 +1127,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5a0256f24de694f4db08928ca72933df, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c2a680aa71367124da0f0c009e362c9f, type: 2}
+      objectReference: {fileID: 2100000, guid: 11752ffbe22d38c4faf5ef5e0994306e, type: 2}
     - target: {fileID: 919132149155446097, guid: 5a0256f24de694f4db08928ca72933df, type: 3}
       propertyPath: m_Name
       value: huppukamut_parveke1_open.right (1)
@@ -3298,7 +3298,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f5fb46e036739cb43b4b4f9aff2c0610, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 249743a185367cf458e8069f42755e5a, type: 2}
+      objectReference: {fileID: 2100000, guid: 156b587064d15c04382b2780e1515aef, type: 2}
     - target: {fileID: 919132149155446097, guid: f5fb46e036739cb43b4b4f9aff2c0610, type: 3}
       propertyPath: m_Name
       value: huppukamut_iso.terassiparveke
@@ -3754,7 +3754,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ce7cf055960271d44a7fd3b326484f61, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a5bea9a1d00cee745a93dafe14b77b17, type: 2}
+      objectReference: {fileID: 2100000, guid: 2575e8ac184c31844a3287632e2fc3a3, type: 2}
     - target: {fileID: 919132149155446097, guid: ce7cf055960271d44a7fd3b326484f61, type: 3}
       propertyPath: m_Name
       value: huppukamut_talo3 (1)
@@ -4472,7 +4472,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ac90f540ca9261d4e95ce086640cbe7b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 3961f2aa8d689624186ac7835bde1672, type: 2}
+      objectReference: {fileID: 2100000, guid: 95b65c690b3dc3d44b5d691edad9049e, type: 2}
     - target: {fileID: 919132149155446097, guid: ac90f540ca9261d4e95ce086640cbe7b, type: 3}
       propertyPath: m_Name
       value: huppukamut_parveke1_open.left
@@ -5063,7 +5063,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ce7cf055960271d44a7fd3b326484f61, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 912c87bfefea3af45a2516bf0ffde70b, type: 2}
+      objectReference: {fileID: 2100000, guid: 2575e8ac184c31844a3287632e2fc3a3, type: 2}
     - target: {fileID: 919132149155446097, guid: ce7cf055960271d44a7fd3b326484f61, type: 3}
       propertyPath: m_Name
       value: huppukamut_talo3 (2)
@@ -8022,7 +8022,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ce7cf055960271d44a7fd3b326484f61, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 912c87bfefea3af45a2516bf0ffde70b, type: 2}
+      objectReference: {fileID: 2100000, guid: 2575e8ac184c31844a3287632e2fc3a3, type: 2}
     - target: {fileID: 919132149155446097, guid: ce7cf055960271d44a7fd3b326484f61, type: 3}
       propertyPath: m_Name
       value: huppukamut_talo3 (1)
@@ -8802,7 +8802,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c68a22a181b30c3469090b6587c61aa9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1d9e83ce72fbba14f87e6ed82adbb5be, type: 2}
+      objectReference: {fileID: 2100000, guid: 63aff5b34134ac04ca5251af0bcdeaf0, type: 2}
     - target: {fileID: 919132149155446097, guid: c68a22a181b30c3469090b6587c61aa9, type: 3}
       propertyPath: m_Name
       value: huppukamut_pariovi2 (7)
@@ -12064,7 +12064,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5a0256f24de694f4db08928ca72933df, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c2a680aa71367124da0f0c009e362c9f, type: 2}
+      objectReference: {fileID: 2100000, guid: 11752ffbe22d38c4faf5ef5e0994306e, type: 2}
     - target: {fileID: 919132149155446097, guid: 5a0256f24de694f4db08928ca72933df, type: 3}
       propertyPath: m_Name
       value: huppukamut_parveke1_open.right
@@ -13319,7 +13319,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ac90f540ca9261d4e95ce086640cbe7b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 3961f2aa8d689624186ac7835bde1672, type: 2}
+      objectReference: {fileID: 2100000, guid: 95b65c690b3dc3d44b5d691edad9049e, type: 2}
     - target: {fileID: 919132149155446097, guid: ac90f540ca9261d4e95ce086640cbe7b, type: 3}
       propertyPath: m_Name
       value: huppukamut_parveke1_open.left (1)

@@ -303,8 +303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Friendly and reliable, the platypus never fails to make everyone feel 
-    safe and cared for. Lorem ipsum dolor set.
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0d071cd5b43a8ef4da5e02e0f5d46cbd, type: 2}
   m_sharedMaterial: {fileID: 8936984242902990589, guid: 0d071cd5b43a8ef4da5e02e0f5d46cbd, type: 2}
@@ -779,17 +778,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   charName: 
   description: 
-  charNameFi: Tunturihaukka
+  charNameFi: Skye
   descriptionFi: "Tunteet k\xE4tkee, piikit n\xE4ytt\xE4\xE4, vois joskus sanoin
     helpottaa p\xE4\xE4t\xE4\xE4n."
-  charNameEn: Hawk
+  charNameEn: Skye
   descriptionEn: When the grind gets rough, just glide, let the rhythm be your guide.
   abilityName: 
   abilityDescription: 
   abilityNameFi: LIITO
-  abilityDescriptionFi: "Liid\xE4 ilman halki painamalla SHIFT"
+  abilityDescriptionFi: "Liid\xE4 ilman halki painamalla SHIFT."
   abilityNameEn: GLIDE
-  abilityDescriptionEn: Press SHIFT to glide trough the air.
+  abilityDescriptionEn: Press [ SHIFT ] to glide trough the air.
   abilityIcon: {fileID: 21300000, guid: e7d17a3b33ba698479cfb0103c26f423, type: 3}
 --- !u!95 &266778781
 Animator:
@@ -1296,7 +1295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HAUKKA
+  m_text: ' '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c70e98e63ab5ca4880925c8c7507df6, type: 2}
   m_sharedMaterial: {fileID: 2818850602952216487, guid: 7c70e98e63ab5ca4880925c8c7507df6, type: 2}
@@ -1305,8 +1304,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293322467
-  m_fontColor: {r: 0.89019614, g: 0.90196085, b: 0.90196085, a: 1}
+    rgba: 15132387
+  m_fontColor: {r: 0.89019614, g: 0.90196085, b: 0.90196085, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1394,17 +1393,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   charName: 
   description: 
-  charNameFi: Alligaattori
+  charNameFi: Skeggo
   descriptionFi: "Takahampaat kun kiristyy, muiden huolet rullaamalla v\xE4istyy."
-  charNameEn: Alligator
+  charNameEn: Skeggo
   descriptionEn: "When the pressure\u2019s high, just roll, ride the rhythm, own
     your flow."
   abilityName: 
   abilityDescription: 
   abilityNameFi: SPURTTI
-  abilityDescriptionFi: "Kiid\xE4 eteenp\xE4in SHIFT-nappulalla."
+  abilityDescriptionFi: "Kiid\xE4 eteenp\xE4in painamalla SHIFT."
   abilityNameEn: DASH
-  abilityDescriptionEn: Press SHIFT to dash forward.
+  abilityDescriptionEn: Press [ SHIFT ] to dash forward.
   abilityIcon: {fileID: 21300000, guid: 780b962b64b78b1478bf5d98e050267b, type: 3}
 --- !u!95 &506959583
 Animator:
@@ -2205,18 +2204,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   charName: 
   description: 
-  charNameFi: "Vesinokkael\xE4in"
+  charNameFi: Yoyo
   descriptionFi: "Skimbaa ja chillaa, ei muiden huolilla p\xE4\xE4t\xE4\xE4n liikaa
-    grillaa"
-  charNameEn: Platypus
+    grillaa."
+  charNameEn: Yoyo
   descriptionEn: "Skis and chills, feels just right, won\u2019t let others\u2019
     worries bite."
   abilityName: 
   abilityDescription: 
-  abilityNameFi: TALLAA
-  abilityDescriptionFi: "Riko esineit\xE4 painamalla SPACE"
-  abilityNameEn: STOMP
-  abilityDescriptionEn: Slam down [ SPACE ] to break objects.
+  abilityNameFi: TALLAUS
+  abilityDescriptionFi: "Riko esineit\xE4 painamalla SHIFT."
+  abilityNameEn: TALLAUS
+  abilityDescriptionEn: Slam down [ SHIFT ] to break objects.
   abilityIcon: {fileID: 21300000, guid: 612e60202ac6a6f4baeb92e30f797fce, type: 3}
 --- !u!95 &982278993
 Animator:
@@ -2932,17 +2931,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   charName: 
   description: 
-  charNameFi: Riuttahai
+  charNameFi: Finley
   descriptionFi: "Viihtyy hyvin pinnan alla, mut v\xE4lill\xE4 ois hyv\xE4 surffaa
     laineilla. "
-  charNameEn: Reef Shark
-  descriptionEn: "Focus up, catch the breeze, don\u2019t get tangled, stay at ease"
+  charNameEn: Finley
+  descriptionEn: "Focus up, catch the breeze, don\u2019t get tangled, stay at ease."
   abilityName: 
   abilityDescription: 
   abilityNameFi: SPURTTI
-  abilityDescriptionFi: "Kiid\xE4 eteenp\xE4in SHIFT-nappulalla."
+  abilityDescriptionFi: "Kiid\xE4 eteenp\xE4in painamalla SHIFT"
   abilityNameEn: DASH
-  abilityDescriptionEn: Press SHIFT to dash forward.
+  abilityDescriptionEn: Press [ SHIFT ] to dash forward.
   abilityIcon: {fileID: 21300000, guid: 780b962b64b78b1478bf5d98e050267b, type: 3}
 --- !u!95 &1298693326
 Animator:
@@ -3223,7 +3222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HAUKKA
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c70e98e63ab5ca4880925c8c7507df6, type: 2}
   m_sharedMaterial: {fileID: 2818850602952216487, guid: 7c70e98e63ab5ca4880925c8c7507df6, type: 2}
@@ -4401,17 +4400,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   charName: 
   description: 
-  charNameFi: Peippo
+  charNameFi: Gilla
   descriptionFi: "Kuuntelee ja pirist\xE4\xE4; mut muistaa oman musan, ettei liikaa
     p\xE4\xE4t\xE4 ala kirist\xE4\xE4."
-  charNameEn: Finch
+  charNameEn: Gilla
   descriptionEn: Tunes in, lifts the vibe, keeps their own beat, stays alive.
   abilityName: 
   abilityDescription: 
   abilityNameFi: LIITO
-  abilityDescriptionFi: "Liid\xE4 ilman halki painamalla SHIFT"
+  abilityDescriptionFi: "Liid\xE4 ilman halki painamalla SHIFT."
   abilityNameEn: GLIDE
-  abilityDescriptionEn: Press SHIFT to glide trough the air.
+  abilityDescriptionEn: Press [ SHIFT ] to glide trough the air.
   abilityIcon: {fileID: 21300000, guid: e7d17a3b33ba698479cfb0103c26f423, type: 3}
 --- !u!95 &1984783024
 Animator:

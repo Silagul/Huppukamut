@@ -5,12 +5,14 @@ public class ItemDistribution : MonoBehaviour
 {
     public GameObject[] itemPrefabs;
     public GameObject[] itemPositions;
+    public int collectedItems = 0;
     public float budget;
 
     private float totalValue = 0;
     private GameObject temp = null;
     private GameObject[] filled;
     private GameObject[] items = null;
+    private TMPro.TextMeshProUGUI collectibleCount;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,9 +23,11 @@ public class ItemDistribution : MonoBehaviour
         {
             filled[o] = null;
         }
+        collectibleCount = GameObject.Find("Huppumerkki count").GetComponent<TMPro.TextMeshProUGUI>();
+        collectibleCount.text = "[ " + collectedItems + "/" + itemPositions.Length + " ]";
 
-        //FirstVersion();
-        SecondVersion();
+        FirstVersion();
+        //SecondVersion();
 
         print("Leftover budget: " + (budget - totalValue));
     }
@@ -170,5 +174,11 @@ public class ItemDistribution : MonoBehaviour
             }
         }
         return amount;
+    }
+
+    public void IncrementScore()
+    {
+        collectedItems++;
+        collectibleCount.text = "[ " + collectedItems + "/" + itemPositions.Length + " ]";
     }
 }

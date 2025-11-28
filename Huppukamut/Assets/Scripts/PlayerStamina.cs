@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerStamina : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerStamina : MonoBehaviour
     public Animator animator;
     public GameObject[] characters;
     public PlayerChoices playerChoices;
+    public Image icon;
     public float maxStamina;
     public float stamina;
     public float staminaDecayRate;
@@ -17,7 +19,7 @@ public class PlayerStamina : MonoBehaviour
     private Rigidbody rb;
     private bool gliding = false;
     private bool canGlide = true;
-    private float skillCooldownTimer = 0;
+    //private float skillCooldownTimer = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +30,7 @@ public class PlayerStamina : MonoBehaviour
 
         Animator[] animators = transform.GetComponentsInChildren<Animator>();
         characters = new GameObject[animators.Length];
+        icon = GameObject.Find("PlayerIcon").GetComponent<Image>();
 
         for (int i = 0; i < animators.Length; i++)
         {
@@ -43,6 +46,7 @@ public class PlayerStamina : MonoBehaviour
             else
             {
                 animator = character.GetComponent<Animator>();
+                icon.sprite = character.GetComponent<HelpeeUI>().icon;
             }
         }
         //animator = transform.GetComponentInChildren<Animator>();

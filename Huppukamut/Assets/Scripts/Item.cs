@@ -11,12 +11,14 @@ public class Item : MonoBehaviour
 
     private float current;
     private bool upward = true;
+    private ItemDistribution itemDistribution;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         current = 0;
         transform.localScale = new Vector3(size, size, size);
+        itemDistribution = GameObject.Find("Positions").GetComponent<ItemDistribution>();
     }
 
     // Update is called once per frame
@@ -61,6 +63,7 @@ public class Item : MonoBehaviour
                 playerStamina.stamina = playerStamina.maxStamina;
             }
             GameObject effect = Instantiate(particleEffect, transform.position, Quaternion.identity);
+            itemDistribution.IncrementScore();
             Destroy(gameObject);
         }
     }

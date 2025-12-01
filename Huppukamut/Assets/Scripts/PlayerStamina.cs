@@ -17,6 +17,7 @@ public class PlayerStamina : MonoBehaviour
     public float skillCooldownTime;
 
     private Rigidbody rb;
+    private float dashTimer = 2f;
     private bool gliding = false;
     private bool canGlide = true;
     //private float skillCooldownTimer = 0;
@@ -76,11 +77,16 @@ public class PlayerStamina : MonoBehaviour
             }
         }
 
-        /*skillCooldownTimer -= Time.deltaTime;
-        if (skillCooldownTimer < 0 && playerMovement.grounded)
+        if (IsDashing())
         {
-            canGlide = true;
-        }*/
+            dashTimer -= Time.deltaTime;
+        }
+        if (dashTimer < 0 && gliding)
+        {
+            gliding = false;
+            animator.SetBool("Dash", false);
+            dashTimer = 2f;
+        }
     }
 
     private void FixedUpdate()
@@ -102,14 +108,14 @@ public class PlayerStamina : MonoBehaviour
                 rb.AddForce(Vector3.left * Time.fixedDeltaTime * 30, ForceMode.VelocityChange);
             }
         }
-        else if (animator.GetParameter(6).name == "Dash" && gliding)
+        else if (IsDashing())
         {
-            playerMovement.deceleration = 0;
+            //playerMovement.deceleration = 0;
         }
         else
         {
             playerMovement.fallGravityMultiplier = playerMovement.originalFallGravityMultiplier;
-            playerMovement.deceleration = playerMovement.originalDeceleration;
+            //playerMovement.deceleration = playerMovement.originalDeceleration;
         }
     }
 
@@ -187,7 +193,7 @@ public class PlayerStamina : MonoBehaviour
 
         if (animator.GetParameter(6).name == "Dash")
         {
-            if (ctx.performed && canGlide)
+            if (ctx.performed && canGlide && gliding)
             {
                 gliding = true;
                 animator.SetBool("Dash", true);
@@ -240,6 +246,18 @@ public class PlayerStamina : MonoBehaviour
                     animator.SetBool("Stomp", true);
                 }
             }
+        }
+    }
+
+    public bool IsDashing()
+    {
+        if (animator.GetParameter(6).name == "Dash" && gliding)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float fixedZ = 0f;
 
     private Rigidbody rb;
+    private PlayerStamina playerStamina;
     private Vector2 moveInput;
     private bool jumpPressed;
     private bool isJumpHeld;
@@ -39,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        playerStamina = GetComponent<PlayerStamina>();
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
@@ -85,6 +87,10 @@ public class PlayerMovement : MonoBehaviour
         // --- horizontal movement (independent of grounded) ---
         float targetX = moveInput.x * moveSpeed;
         float accel = Mathf.Abs(targetX) > 0.01f ? acceleration : deceleration;
+        if (playerStamina.IsDashing())
+        {
+            accel = 0;
+        }
         float newX = Mathf.MoveTowards(rb.linearVelocity.x, targetX, accel * Time.fixedDeltaTime);
         rb.linearVelocity = new Vector3(newX, rb.linearVelocity.y, 0f);
 
@@ -111,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
         moveInput = ctx.ReadValue<Vector2>();
 
         // Flip character based on movement direction (optional)
-        if (moveInput.x != 0f)
+        if (moveInput.x != 0f && !playerStamina.IsDashing())
         {
             Vector3 scale = transform.localScale;
             scale.x = Mathf.Sign(moveInput.x) * Mathf.Abs(scale.x);

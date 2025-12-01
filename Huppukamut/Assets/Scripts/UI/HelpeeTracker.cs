@@ -23,7 +23,15 @@ public class HelpeeTracker : MonoBehaviour
             image.sprite = hui.icon;
 
             RectTransform rec = o.GetComponent<RectTransform>();
-            rec.anchoredPosition = new Vector2(0, 0 + (i * 100));
+
+            if (i < 5)
+            {
+                rec.anchoredPosition = new Vector2(0, 0 + (i * 100));
+            }
+            else
+            {
+                rec.anchoredPosition = new Vector2(100, 0 + ((i - 5) * 100));
+            }
 
             image.gameObject.SetActive(false);
         }

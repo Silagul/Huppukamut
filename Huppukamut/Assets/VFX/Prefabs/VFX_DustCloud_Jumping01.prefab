@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2508422424053360571}
   - component: {fileID: 8868985174337351025}
   m_Layer: 0
-  m_Name: VFX_DustCloud_Jump01
+  m_Name: VFX_DustCloud_Jumping01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0.5
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -980,7 +980,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 15
+        scalar: 20
         minScalar: 30
         maxCurve:
           serializedVersion: 2

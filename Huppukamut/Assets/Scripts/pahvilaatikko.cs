@@ -2,18 +2,15 @@ using UnityEngine;
 
 public class pahvilaatikko : MonoBehaviour
 {
-    private void OnMouseDown()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        Destroy(gameObject);
+        
     }
 
-    private void OnCollisionEnter(Collision collision)
+    // Update is called once per frame
+    void Update()
     {
-        if (collision.gameObject.tag == "Laatikko")
-        {
-            //Destroy(gameObject );
-            Destroy(collision.gameObject);
-        }
+        
     }
-
 }

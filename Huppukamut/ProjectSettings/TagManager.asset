@@ -8,6 +8,7 @@ TagManager:
   - Helpee
   - Collectible
   - ItemPosition
+  - Laatikko
   layers:
   - Default
   - TransparentFX

@@ -53,6 +53,7 @@ Transform:
   - {fileID: 8472001043417113054}
   - {fileID: 5005534029647715116}
   - {fileID: 6623869314256479362}
+  - {fileID: 8389359879226837920}
   - {fileID: 1225816502528602713}
   - {fileID: 2848555889757438895}
   - {fileID: 3210264250878696221}
@@ -181,6 +182,7 @@ Transform:
   - {fileID: 886178501577707258}
   - {fileID: 8280249541544512907}
   - {fileID: 5890828912678668298}
+  - {fileID: 7415761559418620076}
   - {fileID: 6190009690611243827}
   - {fileID: 4205328282026340942}
   - {fileID: 7334135760021110689}
@@ -1313,6 +1315,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 105d1980e5693124189dda18f7a1cb88, type: 2}
     - target: {fileID: 919132149155446097, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
       propertyPath: m_Name
       value: huppukamut_scaffoldin (6)
@@ -1539,6 +1545,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 105d1980e5693124189dda18f7a1cb88, type: 2}
     - target: {fileID: 919132149155446097, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
       propertyPath: m_Name
       value: huppukamut_scaffoldin (2)
@@ -2208,6 +2218,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0349ed40eb3ab1542a432d54b122c1c2, type: 2}
     - target: {fileID: 919132149155446097, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
       propertyPath: m_Name
       value: huppukamut_shop.ikkuna2 (7)
@@ -2975,6 +2989,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0349ed40eb3ab1542a432d54b122c1c2, type: 2}
     - target: {fileID: 919132149155446097, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
       propertyPath: m_Name
       value: huppukamut_shop.ikkuna2
@@ -3444,11 +3462,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70208cb2444acb7458cd5f73484d8cfd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.09
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70208cb2444acb7458cd5f73484d8cfd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9758058
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70208cb2444acb7458cd5f73484d8cfd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3482,6 +3500,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 70208cb2444acb7458cd5f73484d8cfd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 17a21d9f9659ad547a96fb059b57f1f7, type: 2}
     - target: {fileID: 919132149155446097, guid: 70208cb2444acb7458cd5f73484d8cfd, type: 3}
       propertyPath: m_Name
       value: BikeRack
@@ -4529,6 +4551,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b7f2db332a412964d902813f58015074, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b9e46f96f94503a4784a94f71a99d8cf, type: 2}
     - target: {fileID: 919132149155446097, guid: b7f2db332a412964d902813f58015074, type: 3}
       propertyPath: m_Name
       value: Graffiti_wall
@@ -5017,6 +5043,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2fafe44df902fed4db9c89447373c150, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 72b492c9aac39f94598ce4da2b9f6580, type: 2}
     - target: {fileID: 919132149155446097, guid: 2fafe44df902fed4db9c89447373c150, type: 3}
       propertyPath: m_Name
       value: huppukamut_hloauto (1)
@@ -5526,6 +5556,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b7f2db332a412964d902813f58015074, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b9e46f96f94503a4784a94f71a99d8cf, type: 2}
     - target: {fileID: 919132149155446097, guid: b7f2db332a412964d902813f58015074, type: 3}
       propertyPath: m_Name
       value: Graffiti_wall (1)
@@ -5932,6 +5966,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a10b48b8a849aae439bc4bec951cd938, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1562166ca7c5eb94b8fb6ae06d1ec262, type: 2}
     - target: {fileID: 919132149155446097, guid: a10b48b8a849aae439bc4bec951cd938, type: 3}
       propertyPath: m_Name
       value: Power_line_Pole (1)
@@ -6371,6 +6409,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 105d1980e5693124189dda18f7a1cb88, type: 2}
     - target: {fileID: 919132149155446097, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
       propertyPath: m_Name
       value: huppukamut_scaffoldin (7)
@@ -6739,6 +6781,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69bedc729e05564459fb62e2da110697, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c0bbe34e167e8f4dac1361cab39342b, type: 2}
     - target: {fileID: 919132149155446097, guid: 69bedc729e05564459fb62e2da110697, type: 3}
       propertyPath: m_Name
       value: huppukamut_pariovi2_with.ikkuna (1)
@@ -7412,6 +7458,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0349ed40eb3ab1542a432d54b122c1c2, type: 2}
     - target: {fileID: 919132149155446097, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
       propertyPath: m_Name
       value: huppukamut_shop.ikkuna2 (2)
@@ -7888,6 +7938,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0349ed40eb3ab1542a432d54b122c1c2, type: 2}
     - target: {fileID: 919132149155446097, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
       propertyPath: m_Name
       value: huppukamut_shop.ikkuna2 (3)
@@ -8594,6 +8648,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69d71147a66c14c4097c2d7b10599ea0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f1068e4f4a37a147850be4a9220b1e4, type: 2}
     - target: {fileID: 919132149155446097, guid: 69d71147a66c14c4097c2d7b10599ea0, type: 3}
       propertyPath: m_Name
       value: huppukamut_pariovi1 (1)
@@ -9033,6 +9091,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2fafe44df902fed4db9c89447373c150, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0d5caeb36926838479104115b343a3ee, type: 2}
     - target: {fileID: 919132149155446097, guid: 2fafe44df902fed4db9c89447373c150, type: 3}
       propertyPath: m_Name
       value: huppukamut_hloauto (2)
@@ -9279,6 +9341,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 105d1980e5693124189dda18f7a1cb88, type: 2}
     - target: {fileID: 919132149155446097, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
       propertyPath: m_Name
       value: huppukamut_scaffoldin (3)
@@ -9390,6 +9456,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 105d1980e5693124189dda18f7a1cb88, type: 2}
     - target: {fileID: 919132149155446097, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
       propertyPath: m_Name
       value: huppukamut_scaffoldin (1)
@@ -9501,6 +9571,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4f854fb46e4f90647b9174570bb04a44, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 40a402e808b8af8479881d8dd9d87bdb, type: 2}
     - target: {fileID: 919132149155446097, guid: 4f854fb46e4f90647b9174570bb04a44, type: 3}
       propertyPath: m_Name
       value: huppukamut_pakettiauto (1)
@@ -10047,6 +10121,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69bedc729e05564459fb62e2da110697, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cc8595572acb0f47b6f837ccb1bc233, type: 2}
     - target: {fileID: 919132149155446097, guid: 69bedc729e05564459fb62e2da110697, type: 3}
       propertyPath: m_Name
       value: huppukamut_pariovi2_with.ikkuna
@@ -11085,6 +11163,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0349ed40eb3ab1542a432d54b122c1c2, type: 2}
     - target: {fileID: 919132149155446097, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
       propertyPath: m_Name
       value: huppukamut_shop.ikkuna2 (6)
@@ -11540,19 +11622,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.6129034
+      value: 1.7741938
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.2
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11564,19 +11646,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70710814
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000003774895
+      value: -0.000000026692591
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.70710546
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.000000026692488
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11584,7 +11666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -11922,6 +12004,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 105d1980e5693124189dda18f7a1cb88, type: 2}
     - target: {fileID: 919132149155446097, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
       propertyPath: m_Name
       value: huppukamut_scaffoldin (5)
@@ -12115,6 +12201,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69d71147a66c14c4097c2d7b10599ea0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f1068e4f4a37a147850be4a9220b1e4, type: 2}
     - target: {fileID: 919132149155446097, guid: 69d71147a66c14c4097c2d7b10599ea0, type: 3}
       propertyPath: m_Name
       value: huppukamut_pariovi1
@@ -12275,6 +12365,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 105d1980e5693124189dda18f7a1cb88, type: 2}
     - target: {fileID: 919132149155446097, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
       propertyPath: m_Name
       value: huppukamut_scaffoldin (8)
@@ -12468,6 +12562,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0349ed40eb3ab1542a432d54b122c1c2, type: 2}
     - target: {fileID: 919132149155446097, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
       propertyPath: m_Name
       value: huppukamut_shop.ikkuna2 (1)
@@ -12832,15 +12930,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 111.59
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.27
+      value: 15.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13662,6 +13760,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 105d1980e5693124189dda18f7a1cb88, type: 2}
     - target: {fileID: 919132149155446097, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
       propertyPath: m_Name
       value: huppukamut_scaffoldin
@@ -14686,6 +14788,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0349ed40eb3ab1542a432d54b122c1c2, type: 2}
     - target: {fileID: 919132149155446097, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
       propertyPath: m_Name
       value: huppukamut_shop.ikkuna2 (4)
@@ -14864,6 +14970,121 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a3c6812ed9b3f9941819d476f6821a02, type: 3}
   m_PrefabInstance: {fileID: 6987708246284748642}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7016795842650156871
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7376086790130939136}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 154.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5141dd24d960c424c801ddbb65711253, type: 2}
+    - target: {fileID: 919132149155446097, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_Name
+      value: Sidewalk (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3789864562637432641}
+  m_SourcePrefab: {fileID: 100100000, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+--- !u!4 &7415761559418620076 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+  m_PrefabInstance: {fileID: 7016795842650156871}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7899810130988143126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
+  m_PrefabInstance: {fileID: 7016795842650156871}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3789864562637432641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7899810130988143126}
+  m_Material: {fileID: 13400000, guid: e0e084ae3c82bec45979670453fc9aef, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 39.1834, y: 0.100001715, z: 39.1834}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!1001 &7053050499320606252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15356,6 +15577,95 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dbb6d24f42970d64ba8abd50389c5261, type: 3}
   m_PrefabInstance: {fileID: 7119231185818164458}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7162620231574515465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7376086790130939136}
+    m_Modifications:
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4419
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4419
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4419
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 125.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.708059
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70615333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -89.846
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581472096576672884, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c0bbe34e167e8f4dac1361cab39342b, type: 2}
+    - target: {fileID: 4457778320541324982, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 33.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640652582588355785, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+      propertyPath: m_Name
+      value: kauppatalo
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 5311392707545790290, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+    - {fileID: 703836870471362990, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+    - {fileID: 3372809920787838451, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+    - {fileID: 9160517766555743109, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+    - {fileID: 1549878660862394091, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+    - {fileID: 8412182334089341608, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+    - {fileID: 7624368931947713051, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+--- !u!4 &8389359879226837920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1660213605015790761, guid: 8eb12f70555b04240bcbcfd4e364a647, type: 3}
+  m_PrefabInstance: {fileID: 7162620231574515465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7262406531775535068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15502,6 +15812,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 74a244205ae7b264dbc28fb1a0c175bb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ef557afc4b3f894b95e774e65c1a2b0, type: 2}
     - target: {fileID: 919132149155446097, guid: 74a244205ae7b264dbc28fb1a0c175bb, type: 3}
       propertyPath: m_Name
       value: PostBox
@@ -15777,6 +16091,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 105d1980e5693124189dda18f7a1cb88, type: 2}
     - target: {fileID: 919132149155446097, guid: b74b6e8bc224ae94a9093c1f62f5abdf, type: 3}
       propertyPath: m_Name
       value: huppukamut_scaffoldin (4)
@@ -17249,6 +17567,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0349ed40eb3ab1542a432d54b122c1c2, type: 2}
     - target: {fileID: 919132149155446097, guid: cb141ef887b2e3241aec77238cfc8b34, type: 3}
       propertyPath: m_Name
       value: huppukamut_shop.ikkuna2 (5)
@@ -18407,7 +18729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 75.61
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18415,7 +18737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.04
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9675fe22d8548924db878ddeae53e8f7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19396,19 +19718,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.6129034
+      value: 2.0161293
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.31
+      value: 13.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d39af7a9dacd1314e8863aa3177c56bd, type: 3}
       propertyPath: m_LocalPosition.y

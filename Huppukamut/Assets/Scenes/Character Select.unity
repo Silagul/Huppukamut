@@ -3886,6 +3886,135 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &1628561841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.412
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -664045506750456076, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ff5bd70a430b2f409d91c5fcb02a896, type: 2}
+    - target: {fileID: 919132149155446097, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_Name
+      value: Character_Panda
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1628561844}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1628561843}
+  m_SourcePrefab: {fileID: 100100000, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+--- !u!1 &1628561842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+  m_PrefabInstance: {fileID: 1628561841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1628561843
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628561842}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 431a9aca2fa3ff84fb78d5564467c527, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1628561844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628561842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f6419a6fd06784eba751e4dda1896c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  charName: 
+  description: 
+  charNameFi: Tomo
+  descriptionFi: "Pehme\xE4n halauksen takana painavaa asiaa salaa, pikkuisen vois
+    avata ja asiaa jakaa."
+  charNameEn: Tomo
+  descriptionEn: "Hugs the worries, more than a few, but not every burden\u2019s
+    just theirs to chew."
+  abilityName: 
+  abilityDescription: 
+  abilityNameFi: TALLAUS
+  abilityDescriptionFi: "Riko esineit\xE4 painamalla SHIFT."
+  abilityNameEn: TALLAUS
+  abilityDescriptionEn: Slam down [ SHIFT ] to break objects.
+  abilityIcon: {fileID: 21300000, guid: 612e60202ac6a6f4baeb92e30f797fce, type: 3}
 --- !u!1 &1630492404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4591,4 +4720,5 @@ SceneRoots:
   - {fileID: 1334183639}
   - {fileID: 726735841}
   - {fileID: 1298693323}
+  - {fileID: 1628561841}
   - {fileID: 515299227}

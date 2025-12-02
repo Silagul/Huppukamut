@@ -15,10 +15,10 @@ public class PlayerStamina : MonoBehaviour
     public float staminaDecayRate;
     public float helpingStaminaCost;
     public float skillCooldownTime;
+    public bool gliding = false;
 
     private Rigidbody rb;
     private float dashTimer = 2f;
-    private bool gliding = false;
     private bool canGlide = true;
     //private float skillCooldownTimer = 0;
 
@@ -240,7 +240,7 @@ public class PlayerStamina : MonoBehaviour
                 {
                     stamina -= 5;
                     rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
-                    rb.AddForce(Vector3.down * (playerMovement.jumpForce * 0.8f), ForceMode.VelocityChange);
+                    rb.AddForce(Vector3.down * (playerMovement.jumpForce * 1f), ForceMode.VelocityChange);
                     gliding = true;
                     canGlide = false;
                     animator.SetBool("Stomp", true);

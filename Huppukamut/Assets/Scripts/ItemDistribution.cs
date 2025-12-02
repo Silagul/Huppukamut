@@ -11,6 +11,7 @@ public class ItemDistribution : MonoBehaviour
     private float totalValue = 0;
     private GameObject temp = null;
     private GameObject[] filled;
+    private GameObject[] boxes;
     private GameObject[] items = null;
     private TMPro.TextMeshProUGUI collectibleCount;
 
@@ -18,13 +19,14 @@ public class ItemDistribution : MonoBehaviour
     void Start()
     {
         itemPositions = GameObject.FindGameObjectsWithTag("ItemPosition");
+        boxes = GameObject.FindGameObjectsWithTag("Laatikko");
         filled = new GameObject[itemPositions.Length];
         for (int o = 0; o < filled.Length; o++)
         {
             filled[o] = null;
         }
         collectibleCount = GameObject.Find("Huppumerkki count").GetComponent<TMPro.TextMeshProUGUI>();
-        collectibleCount.text = "[ " + collectedItems + "/" + itemPositions.Length + " ]";
+        collectibleCount.text = "[ " + collectedItems + "/" + (itemPositions.Length + boxes.Length) + " ]";
 
         FirstVersion();
         //SecondVersion();
@@ -179,6 +181,6 @@ public class ItemDistribution : MonoBehaviour
     public void IncrementScore()
     {
         collectedItems++;
-        collectibleCount.text = "[ " + collectedItems + "/" + itemPositions.Length + " ]";
+        collectibleCount.text = "[ " + collectedItems + "/" + (itemPositions.Length + boxes.Length) + " ]";
     }
 }

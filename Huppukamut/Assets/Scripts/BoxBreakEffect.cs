@@ -6,23 +6,28 @@ public class BoxBreakEffect : MonoBehaviour
     public GameObject spawnObject;
     public float particleLifetime = 2f;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (!other.CompareTag("Player")) return;
-
-        Debug.Log("BREAK BOX");
-
-        if (particleEffect)
+        //if (!other.CompareTag("Player")) return;
+        if (collision.collider.gameObject.TryGetComponent<PlayerStamina>(out PlayerStamina ps))
         {
-            GameObject fx = Instantiate(particleEffect, transform.position, transform.rotation);
-            Destroy(fx, particleLifetime);
-        }
+            if (ps.gliding)
+            {
+                Debug.Log("BREAK BOX");
 
-        if (spawnObject)
-        {
-            Instantiate(spawnObject, transform.position, transform.rotation);
-        }
+                if (particleEffect)
+                {
+                    GameObject fx = Instantiate(particleEffect, transform.position, transform.rotation);
+                    Destroy(fx, particleLifetime);
+                }
 
-        Destroy(gameObject);
+                if (spawnObject)
+                {
+                    Instantiate(spawnObject, transform.position, transform.rotation);
+                }
+
+                Destroy(gameObject);
+            }
+        }
     }
 }

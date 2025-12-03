@@ -9,6 +9,7 @@ TagManager:
   - Collectible
   - ItemPosition
   - Laatikko
+  - GameMusic
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,7 @@ public class CharacterSelectController : MonoBehaviour
     public TMPro.TextMeshProUGUI abilityName;
     public TMPro.TextMeshProUGUI abilityDescription;
     public Image abilityIcon;
+    public Image graffiti;
     public string[,] characterData;
     public int current = 0;
     public bool clockwise;
@@ -39,6 +40,7 @@ public class CharacterSelectController : MonoBehaviour
         abilityName = GameObject.Find("AbilityName").GetComponent<TMPro.TextMeshProUGUI>();
         abilityDescription = GameObject.Find("AbilityDescription").GetComponent<TMPro.TextMeshProUGUI>();
         abilityIcon = GameObject.Find("AbilityIcon").GetComponent<Image>();
+        graffiti = GameObject.Find("Graffiti").GetComponent<Image>();
 
         platform = GameObject.Find("Platform");
 
@@ -57,12 +59,12 @@ public class CharacterSelectController : MonoBehaviour
             characterData[i, 0] = characters[i].name;
             characterData[i, 1] = characters[i].name + " description";
 
-            characters[i].transform.position = platform.transform.position + new Vector3(0, 0.1f, -2.5f);
+            characters[i].transform.position = platform.transform.position + new Vector3(0, 0.1f, -1.5f);
             characters[i].transform.RotateAround(platform.transform.position, Vector3.up, step * i);
             characters[i].transform.RotateAround(characters[i].transform.position, Vector3.up, 180);
         }
 
-        if (characters[0].TryGetComponent<CharacterData>(out CharacterData cd))
+        /*if (characters[0].TryGetComponent<CharacterData>(out CharacterData cd))
         {
             nameDisplay.text = cd.charName;
             nameDisplay2.text = cd.charName;
@@ -77,7 +79,7 @@ public class CharacterSelectController : MonoBehaviour
             nameDisplay.text = characterData[0, 0];
             nameDisplay2.text = characterData[0, 0];
             description.text = characterData[0, 1];
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -101,6 +103,24 @@ public class CharacterSelectController : MonoBehaviour
                     character.transform.RotateAround(platform.transform.position, Vector3.up, -1 * speed * Time.deltaTime);
                 }
             }
+        }
+
+        if (characters[current].TryGetComponent<CharacterData>(out CharacterData cd))
+        {
+            nameDisplay.text = cd.charName;
+            nameDisplay2.text = cd.charName;
+            description.text = cd.description;
+
+            abilityName.text = cd.abilityName;
+            abilityDescription.text = cd.abilityDescription;
+            abilityIcon.sprite = cd.abilityIcon;
+            graffiti.sprite = cd.graffiti;
+        }
+        else
+        {
+            nameDisplay.text = characterData[current, 0];
+            nameDisplay2.text = characterData[current, 0];
+            description.text = characterData[current, 1];
         }
 
         if (ticking)
@@ -142,23 +162,6 @@ public class CharacterSelectController : MonoBehaviour
                 {
                     current++;
                 }
-            }
-
-            if (characters[current].TryGetComponent<CharacterData>(out CharacterData cd))
-            {
-                nameDisplay.text = cd.charName;
-                nameDisplay2.text = cd.charName;
-                description.text = cd.description;
-
-                abilityName.text = cd.abilityName;
-                abilityDescription.text = cd.abilityDescription;
-                abilityIcon.sprite = cd.abilityIcon;
-            }
-            else
-            {
-                nameDisplay.text = characterData[current, 0];
-                nameDisplay2.text = characterData[current, 0];
-                description.text = characterData[current, 1];
             }
         }
     }

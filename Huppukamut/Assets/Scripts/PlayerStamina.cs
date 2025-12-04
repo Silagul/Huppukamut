@@ -20,7 +20,8 @@ public class PlayerStamina : MonoBehaviour
     private Rigidbody rb;
     private float dashTimer = 2f;
     private bool canGlide = true;
-    //private float skillCooldownTimer = 0;
+    private bool canRecharge = true;
+    private float skillCooldownTimer = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -63,7 +64,7 @@ public class PlayerStamina : MonoBehaviour
 
         if (playerMovement.grounded)
         {
-            canGlide = true;
+            canRecharge = true;
             if (animator.GetParameter(6).name == "Gliding")
             {
                 gliding = false;
@@ -86,6 +87,15 @@ public class PlayerStamina : MonoBehaviour
             gliding = false;
             animator.SetBool("Dash", false);
             dashTimer = 2f;
+        }
+        
+        if (skillCooldownTimer > 0 && canGlide == false && canRecharge)
+        {
+            skillCooldownTimer -= Time.deltaTime;
+        }
+        if (skillCooldownTimer <= 0)
+        {
+            canGlide = true;
         }
     }
 
@@ -186,14 +196,16 @@ public class PlayerStamina : MonoBehaviour
 
                     gliding = true;
                     canGlide = false;
+                    canRecharge = false;
                     animator.SetBool("Gliding", true);
+                    skillCooldownTimer = skillCooldownTime;
                 }
             }
         }
 
         if (animator.GetParameter(6).name == "Dash")
         {
-            if (ctx.performed && canGlide && gliding)
+            if (ctx.performed && gliding && canGlide)
             {
                 gliding = true;
                 animator.SetBool("Dash", true);
@@ -218,7 +230,9 @@ public class PlayerStamina : MonoBehaviour
 
                 gliding = true;
                 canGlide = false;
+                canRecharge = false;
                 animator.SetBool("Dash", true);
+                skillCooldownTimer = skillCooldownTime;
             }
         }
 
@@ -243,7 +257,9 @@ public class PlayerStamina : MonoBehaviour
                     rb.AddForce(Vector3.down * (playerMovement.jumpForce * 1f), ForceMode.VelocityChange);
                     gliding = true;
                     canGlide = false;
+                    canRecharge = false;
                     animator.SetBool("Stomp", true);
+                    skillCooldownTimer = skillCooldownTime;
                 }
             }
         }

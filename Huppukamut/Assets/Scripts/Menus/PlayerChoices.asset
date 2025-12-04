@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerChoices
   m_EditorClassIdentifier: Assembly-CSharp::PlayerChoices
   volume: 0
-  characterName: Character_Panda
+  characterName: Character_Hai

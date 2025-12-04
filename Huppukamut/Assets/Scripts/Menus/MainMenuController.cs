@@ -14,14 +14,22 @@ public class MainMenuController : MonoBehaviour
     public GameObject linksMenu;
     public GameObject current;
     public Transform target;
-    public float moveStep;
-    public float rotateStep;
 
-    //private Quaternion targetRotation = new Quaternion(0, 0, 0, 1);
-    //private float ang = 0f;
-    private float distance = 0;
+    // === NEW: Smooth camera settings (copied from first script) ===
+    [Header("Smooth Camera Animation")]
+    public float moveDuration = 0.8f;
+    public float rotationDuration = 0.75f;
+    public AnimationCurve moveCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+    public AnimationCurve rotationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Internal smooth transition state
+    private Vector3 camStartPos;
+    private Quaternion camStartRot;
+    private Vector3 camTargetPos;
+    private Quaternion camTargetRot;
+    private float transitionTimer = 0f;
+    private bool isTransitioning = false;
+
     void Start()
     {
         cam = Camera.main.transform;
@@ -30,65 +38,78 @@ public class MainMenuController : MonoBehaviour
         creditsMenu = GameObject.Find("CreditsMenu");
         linksMenu = GameObject.Find("LinksMenu");
 
+        // Hide all canvases
         GameObject[] menus = { mainMenu, settingsMenu, creditsMenu, linksMenu };
         foreach (GameObject menu in menus)
         {
-            menu.transform.Find("Canvas").gameObject.SetActive(false);
+            var canvas = menu.transform.Find("Canvas")?.gameObject;
+            if (canvas != null) canvas.SetActive(false);
         }
+
+        // Start on main menu with instant positioning
         current = mainMenu;
         target = current.transform.Find("CameraTarget");
-        ChangeActiveMenu(current);
+        ChangeActiveMenu(current, instant: true);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Move our position a step closer to the target.
-        Vector3 targetDirection = current.transform.position - cam.position;
-        Vector3 targetDirection2 = target.transform.position - cam.position;
-        //float step = moveStep * Time.deltaTime; // calculate distance to move
-        float step = (distance + 10) * Time.deltaTime; // calculate distance to move
-        cam.position = Vector3.MoveTowards(cam.position, target.position, step);
+        if (!isTransitioning) return;
 
-        //float ang2 = Quaternion.Angle(cam.rotation, current.transform.rotation);
-        float singleStep = rotateStep * Time.deltaTime;
-        if (current == mainMenu)
+        transitionTimer += Time.deltaTime;
+
+        float moveT = Mathf.Clamp01(transitionTimer / moveDuration);
+        float rotT = Mathf.Clamp01(transitionTimer / rotationDuration);
+
+        // Smooth position with curve
+        cam.position = Vector3.Lerp(camStartPos, camTargetPos, moveCurve.Evaluate(moveT));
+        // Smooth rotation with curve
+        cam.rotation = Quaternion.Slerp(camStartRot, camTargetRot, rotationCurve.Evaluate(rotT));
+
+        // Finish when both are done
+        if (moveT >= 1f && rotT >= 1f)
         {
-            if (targetDirection2.sqrMagnitude <= 121)
-            {
-                Vector3 newDirection = Vector3.RotateTowards(cam.forward, targetDirection, singleStep * 1.5f, 0.0f);
-                cam.rotation = Quaternion.LookRotation(newDirection);
-            }
-        }
-        else
-        {
-            Vector3 newDirection = Vector3.RotateTowards(cam.forward, targetDirection, singleStep, 0.0f);
-            cam.rotation = Quaternion.LookRotation(newDirection);
+            isTransitioning = false;
         }
     }
 
     public void ChangeActiveMenu(GameObject menu)
     {
+        ChangeActiveMenu(menu, instant: false);
+    }
+
+    // Overloaded version so Start() can snap instantly
+    private void ChangeActiveMenu(GameObject menu, bool instant)
+    {
         GameObject[] menus = { mainMenu, settingsMenu, creditsMenu, linksMenu };
         foreach (GameObject m in menus)
         {
-            if (m != menu)
-            {
-                m.transform.Find("Canvas").gameObject.SetActive(false);
-            }
-            else
-            {
-                m.transform.Find("Canvas").gameObject.SetActive(true);
-            }
+            var canvas = m.transform.Find("Canvas")?.gameObject;
+            if (canvas != null)
+                canvas.SetActive(m == menu);
         }
-        //ang = Quaternion.Angle(cam.rotation, menu.transform.rotation);
+
         current = menu;
         target = menu.transform.Find("CameraTarget");
-        Vector3 targetDirection = target.transform.position - cam.position;
-        distance = targetDirection.magnitude;
 
-        //print(ang + " degrees");
-        //print(distance + " units length");
+        if (instant)
+        {
+            // Snap camera immediately (used on Start)
+            cam.position = target.position;
+            cam.rotation = target.rotation;
+            isTransitioning = false;
+        }
+        else
+        {
+            // Start smooth transition
+            camStartPos = cam.position;
+            camStartRot = cam.rotation;
+            camTargetPos = target.position;
+            camTargetRot = target.rotation;
+
+            transitionTimer = 0f;
+            isTransitioning = true;
+        }
     }
 
     public void LoadLevel(string name)

@@ -46,6 +46,7 @@ public class HelpeeAi : MonoBehaviour
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
+        goal = GameObject.FindGameObjectWithTag("Finish");
         capsuleCollider = GetComponent<CapsuleCollider>();
         capsuleCollider.excludeLayers = LayerMask.GetMask("Default");
 
@@ -77,6 +78,7 @@ public class HelpeeAi : MonoBehaviour
             SetDestination(gameObject);
         }
 
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         /*if (rb.linearVelocity.x != 0f)
         {
             Vector3 scale = transform.localScale;

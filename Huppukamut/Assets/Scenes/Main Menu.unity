@@ -8634,14 +8634,14 @@ PrefabInstance:
     - target: {fileID: 1993560546871033520, guid: 8990c114bd814da49ae8690e743f7ba1, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 0d071cd5b43a8ef4da5e02e0f5d46cbd, type: 2}
+      objectReference: {fileID: 11400000, guid: 7ec9ebd7700350d40a5f0a5e472c5543, type: 2}
     - target: {fileID: 1993560546871033520, guid: 8990c114bd814da49ae8690e743f7ba1, type: 3}
       propertyPath: m_fontSizeBase
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1993560546871033520, guid: 8990c114bd814da49ae8690e743f7ba1, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1993560546871033520, guid: 8990c114bd814da49ae8690e743f7ba1, type: 3}
       propertyPath: m_hasFontAssetChanged

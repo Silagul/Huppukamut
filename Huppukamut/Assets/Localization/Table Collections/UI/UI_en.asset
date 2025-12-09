@@ -221,6 +221,26 @@ MonoBehaviour:
     m_Localized: RETRY
     m_Metadata:
       m_Items: []
+  - m_Id: 18086675232960512
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18086764080902144
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18086877461327872
+    m_Localized: Are you sure you want to quit?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18089348720078848
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18089397541777408
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

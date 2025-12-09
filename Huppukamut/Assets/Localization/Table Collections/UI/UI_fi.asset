@@ -184,6 +184,26 @@ MonoBehaviour:
     m_Localized: "YRIT\xC4 UUDELLEEN"
     m_Metadata:
       m_Items: []
+  - m_Id: 18086675232960512
+    m_Localized: "Kyll\xE4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18086764080902144
+    m_Localized: Ei
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18086877461327872
+    m_Localized: "Oletko varma ett\xE4 haluat lopettaa?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18089348720078848
+    m_Localized: Lopeta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18089397541777408
+    m_Localized: Jatka
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

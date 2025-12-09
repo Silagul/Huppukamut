@@ -139,6 +139,26 @@ MonoBehaviour:
     m_Key: retry_button
     m_Metadata:
       m_Items: []
+  - m_Id: 18086675232960512
+    m_Key: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18086764080902144
+    m_Key: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18086877461327872
+    m_Key: Quit_confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18089348720078848
+    m_Key: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18089397541777408
+    m_Key: Resume
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

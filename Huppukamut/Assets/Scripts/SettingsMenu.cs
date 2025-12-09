@@ -9,7 +9,9 @@ public class SettingsMenu : MonoBehaviour
 
     public void GoBackToMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        
     }
 
     public void ResumeGame()

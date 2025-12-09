@@ -28,11 +28,13 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        timer.Instance.Pause();
     }
 
     public void Resume()
     {
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
+        timer.Instance.Resume();
     }
 }

@@ -3083,6 +3083,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461445743}
   m_CullTransparentMesh: 1
+--- !u!1001 &467293196
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 126.09206
+      objectReference: {fileID: 0}
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.10001
+      objectReference: {fileID: 0}
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 142.68207
+      objectReference: {fileID: 0}
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858790434985849573, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561872232058335874, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: m_Name
+      value: TimerManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820539533759999508, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 1467363412}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c225425f34a2ae4e9f77314950e29d7, type: 3}
 --- !u!1001 &487403699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8732,6 +8793,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1286234826}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1286234824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10150,7 +10223,6 @@ GameObject:
   - component: {fileID: 1467363410}
   - component: {fileID: 1467363413}
   - component: {fileID: 1467363412}
-  - component: {fileID: 1467363411}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -10177,19 +10249,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -45}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &1467363411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467363409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c73209a1d072f2842bd375af19915977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::timer
-  timeText: {fileID: 1467363412}
 --- !u!114 &1467363412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15432,3 +15491,4 @@ SceneRoots:
   - {fileID: 7550130157056463336}
   - {fileID: 1595117827}
   - {fileID: 1366943464}
+  - {fileID: 467293196}

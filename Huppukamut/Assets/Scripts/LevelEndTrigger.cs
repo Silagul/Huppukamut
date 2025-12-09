@@ -15,6 +15,7 @@ public class LevelEndTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        timer.Instance.Pause();
         if (alreadyTriggered) return;
         if (!other.CompareTag("Player")) return;
 

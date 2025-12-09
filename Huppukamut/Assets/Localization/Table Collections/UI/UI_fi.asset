@@ -176,6 +176,14 @@ MonoBehaviour:
     m_Localized: ERIKOISKYKY
     m_Metadata:
       m_Items: []
+  - m_Id: 18068931868307456
+    m_Localized: JAKSAMINEN LOPPUI!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18069688319422464
+    m_Localized: "YRIT\xC4 UUDELLEEN"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -127,6 +127,10 @@ MonoBehaviour:
     m_Key: settings_language
     m_Metadata:
       m_Items: []
+  - m_Id: 18062582556078080
+    m_Key: special_ability
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

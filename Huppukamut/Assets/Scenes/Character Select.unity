@@ -790,7 +790,7 @@ MonoBehaviour:
   abilityNameEn: GLIDE
   abilityDescriptionEn: Press [ SHIFT ] to glide trough the air.
   abilityIcon: {fileID: 21300000, guid: e7d17a3b33ba698479cfb0103c26f423, type: 3}
-  graffiti: {fileID: 21300000, guid: 91c1b3d3728d77145b535595fba2e46d, type: 3}
+  graffiti: {fileID: 21300000, guid: 40fd55523f9232948b1b7d6b5c5d8752, type: 3}
 --- !u!95 &266778781
 Animator:
   serializedVersion: 7
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   abilityNameEn: DASH
   abilityDescriptionEn: Press [ SHIFT ] to dash forward.
   abilityIcon: {fileID: 21300000, guid: 780b962b64b78b1478bf5d98e050267b, type: 3}
-  graffiti: {fileID: 21300000, guid: 15bb00d2149fda44dbd16dadbc1d2fc8, type: 3}
+  graffiti: {fileID: 21300000, guid: 48265e762a921954dbe4aae77d4f1b7e, type: 3}
 --- !u!95 &506959583
 Animator:
   serializedVersion: 7
@@ -1861,6 +1861,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &724866577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724866578}
+  - component: {fileID: 724866580}
+  - component: {fileID: 724866579}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &724866578
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724866577}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 937144404}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -482, y: 478}
+  m_SizeDelta: {x: 1024, y: 1024}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &724866579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724866577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d63043f26b716074bbf72f87ca8d6037, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &724866580
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724866577}
+  m_CullTransparentMesh: 1
 --- !u!1001 &726735841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2177,6 +2252,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1630492405}
+  - {fileID: 724866578}
   - {fileID: 1492859053}
   - {fileID: 493557686}
   - {fileID: 1390450763}
@@ -2216,10 +2292,10 @@ MonoBehaviour:
   abilityDescription: 
   abilityNameFi: TALLAUS
   abilityDescriptionFi: "Riko esineit\xE4 painamalla SHIFT."
-  abilityNameEn: TALLAUS
+  abilityNameEn: STOMP
   abilityDescriptionEn: Slam down [ SHIFT ] to break objects.
   abilityIcon: {fileID: 21300000, guid: 612e60202ac6a6f4baeb92e30f797fce, type: 3}
-  graffiti: {fileID: 21300000, guid: ce46fca3597594c4d858b1bb402a80e1, type: 3}
+  graffiti: {fileID: 21300000, guid: 38f94dd706402fb43a0b434a9bbd1a58, type: 3}
 --- !u!95 &982278993
 Animator:
   serializedVersion: 7
@@ -2479,8 +2555,9 @@ GameObject:
   - component: {fileID: 1126636933}
   - component: {fileID: 1126636935}
   - component: {fileID: 1126636934}
+  - component: {fileID: 1126636936}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ERIKOISKYKY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2604,6 +2681,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126636932}
   m_CullTransparentMesh: 1
+--- !u!114 &1126636936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126636932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:fd3437d4d638b714fb13cb80c0f1d47d
+    m_TableEntryReference:
+      m_KeyId: 18062582556078080
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1126636934}
+        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1181737055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,7 +3076,7 @@ MonoBehaviour:
   abilityNameEn: DASH
   abilityDescriptionEn: Press [ SHIFT ] to dash forward.
   abilityIcon: {fileID: 21300000, guid: 780b962b64b78b1478bf5d98e050267b, type: 3}
-  graffiti: {fileID: 21300000, guid: 8b0bfbb1fd9daa34ba00182eb918b0e5, type: 3}
+  graffiti: {fileID: 21300000, guid: 7859ba6b497be7a408f6c7aa6f377cc7, type: 3}
 --- !u!95 &1298693326
 Animator:
   serializedVersion: 7
@@ -3632,14 +3749,14 @@ RectTransform:
   m_GameObject: {fileID: 1492859052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 937144404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -753, y: 428}
+  m_AnchoredPosition: {x: 719, y: 432}
   m_SizeDelta: {x: 512, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492859054
@@ -3662,7 +3779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 91c1b3d3728d77145b535595fba2e46d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40fd55523f9232948b1b7d6b5c5d8752, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4041,10 +4158,10 @@ MonoBehaviour:
   abilityDescription: 
   abilityNameFi: TALLAUS
   abilityDescriptionFi: "Riko esineit\xE4 painamalla SHIFT."
-  abilityNameEn: TALLAUS
+  abilityNameEn: STOMP
   abilityDescriptionEn: Slam down [ SHIFT ] to break objects.
   abilityIcon: {fileID: 21300000, guid: 612e60202ac6a6f4baeb92e30f797fce, type: 3}
-  graffiti: {fileID: 21300000, guid: a654203a70e187348b2ef4e54e5f10ec, type: 3}
+  graffiti: {fileID: 21300000, guid: 3e3ee079a39ee784c9ed08a531b74ac0, type: 3}
 --- !u!1 &1630492404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4571,7 +4688,7 @@ MonoBehaviour:
   abilityNameEn: GLIDE
   abilityDescriptionEn: Press [ SHIFT ] to glide trough the air.
   abilityIcon: {fileID: 21300000, guid: e7d17a3b33ba698479cfb0103c26f423, type: 3}
-  graffiti: {fileID: 21300000, guid: 67c16d64d7799424c96a42ac9dfdb7a6, type: 3}
+  graffiti: {fileID: 21300000, guid: f8af804674ec0bd4b9c5f57003e8ad5e, type: 3}
 --- !u!95 &1984783024
 Animator:
   serializedVersion: 7

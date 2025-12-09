@@ -66,7 +66,7 @@ MonoBehaviour:
       Help friend - E
 
       Special
-      Skill - Shift'
+      Ability - Shift'
     m_Metadata:
       m_Items: []
   - m_Id: 12711423567605760
@@ -207,6 +207,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 14089527920111616
     m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18062582556078080
+    m_Localized: SPECIAL ABILITY
     m_Metadata:
       m_Items: []
   references:

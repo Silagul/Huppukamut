@@ -18,6 +18,11 @@ public class PlayerStamina : MonoBehaviour
     public bool gliding = false;
 
     private Rigidbody rb;
+    private GameObject skillCooldown;
+    private GameObject dashIcon;
+    private GameObject glideIcon;
+    private GameObject stompIcon;
+    private GameObject maskImage;
     private float dashTimer = 2f;
     private bool canGlide = true;
     private bool canRecharge = true;
@@ -29,6 +34,12 @@ public class PlayerStamina : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody>();
         stamina = maxStamina;
+
+        skillCooldown = GameObject.Find("Skill Cooldown");
+        dashIcon = skillCooldown.transform.Find("Dash").gameObject;
+        glideIcon = skillCooldown.transform.Find("Glide").gameObject;
+        stompIcon = skillCooldown.transform.Find("Stomp").gameObject;
+        maskImage = GameObject.Find("Skill cooldown bar");
 
         Animator[] animators = transform.GetComponentsInChildren<Animator>();
         characters = new GameObject[animators.Length];
@@ -51,7 +62,22 @@ public class PlayerStamina : MonoBehaviour
                 icon.sprite = character.GetComponent<HelpeeUI>().icon;
             }
         }
-        //animator = transform.GetComponentInChildren<Animator>();
+
+        switch (animator.GetParameter(6).name)
+        {
+            case "Gliding":
+                dashIcon.SetActive(false);
+                stompIcon.SetActive(false);
+                break;
+            case "Dash":
+                glideIcon.SetActive(false);
+                stompIcon.SetActive(false);
+                break;
+            case "Stomp":
+                glideIcon.SetActive(false);
+                dashIcon.SetActive(false);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -97,6 +123,7 @@ public class PlayerStamina : MonoBehaviour
         {
             canGlide = true;
         }
+        UpdateSkillCooldownVisual(skillCooldownTimer);
     }
 
     private void FixedUpdate()
@@ -221,11 +248,11 @@ public class PlayerStamina : MonoBehaviour
                 rb.AddForce(Vector3.up * (playerMovement.jumpForce * 0.3f), ForceMode.VelocityChange);
                 if (transform.localScale.x == 1)
                 {
-                    rb.AddForce(Vector3.right * (playerMovement.jumpForce * 1f), ForceMode.VelocityChange);
+                    rb.AddForce(Vector3.right * (playerMovement.jumpForce * 0.8f), ForceMode.VelocityChange);
                 }
                 else
                 {
-                    rb.AddForce(Vector3.left * (playerMovement.jumpForce * 1f), ForceMode.VelocityChange);
+                    rb.AddForce(Vector3.left * (playerMovement.jumpForce * 0.8f), ForceMode.VelocityChange);
                 }
 
                 gliding = true;
@@ -275,5 +302,13 @@ public class PlayerStamina : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void UpdateSkillCooldownVisual(float timer)
+    {
+        float normalized = (Mathf.Clamp01(timer / skillCooldownTime));
+
+        // Update fill amount on the parent Image (the mask)
+        maskImage.GetComponent<RectTransform>().SetLocalPositionAndRotation(new Vector3(0, normalized * -100, 0), Quaternion.Euler(0, 0, 0));
     }
 }

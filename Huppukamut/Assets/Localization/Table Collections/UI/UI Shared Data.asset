@@ -179,6 +179,10 @@ MonoBehaviour:
     m_Key: Final_Score
     m_Metadata:
       m_Items: []
+  - m_Id: 18468580633718784
+    m_Key: Next_Song
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

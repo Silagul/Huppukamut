@@ -261,6 +261,10 @@ MonoBehaviour:
     m_Localized: 'Final Score:'
     m_Metadata:
       m_Items: []
+  - m_Id: 18468580633718784
+    m_Localized: Next Song
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

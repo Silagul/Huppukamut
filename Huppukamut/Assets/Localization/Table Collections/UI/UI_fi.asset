@@ -204,6 +204,26 @@ MonoBehaviour:
     m_Localized: Jatka
     m_Metadata:
       m_Items: []
+  - m_Id: 18424250939158528
+    m_Localized: "P\xE4\xE4valikkoon"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18429816637960192
+    m_Localized: 'Autetut kaverit:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18429914843394048
+    m_Localized: 'Huppumerkit:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18429970560528384
+    m_Localized: 'Aikabonus:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18430078903595008
+    m_Localized: 'Loppupisteet:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

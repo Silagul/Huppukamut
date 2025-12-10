@@ -159,6 +159,26 @@ MonoBehaviour:
     m_Key: Resume
     m_Metadata:
       m_Items: []
+  - m_Id: 18424250939158528
+    m_Key: Main_Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18429816637960192
+    m_Key: Friends_Helped
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18429914843394048
+    m_Key: Collectibles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18429970560528384
+    m_Key: Time_Bonus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18430078903595008
+    m_Key: Final_Score
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

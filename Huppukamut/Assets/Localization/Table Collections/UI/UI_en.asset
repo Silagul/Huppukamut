@@ -241,6 +241,26 @@ MonoBehaviour:
     m_Localized: Resume
     m_Metadata:
       m_Items: []
+  - m_Id: 18424250939158528
+    m_Localized: Exit To Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18429816637960192
+    m_Localized: 'Friends Helped:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18429914843394048
+    m_Localized: 'Collectibles:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18429970560528384
+    m_Localized: 'Time Bonus:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18430078903595008
+    m_Localized: 'Final Score:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

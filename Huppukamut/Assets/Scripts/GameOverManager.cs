@@ -28,6 +28,7 @@ public class GameOverManager : MonoBehaviour
 
         if (playerStamina.stamina <= 0f)
         {
+            timer.Instance.Pause();
             TriggerGameOver();
         }
     }

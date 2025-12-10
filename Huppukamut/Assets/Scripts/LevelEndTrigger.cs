@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Reflection; // Only needed for one tiny line
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Collider))]
 public class LevelEndTrigger : MonoBehaviour
@@ -30,6 +31,10 @@ public class LevelEndTrigger : MonoBehaviour
         // 2. Completely disable player control
         if (pm != null) pm.enabled = false;
         if (ps != null) ps.enabled = false;
+
+
+        var inputActions = other.GetComponent<UnityEngine.InputSystem.PlayerInput>();
+        if (inputActions != null) inputActions.DeactivateInput();
 
         // 3. Stop all physics movement (modern Unity way)
         if (rb != null)

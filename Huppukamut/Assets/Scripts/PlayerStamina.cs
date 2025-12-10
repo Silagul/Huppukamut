@@ -188,6 +188,7 @@ public class PlayerStamina : MonoBehaviour
                 animator.SetTrigger("Helping");
                 stamina -= helpingStaminaCost;
                 helpee.stamina = helpee.maxStamina;
+                helpee.canvas.SetActive(false);
                 helpee.SetDestination(helpee.goal);
             }
             else

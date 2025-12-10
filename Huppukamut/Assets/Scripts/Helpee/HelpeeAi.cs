@@ -30,6 +30,7 @@ public class HelpeeAi : MonoBehaviour
     public GameObject goal;
 
     public NavMeshAgent agent;
+    public GameObject canvas;
     private CapsuleCollider capsuleCollider;
     private Rigidbody rb;
 
@@ -46,8 +47,9 @@ public class HelpeeAi : MonoBehaviour
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
-        goal = GameObject.FindGameObjectWithTag("Finish");
+        goal = GameObject.Find("Helpee Goal");
         capsuleCollider = GetComponent<CapsuleCollider>();
+        canvas = GetComponentInChildren<Canvas>().gameObject;
         capsuleCollider.excludeLayers = LayerMask.GetMask("Default");
 
         agent.autoTraverseOffMeshLink = true;
@@ -76,6 +78,7 @@ public class HelpeeAi : MonoBehaviour
         if (stamina <= 0)
         {
             SetDestination(gameObject);
+            canvas.SetActive(true);
         }
 
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);

@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 03e9e0de59c21614fb63f6b19a541f70, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 03e9e0de59c21614fb63f6b19a541f70, type: 3}
       propertyPath: m_TagString
@@ -83,9 +83,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 03e9e0de59c21614fb63f6b19a541f70, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8849861430781084410}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 03e9e0de59c21614fb63f6b19a541f70, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2848796294844533685}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 03e9e0de59c21614fb63f6b19a541f70, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2623407823763548957}
@@ -113,33 +110,6 @@ MonoBehaviour:
   particleEffect: {fileID: 5328559473442927920, guid: 7258f10aa104bc247882df9d94407387, type: 3}
   spawnObject: {fileID: 8352075478426512914, guid: 494f7fca493c6ca4e9b92647085083e6, type: 3}
   particleLifetime: 2
---- !u!54 &2848796294844533685
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5925058132009529741}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 0
 --- !u!65 &2623407823763548957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -157,7 +127,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 16.975288, y: 11.599283, z: 11.565886}
   m_Center: {x: -0.070171356, y: 4.851884, z: -0.0000000404394}

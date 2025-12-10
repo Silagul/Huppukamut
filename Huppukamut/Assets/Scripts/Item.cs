@@ -16,6 +16,7 @@ public class Item : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         current = 0;
         transform.localScale = new Vector3(size, size, size);
         itemDistribution = GameObject.Find("Positions").GetComponent<ItemDistribution>();
@@ -44,6 +45,7 @@ public class Item : MonoBehaviour
             {
                 upward = true;
             }
+
         }
 
         transform.Translate(Vector3.up * current * Time.deltaTime, Space.World);
@@ -62,6 +64,7 @@ public class Item : MonoBehaviour
             {
                 playerStamina.stamina = playerStamina.maxStamina;
             }
+            ScoreManager.instance.AddPoint();
             GameObject effect = Instantiate(particleEffect, transform.position, Quaternion.identity);
             itemDistribution.IncrementScore();
             Destroy(gameObject);

@@ -24,6 +24,7 @@ public class HelpeeAi : MonoBehaviour
     public float maxStamina;
     public float stamina;
     public float staminaDecayRate;
+    public bool moving = false;
 
     [Header("References")]
     public GameObject player;
@@ -33,6 +34,8 @@ public class HelpeeAi : MonoBehaviour
     public GameObject canvas;
     private CapsuleCollider capsuleCollider;
     private Rigidbody rb;
+    private float timer = 2f;
+    private bool ticking = false;
 
     //private GameObject[] goals;
     //private float moveTimer = 1f;
@@ -50,6 +53,7 @@ public class HelpeeAi : MonoBehaviour
         goal = GameObject.Find("Helpee Goal");
         capsuleCollider = GetComponent<CapsuleCollider>();
         canvas = GetComponentInChildren<Canvas>().gameObject;
+
         capsuleCollider.excludeLayers = LayerMask.GetMask("Default");
 
         agent.autoTraverseOffMeshLink = true;
@@ -70,6 +74,7 @@ public class HelpeeAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 targetDirection = goal.transform.position - transform.position;
         if (!agent.isOnOffMeshLink && stamina > 0 && agent.remainingDistance > 1)
         {
             stamina -= Time.deltaTime * staminaDecayRate;
@@ -78,7 +83,35 @@ public class HelpeeAi : MonoBehaviour
         if (stamina <= 0)
         {
             SetDestination(gameObject);
+            moving = false;
             canvas.SetActive(true);
+        }
+
+        if (moving == true)
+        {
+            print(targetDirection.magnitude);
+            //print(agent.remainingDistance);
+            if (targetDirection.sqrMagnitude > 4)
+            {
+                //
+            }
+            else
+            {
+                agent.isStopped = true;
+                transform.GetComponentInChildren<Animator>().SetTrigger("Pose");
+                HelpeeTracker helpeeTracker = GameObject.Find("Autettavat").GetComponent<HelpeeTracker>();
+                helpeeTracker.HelpeeRescued(gameObject);
+                ticking = true;
+            }
+        }
+
+        if (ticking)
+        {
+            timer -= Time.deltaTime;
+        }
+        if (timer <= 0)
+        {
+            Destroy(gameObject);
         }
 
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);

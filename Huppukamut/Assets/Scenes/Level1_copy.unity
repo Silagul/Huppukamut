@@ -3867,7 +3867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Compass
   goal: {fileID: 0}
-  needle: {fileID: 0}
+  target: {fileID: 0}
   player: {fileID: 0}
 --- !u!1001 &661319412
 PrefabInstance:
@@ -7810,7 +7810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530055634242629699, guid: ff8c882cba82cf1478b2b27ae4019246, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.911
+      value: -4.919
       objectReference: {fileID: 0}
     - target: {fileID: 4530055634242629699, guid: ff8c882cba82cf1478b2b27ae4019246, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8824,7 +8824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Compass
   goal: {fileID: 0}
-  needle: {fileID: 0}
+  target: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &1201923810
 MonoBehaviour:
@@ -9245,6 +9245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   ScoreText: {fileID: 1254167224}
+  score: 0
 --- !u!1 &1260310915
 GameObject:
   m_ObjectHideFlags: 0
@@ -10717,7 +10718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530055634242629699, guid: ff8c882cba82cf1478b2b27ae4019246, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.459
+      value: 6.21
       objectReference: {fileID: 0}
     - target: {fileID: 4530055634242629699, guid: ff8c882cba82cf1478b2b27ae4019246, type: 3}
       propertyPath: m_LocalPosition.y

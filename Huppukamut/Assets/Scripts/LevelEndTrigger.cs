@@ -11,7 +11,7 @@ public class LevelEndTrigger : MonoBehaviour
     public string nextSceneName = "EndingScene";
     public float delayBeforeLoad = 3f;
     public string victoryTriggerName = "Chosen";
-    public string helpingTriggerName = "Helping";  // ADD THIS - plays after victory
+    public string helpingTriggerName = "Helping";
 
     private bool alreadyTriggered = false;
 
@@ -33,30 +33,26 @@ public class LevelEndTrigger : MonoBehaviour
         if (pm != null) pm.enabled = false;
         if (ps != null) ps.enabled = false;
 
-        var inputActions = other.GetComponent<UnityEngine.InputSystem.PlayerInput>();
+        var inputActions = other.GetComponent<PlayerInput>();
         if (inputActions != null) inputActions.DeactivateInput();
 
-        // 3. ONLY stop horizontal movement - let player FALL naturally
+        // 3. Stop horizontal movement - let player fall naturally
         if (rb != null)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
 
-        // 4. Force-cancel any active skill + play victory → idle → helping sequence
+        // 4. Force-cancel active skills and play victory → idle → helping sequence
         if (anim != null)
         {
-            // Reset ALL possible states to force idle
             anim.SetBool("Dash", false);
             anim.SetBool("Gliding", false);
-            anim.SetBool("Stomp", false);
-            anim.SetFloat("Speed", 0f);      // ADD: Reset speed param
-            anim.SetBool("Jump", false);     // ADD: Reset jump param
-            anim.SetBool("Grounded", true);  // ADD: Force grounded param
+            anim.SetFloat("Speed", 0f);
+            anim.SetBool("Jump", false);
+            anim.SetBool("Grounded", true);
 
-            // Play victory animation first
             anim.SetTrigger(victoryTriggerName);
 
-            // Then force Helping animation after short delay (plays idle in between)
             StartCoroutine(PlayHelpingAfterVictory(anim));
         }
 
@@ -77,16 +73,27 @@ public class LevelEndTrigger : MonoBehaviour
 
     private IEnumerator PlayHelpingAfterVictory(Animator anim)
     {
-        // Wait for victory anim to finish (adjust timing as needed)
-        yield return new WaitForSeconds(1.5f);  // Or use anim.GetCurrentAnimatorStateInfo(0).length
-
-        // Force Helping trigger (plays idle → helping naturally)
+        yield return new WaitForSeconds(1.5f);
         anim.SetTrigger(helpingTriggerName);
     }
 
     private IEnumerator LoadNextScene()
     {
         yield return new WaitForSeconds(delayBeforeLoad);
+
+        // ⭐ Tallenna score ennen scenenvaihtoa ⭐
+        if (ScoreManager.instance != null)
+        {
+            PlayerPrefs.SetInt("FinalScore", ScoreManager.instance.CurrentScore);
+            PlayerPrefs.Save();
+            Debug.Log("Tallennettu score: " + ScoreManager.instance.CurrentScore);
+        }
+        else
+        {
+            Debug.LogError("ScoreManager.instance on NULL!");
+        }
+
+        // Lataa lopetusscenen
         SceneManager.LoadScene(nextSceneName);
     }
 

@@ -7,10 +7,13 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
+
     public TextMeshProUGUI ScoreText;
 
-    int score = 0;
+    public int score = 0;
 
+
+    public int CurrentScore => score;
 
     private void Awake()
     {
@@ -28,4 +31,11 @@ public class ScoreManager : MonoBehaviour
         score += 250;
         ScoreText.text = score.ToString() + "";
     }
+    public void SaveScore()
+    {
+        PlayerPrefs.SetInt("FinalScore", score);
+        PlayerPrefs.Save();
+        Debug.Log("Tallennettu score: " + score);
+    }
+
 }

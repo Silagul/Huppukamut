@@ -2263,6 +2263,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ddeff9ca9aeeaa418e7380ae61c4648, type: 3}
+--- !u!1001 &4682654212371854777
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5190568551827231317, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_Name
+      value: VFX_FallingLeaves_Oak_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -41.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695762489392413624, guid: 4469176bf00480547a0c753b249b7545, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4469176bf00480547a0c753b249b7545, type: 3}
 --- !u!1001 &4688199070823590353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2743,6 +2800,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1238555463648776415, guid: b2f1659612dc55b4f84de31fea1c1f95, type: 3}
   m_PrefabInstance: {fileID: 7932870708598207098}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7286110558465631335
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3710305262775905666, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_Name
+      value: VFX_FallingLeaves_Oak_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259995479007675952, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3a4751e9057ceb0468612fae5a4a5a74, type: 3}
 --- !u!1001 &7672542145922150876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3232,6 +3346,8 @@ SceneRoots:
   - {fileID: 255206625}
   - {fileID: 1511027247}
   - {fileID: 3507430049318784326}
+  - {fileID: 7286110558465631335}
+  - {fileID: 4682654212371854777}
   - {fileID: 419649015835909855}
   - {fileID: 4688199070823590353}
   - {fileID: 2138591971693296899}

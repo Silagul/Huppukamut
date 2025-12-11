@@ -45,7 +45,7 @@ public class FinalScoreManager : MonoBehaviour
 
         // 1. Faster = higher score (recommended)
         float time = timer.FinalTime;
-        int score = Mathf.Max(100000 - (int)(time * 100), 0);        // 1000 points per second penalty
+        int score = Mathf.Max(30000 - (int)(time * 100), 0);        // 1000 points per second penalty
 
         // 2. Or bonus for very fast times
         // int score = time < 60 ? 50000 : time < 120 ? 30000 : 10000;

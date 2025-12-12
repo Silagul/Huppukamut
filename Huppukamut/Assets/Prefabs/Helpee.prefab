@@ -326,6 +326,7 @@ MonoBehaviour:
   maxStamina: 100
   stamina: 0
   staminaDecayRate: 1
+  moving: 0
   player: {fileID: 0}
   goal: {fileID: 0}
   agent: {fileID: 0}
@@ -623,6 +624,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 26abf93d625752b438677e4f3209ff7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3440059469876933222}
+    - targetCorrespondingSourceObject: {fileID: 2197806557707744274, guid: 26abf93d625752b438677e4f3209ff7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2266488453099844607}
   m_SourcePrefab: {fileID: 100100000, guid: 26abf93d625752b438677e4f3209ff7b, type: 3}
 --- !u!1 &373728985972277826 stripped
 GameObject:
@@ -670,6 +674,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26abf93d625752b438677e4f3209ff7b, type: 3}
   m_PrefabInstance: {fileID: 715695593722756883}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1688432263984417537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2197806557707744274, guid: 26abf93d625752b438677e4f3209ff7b, type: 3}
+  m_PrefabInstance: {fileID: 715695593722756883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2266488453099844607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688432263984417537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2fe3a3eb3d9aa419a23015bfcda1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SadMaterialEffect
+  animator: {fileID: 0}
+  shaderProperty: _Stamina
+  sadBoolName: Sad
+  sadIntensity: 0.5
+  drainSpeed: 1.4
+  recoverySpeed: 0.45
 --- !u!1001 &1112750241743309845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -756,6 +783,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8f4ed5ba64c0f24db094b50ea7e085a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5209054319365681767}
+    - targetCorrespondingSourceObject: {fileID: 3960100370241073303, guid: c8f4ed5ba64c0f24db094b50ea7e085a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4727008825904249775}
   m_SourcePrefab: {fileID: 100100000, guid: c8f4ed5ba64c0f24db094b50ea7e085a, type: 3}
 --- !u!1 &265749361556336964 stripped
 GameObject:
@@ -803,6 +833,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c8f4ed5ba64c0f24db094b50ea7e085a, type: 3}
   m_PrefabInstance: {fileID: 1112750241743309845}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4144527979601181826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3960100370241073303, guid: c8f4ed5ba64c0f24db094b50ea7e085a, type: 3}
+  m_PrefabInstance: {fileID: 1112750241743309845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4727008825904249775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4144527979601181826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2fe3a3eb3d9aa419a23015bfcda1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SadMaterialEffect
+  animator: {fileID: 4178333157409536888}
+  shaderProperty: _Stamina
+  sadBoolName: Sad
+  sadIntensity: 0.5
+  drainSpeed: 1.4
+  recoverySpeed: 0.45
 --- !u!1001 &3824638473504849559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -889,7 +942,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7801323747672247300}
+    - targetCorrespondingSourceObject: {fileID: -7654371625091129823, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 426807971324304070}
   m_SourcePrefab: {fileID: 100100000, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+--- !u!1 &2366058735313445046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7654371625091129823, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
+  m_PrefabInstance: {fileID: 3824638473504849559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &426807971324304070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2366058735313445046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2fe3a3eb3d9aa419a23015bfcda1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SadMaterialEffect
+  animator: {fileID: 4178333157409536888}
+  shaderProperty: _Stamina
+  sadBoolName: Sad
+  sadIntensity: 0.5
+  drainSpeed: 1.4
+  recoverySpeed: 0.45
 --- !u!4 &3646052098861242748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 04185d49524dc8744a6f7b9a52c4b62b, type: 3}
@@ -1030,7 +1109,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2766413666397585847}
+    - targetCorrespondingSourceObject: {fileID: -6055922269112329902, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5448718584683304436}
   m_SourcePrefab: {fileID: 100100000, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+--- !u!1 &2050555089726274083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6055922269112329902, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
+  m_PrefabInstance: {fileID: 3999198896997688177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5448718584683304436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050555089726274083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2fe3a3eb3d9aa419a23015bfcda1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SadMaterialEffect
+  animator: {fileID: 4178333157409536888}
+  shaderProperty: _Stamina
+  sadBoolName: Sad
+  sadIntensity: 0.5
+  drainSpeed: 1.4
+  recoverySpeed: 0.45
 --- !u!4 &3461785182423680154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 244fab423b7485d49931b8066d4eabff, type: 3}
@@ -1163,7 +1268,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 06a329757bf64c142b662f3d98506f96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2063492804303684482}
+    - targetCorrespondingSourceObject: {fileID: -247098687617848698, guid: 06a329757bf64c142b662f3d98506f96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7597825539656827973}
   m_SourcePrefab: {fileID: 100100000, guid: 06a329757bf64c142b662f3d98506f96, type: 3}
+--- !u!1 &1501944434039354592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -247098687617848698, guid: 06a329757bf64c142b662f3d98506f96, type: 3}
+  m_PrefabInstance: {fileID: 7513652951091043942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7597825539656827973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501944434039354592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2fe3a3eb3d9aa419a23015bfcda1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SadMaterialEffect
+  animator: {fileID: 4178333157409536888}
+  shaderProperty: _Stamina
+  sadBoolName: Sad
+  sadIntensity: 0.5
+  drainSpeed: 1.4
+  recoverySpeed: 0.45
 --- !u!1 &7243110214014460727 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 06a329757bf64c142b662f3d98506f96, type: 3}

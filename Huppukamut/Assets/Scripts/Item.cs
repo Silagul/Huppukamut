@@ -64,7 +64,7 @@ public class Item : MonoBehaviour
             {
                 playerStamina.stamina = playerStamina.maxStamina;
             }
-            ScoreManager.instance.AddPoint();
+            ScoreManager.instance.AddPoint(250);
             GameObject effect = Instantiate(particleEffect, transform.position, Quaternion.identity);
             itemDistribution.IncrementScore();
             Destroy(gameObject);

@@ -6,7 +6,7 @@ public class BoxBreakEffect : MonoBehaviour
     public GameObject spawnObject;
     public float particleLifetime = 2f;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.TryGetComponent<PlayerStamina>(out PlayerStamina ps))
         {

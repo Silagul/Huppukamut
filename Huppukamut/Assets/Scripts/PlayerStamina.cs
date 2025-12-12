@@ -104,14 +104,14 @@ public class PlayerStamina : MonoBehaviour
             }
         }
 
-        if (IsDashing())
+        if (IsDashing() || IsGliding())
         {
             dashTimer -= Time.deltaTime;
         }
         if (dashTimer < 0 && gliding)
         {
             gliding = false;
-            animator.SetBool("Dash", false);
+            animator.SetBool(animator.GetParameter(6).name, false);
             dashTimer = 2f;
         }
         
@@ -190,6 +190,7 @@ public class PlayerStamina : MonoBehaviour
                 helpee.stamina = helpee.maxStamina;
                 helpee.canvas.SetActive(false);
                 helpee.moving = true;
+                helpee.agent.enabled = true;
                 helpee.SetDestination(helpee.goal);
             }
             else
@@ -297,6 +298,18 @@ public class PlayerStamina : MonoBehaviour
     public bool IsDashing()
     {
         if (animator.GetParameter(6).name == "Dash" && gliding)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool IsGliding()
+    {
+        if (animator.GetParameter(6).name == "Gliding" && gliding)
         {
             return true;
         }

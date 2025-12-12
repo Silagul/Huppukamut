@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class HelpeeTracker : MonoBehaviour
 {
     public GameObject iconPrefab;
+    public int numberRescued = 0;
+
     private GameObject[] helpees;
     private GameObject[] icons;
 
@@ -63,6 +65,7 @@ public class HelpeeTracker : MonoBehaviour
                 GameObject c = icons[i];
                 GetIconComponents(c);
                 image.gameObject.SetActive(true);
+                numberRescued++;
             }
         }
     }

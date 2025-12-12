@@ -49,10 +49,10 @@ public class HelpeeAi : MonoBehaviour
         //agent.destination = FindClosestTagged("HelpeeGoal");
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
-        agent = GetComponent<NavMeshAgent>();
         goal = GameObject.Find("Helpee Goal");
         capsuleCollider = GetComponent<CapsuleCollider>();
         canvas = GetComponentInChildren<Canvas>().gameObject;
+        agent = GetComponent<NavMeshAgent>();
 
         capsuleCollider.excludeLayers = LayerMask.GetMask("Default");
 
@@ -75,33 +75,42 @@ public class HelpeeAi : MonoBehaviour
     void Update()
     {
         Vector3 targetDirection = goal.transform.position - transform.position;
-        if (!agent.isOnOffMeshLink && stamina > 0 && agent.remainingDistance > 1)
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+
+        if (!moving)
         {
-            stamina -= Time.deltaTime * staminaDecayRate;
+            agent.enabled = false;
         }
 
-        if (stamina <= 0)
+        if (agent.enabled)
         {
-            SetDestination(gameObject);
-            moving = false;
-            canvas.SetActive(true);
-        }
-
-        if (moving == true)
-        {
-            print(targetDirection.magnitude);
-            //print(agent.remainingDistance);
-            if (targetDirection.sqrMagnitude > 4)
+            if (!agent.isOnOffMeshLink && stamina > 0 && agent.remainingDistance > 1)
             {
-                //
+                stamina -= Time.deltaTime * staminaDecayRate;
             }
-            else
+
+            if (stamina <= 0)
             {
-                agent.isStopped = true;
-                transform.GetComponentInChildren<Animator>().SetTrigger("Pose");
-                HelpeeTracker helpeeTracker = GameObject.Find("Autettavat").GetComponent<HelpeeTracker>();
-                helpeeTracker.HelpeeRescued(gameObject);
-                ticking = true;
+                SetDestination(gameObject);
+                moving = false;
+                canvas.SetActive(true);
+            }
+
+            if (moving == true)
+            {
+                if (targetDirection.sqrMagnitude <= 4)
+                {
+                    agent.isStopped = true;
+                    rb.constraints = RigidbodyConstraints.FreezePositionX;
+                    if (!ticking)
+                    {
+                        transform.GetComponentInChildren<Animator>().SetTrigger("Pose");
+                        HelpeeTracker helpeeTracker = GameObject.Find("Autettavat").GetComponent<HelpeeTracker>();
+                        helpeeTracker.HelpeeRescued(gameObject);
+                        ScoreManager.instance.AddPoint(2000);
+                        ticking = true;
+                    }
+                }
             }
         }
 
@@ -114,7 +123,6 @@ public class HelpeeAi : MonoBehaviour
             Destroy(gameObject);
         }
 
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         /*if (rb.linearVelocity.x != 0f)
         {
             Vector3 scale = transform.localScale;

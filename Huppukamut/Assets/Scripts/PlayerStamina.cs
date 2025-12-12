@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerStamina : MonoBehaviour
 {
+    [Header("Helping Effects")]
+    public GameObject helpParticleEffect; // Assign your sparkle/heart burst prefab HERE
+
     public PlayerMovement playerMovement;
     public Animator animator;
     public GameObject[] characters;
@@ -16,7 +19,6 @@ public class PlayerStamina : MonoBehaviour
     public float helpingStaminaCost;
     public float skillCooldownTime;
     public bool gliding = false;
-
     private Rigidbody rb;
     private GameObject skillCooldown;
     private GameObject dashIcon;
@@ -34,22 +36,18 @@ public class PlayerStamina : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody>();
         stamina = maxStamina;
-
         skillCooldown = GameObject.Find("Skill Cooldown");
         dashIcon = skillCooldown.transform.Find("Dash").gameObject;
         glideIcon = skillCooldown.transform.Find("Glide").gameObject;
         stompIcon = skillCooldown.transform.Find("Stomp").gameObject;
         maskImage = GameObject.Find("Skill cooldown bar");
-
         Animator[] animators = transform.GetComponentsInChildren<Animator>();
         characters = new GameObject[animators.Length];
         icon = GameObject.Find("PlayerIcon").GetComponent<Image>();
-
         for (int i = 0; i < animators.Length; i++)
         {
             characters[i] = animators[i].gameObject;
         }
-
         foreach (GameObject character in characters)
         {
             if (character.gameObject.name != playerChoices.characterName)
@@ -62,7 +60,6 @@ public class PlayerStamina : MonoBehaviour
                 icon.sprite = character.GetComponent<HelpeeUI>().icon;
             }
         }
-
         switch (animator.GetParameter(6).name)
         {
             case "Gliding":
@@ -87,7 +84,6 @@ public class PlayerStamina : MonoBehaviour
         {
             stamina -= Time.deltaTime * staminaDecayRate;
         }
-
         if (playerMovement.grounded)
         {
             canRecharge = true;
@@ -102,8 +98,11 @@ public class PlayerStamina : MonoBehaviour
                 animator.SetBool("Stomp", false);
                 rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
             }
+            
+            // Stop glide loop sound when landing
+            if (SoundManager.instance != null)
+                SoundManager.instance.GlideLoop(false);
         }
-
         if (IsDashing() || IsGliding())
         {
             dashTimer -= Time.deltaTime;
@@ -114,7 +113,7 @@ public class PlayerStamina : MonoBehaviour
             animator.SetBool(animator.GetParameter(6).name, false);
             dashTimer = 2f;
         }
-        
+       
         if (skillCooldownTimer > 0 && canGlide == false && canRecharge)
         {
             skillCooldownTimer -= Time.deltaTime;
@@ -135,7 +134,7 @@ public class PlayerStamina : MonoBehaviour
             {
                 rb.AddForce(Vector3.up * Time.fixedDeltaTime * 15, ForceMode.VelocityChange);
             }
-            
+           
             if (transform.localScale.x == 1)
             {
                 rb.AddForce(Vector3.right * Time.fixedDeltaTime * 30, ForceMode.VelocityChange);
@@ -163,10 +162,9 @@ public class PlayerStamina : MonoBehaviour
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;
-
         foreach (GameObject go in gos)
         {
-            Vector3 diff = go.transform.position - position;    // Vector from this to target
+            Vector3 diff = go.transform.position - position; // Vector from this to target
             float curDistance = diff.sqrMagnitude;
             if (curDistance < 4 && curDistance < distance)
             {
@@ -180,7 +178,6 @@ public class PlayerStamina : MonoBehaviour
     public void Interact(InputAction.CallbackContext ctx)
     {
         GameObject h = FindClosestTagged("Helpee");
-
         if ( h != null && h.TryGetComponent<HelpeeAi>(out HelpeeAi helpee))
         {
             if (stamina >= helpingStaminaCost && helpee.stamina == 0)
@@ -192,6 +189,12 @@ public class PlayerStamina : MonoBehaviour
                 helpee.moving = true;
                 helpee.agent.enabled = true;
                 helpee.SetDestination(helpee.goal);
+
+                // === PARTICLE BURST ON FRIEND + SOUND ===
+                if (helpParticleEffect != null)
+                    Instantiate(helpParticleEffect, helpee.transform.position, Quaternion.identity);
+                
+                SoundManager.instance?.PlayHelpFriend();
             }
             else
             {
@@ -214,25 +217,41 @@ public class PlayerStamina : MonoBehaviour
                 {
                     gliding = true;
                     animator.SetBool("Gliding", true);
+                    
+                    // Glide start sound
+                    if (SoundManager.instance != null)
+                        SoundManager.instance.GlideStart();
+                    
+                    if (SoundManager.instance != null)
+                        SoundManager.instance.GlideLoop(true);
                 }
                 else if (ctx.canceled)
                 {
                     gliding = false;
                     animator.SetBool("Gliding", false);
+                    
+                    // Stop glide loop
+                    if (SoundManager.instance != null)
+                        SoundManager.instance.GlideLoop(false);
                 }
                 else if (canGlide)
                 {
                     stamina -= 5;
-
                     gliding = true;
                     canGlide = false;
                     canRecharge = false;
                     animator.SetBool("Gliding", true);
                     skillCooldownTimer = skillCooldownTime;
+                    
+                    // Glide start sound
+                    if (SoundManager.instance != null)
+                        SoundManager.instance.GlideStart();
+                    
+                    if (SoundManager.instance != null)
+                        SoundManager.instance.GlideLoop(true);
                 }
             }
         }
-
         if (animator.GetParameter(6).name == "Dash")
         {
             if (ctx.performed && gliding && canGlide)
@@ -257,15 +276,17 @@ public class PlayerStamina : MonoBehaviour
                 {
                     rb.AddForce(Vector3.left * (playerMovement.jumpForce * 0.8f), ForceMode.VelocityChange);
                 }
-
                 gliding = true;
                 canGlide = false;
                 canRecharge = false;
                 animator.SetBool("Dash", true);
                 skillCooldownTimer = skillCooldownTime;
+                
+                // Dash sound
+                if (SoundManager.instance != null)
+                    SoundManager.instance.Dash();
             }
         }
-
         if (animator.GetParameter(6).name == "Stomp")
         {
             if (!playerMovement.grounded)
@@ -290,6 +311,10 @@ public class PlayerStamina : MonoBehaviour
                     canRecharge = false;
                     animator.SetBool("Stomp", true);
                     skillCooldownTimer = skillCooldownTime;
+                    
+                    // Stomp sound
+                    if (SoundManager.instance != null)
+                        SoundManager.instance.PlayStomp();
                 }
             }
         }
@@ -322,7 +347,6 @@ public class PlayerStamina : MonoBehaviour
     public void UpdateSkillCooldownVisual(float timer)
     {
         float normalized = (Mathf.Clamp01(timer / skillCooldownTime));
-
         // Update fill amount on the parent Image (the mask)
         maskImage.GetComponent<RectTransform>().SetLocalPositionAndRotation(new Vector3(0, normalized * -100, 0), Quaternion.Euler(0, 0, 0));
     }

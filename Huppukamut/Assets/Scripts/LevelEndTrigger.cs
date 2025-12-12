@@ -23,26 +23,34 @@ public class LevelEndTrigger : MonoBehaviour
 
         alreadyTriggered = true;
 
-        // 1. Get components once
+        // Play all particle systems that are children of this trigger object (once)
+        foreach (var particle in GetComponentsInChildren<ParticleSystem>())
+        {
+            var main = particle.main;
+            main.loop = false;
+            particle.Play();
+        }
+
+        // Player components
         PlayerMovement pm = other.GetComponent<PlayerMovement>();
         PlayerStamina ps = other.GetComponent<PlayerStamina>();
         Rigidbody rb = other.GetComponent<Rigidbody>();
         Animator anim = other.GetComponentInChildren<Animator>();
 
-        // 2. Completely disable player control
+        // Disable controls
         if (pm != null) pm.enabled = false;
         if (ps != null) ps.enabled = false;
 
         var inputActions = other.GetComponent<PlayerInput>();
         if (inputActions != null) inputActions.DeactivateInput();
 
-        // 3. Stop horizontal movement - let player fall naturally
+        // Stop horizontal movement
         if (rb != null)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
 
-        // 4. Force-cancel active skills and play victory → idle → helping sequence
+        // Animation sequence
         if (anim != null)
         {
             anim.SetBool("Dash", false);
@@ -52,11 +60,10 @@ public class LevelEndTrigger : MonoBehaviour
             anim.SetBool("Grounded", true);
 
             anim.SetTrigger(victoryTriggerName);
-
             StartCoroutine(PlayHelpingAfterVictory(anim));
         }
 
-        // Safety: reset private gliding flag
+        // Reset gliding flag + freeze Z
         if (ps != null)
         {
             FieldInfo glidingField = ps.GetType().GetField("gliding",
@@ -67,7 +74,6 @@ public class LevelEndTrigger : MonoBehaviour
                 rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
         }
 
-        // Load scene after delay
         StartCoroutine(LoadNextScene());
     }
 
@@ -81,7 +87,6 @@ public class LevelEndTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBeforeLoad);
 
-        // ⭐ Tallenna score ennen scenenvaihtoa ⭐
         if (ScoreManager.instance != null)
         {
             PlayerPrefs.SetInt("FinalScore", ScoreManager.instance.CurrentScore);
@@ -93,7 +98,6 @@ public class LevelEndTrigger : MonoBehaviour
             Debug.LogError("ScoreManager.instance on NULL!");
         }
 
-        // Lataa lopetusscenen
         SceneManager.LoadScene(nextSceneName);
     }
 

@@ -24,6 +24,10 @@ public class BoxBreakEffect : MonoBehaviour
                 {
                     Instantiate(spawnObject, transform.position, transform.rotation);
                 }
+                
+                // Box break sound
+                if (SoundManager.instance != null)
+                    SoundManager.instance.BoxBreak();
 
                 Destroy(gameObject);
             }

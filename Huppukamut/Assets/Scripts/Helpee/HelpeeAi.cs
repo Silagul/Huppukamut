@@ -13,9 +13,7 @@ public enum OffMeshLinkMoveMethod
 
 public class HelpeeAi : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    [Header("Jump")] // This adds a header to the editor view.
+    [Header("Jump")]
     public OffMeshLinkMoveMethod method = OffMeshLinkMoveMethod.Parabola;
     public float jumpDuration = 1.5f;
     public float jumpHeight = 5.0f;
@@ -29,24 +27,16 @@ public class HelpeeAi : MonoBehaviour
     [Header("References")]
     public GameObject player;
     public GameObject goal;
-
     public NavMeshAgent agent;
     public GameObject canvas;
+
     private CapsuleCollider capsuleCollider;
     private Rigidbody rb;
     private float timer = 2f;
     private bool ticking = false;
 
-    //private GameObject[] goals;
-    //private float moveTimer = 1f;
-    //private float movingSpeed = 0f;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     IEnumerator Start()
     {
-        //goals = GameObject.FindGameObjectsWithTag("HelpeeGoal");
-        //int rand = UnityEngine.Random.Range(0, nodes.Length);
-        //agent.destination = FindClosestTagged("HelpeeGoal");
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
         goal = GameObject.Find("Helpee Goal");
@@ -55,8 +45,8 @@ public class HelpeeAi : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         capsuleCollider.excludeLayers = LayerMask.GetMask("Default");
-
         agent.autoTraverseOffMeshLink = true;
+
         while (true)
         {
             if (agent.isOnOffMeshLink)
@@ -65,13 +55,13 @@ public class HelpeeAi : MonoBehaviour
                     yield return StartCoroutine(NormalSpeed(agent));
                 else if (method == OffMeshLinkMoveMethod.Parabola)
                     yield return StartCoroutine(Parabola(agent, jumpHeight, jumpDuration));
+
                 agent.CompleteOffMeshLink();
             }
             yield return null;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 targetDirection = goal.transform.position - transform.position;
@@ -102,6 +92,7 @@ public class HelpeeAi : MonoBehaviour
                 {
                     agent.isStopped = true;
                     rb.constraints = RigidbodyConstraints.FreezePositionX;
+
                     if (!ticking)
                     {
                         transform.GetComponentInChildren<Animator>().SetTrigger("Pose");
@@ -118,22 +109,26 @@ public class HelpeeAi : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+
         if (timer <= 0)
         {
             Destroy(gameObject);
         }
-
-        /*if (rb.linearVelocity.x != 0f)
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Sign(rb.linearVelocity.x) * Mathf.Abs(scale.x);
-            transform.localScale = scale;
-        }*/
     }
 
     public void SetDestination(GameObject destination)
     {
         agent.destination = destination.transform.position;
+    }
+
+    // Called from PlayerStamina.Interact() when player helps this helpee
+    public void OnHelped() // ← You can call this from PlayerStamina if you prefer, but we do it safely here too
+    {
+        moving = true;
+        agent.enabled = true;
+        canvas.SetActive(false);
+
+        SoundManager.instance?.PlayHelpFriend();
     }
 
     IEnumerator NormalSpeed(NavMeshAgent agent)
@@ -153,6 +148,7 @@ public class HelpeeAi : MonoBehaviour
         Vector3 startPos = agent.transform.position;
         Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
         float normalizedTime = 0.0f;
+
         while (normalizedTime < 1.0f)
         {
             float yOffset = height * 4.0f * (normalizedTime - normalizedTime * normalizedTime);

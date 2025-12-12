@@ -11,35 +11,36 @@ public class timer : MonoBehaviour
     private float elapsedTime;
     private bool isRunning = false;
 
-    // These static values carry the final time to the next scene
-    public static float FinalTime { get; private set; }
-    public static string FinalTimeFormatted { get; private set; }
+    // These survive scene changes
+    public static float FinalTime { get; private set; } = 0f;
+    public static string FinalTimeFormatted { get; private set; } = "00:00";
 
     private void Awake()
     {
-        // New instance every time you enter the level → fresh timer
         Instance = this;
     }
 
     private void OnEnable()
     {
-        // Auto-start fresh every time level loads
         elapsedTime = 0f;
         isRunning = true;
+        FinalTime = 0f;
+        FinalTimeFormatted = "00:00";
         FindText();
     }
 
     private void OnDisable()
     {
-        // When leaving level → save final time for results scene
         FinalTime = elapsedTime;
         TimeSpan t = TimeSpan.FromSeconds(elapsedTime);
         FinalTimeFormatted = string.Format("{0:00}:{1:00}", t.Minutes, t.Seconds);
+
+        Debug.Log($"[timer] Final time saved: {FinalTimeFormatted} ({FinalTime:F2}s)");
     }
 
     void Update()
     {
-        FindText(); // Always safe
+        FindText(); // your original "always safe" call
 
         if (isRunning)
             elapsedTime += Time.deltaTime;
@@ -61,12 +62,10 @@ public class timer : MonoBehaviour
         }
     }
 
-    // YOUR EXISTING PAUSE MENU CODE STILL WORKS 100% WITH THESE:
-    public void Pause()  => isRunning = false;
+    // YOUR ORIGINAL PAUSE/RESUME METHODS – 100% unchanged
+    public void Pause() => isRunning = false;
     public void Resume() => isRunning = true;
-
     public float GetElapsedTime() => elapsedTime;
-
     public string GetFormattedTime()
     {
         TimeSpan t = TimeSpan.FromSeconds(elapsedTime);

@@ -5,8 +5,9 @@ using UnityEngine;
 public class Compass : MonoBehaviour
 {
     public GameObject goal;
-    public GameObject needle;
+    public GameObject target;
     public GameObject player;
+    private GameObject needle;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,11 +21,7 @@ public class Compass : MonoBehaviour
     void Update()
     {
         //GameObject target = goal;
-        GameObject target = FindClosestTagged("Helpee");
-        if (target == null)
-        {
-            target = goal;
-        }
+        target = FindClosestTagged("Helpee");
 
         Vector3 targetDirection = target.transform.position - player.transform.position;
 
@@ -44,7 +41,7 @@ public class Compass : MonoBehaviour
         gos = GameObject.FindGameObjectsWithTag(tag);
         GameObject closest = null;
         float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
+        Vector3 position = player.transform.position;
 
         foreach (GameObject go in gos)
         {
@@ -59,6 +56,13 @@ public class Compass : MonoBehaviour
                 }
             }
         }
-        return closest;
+        if (closest == null)
+        {
+            return goal;
+        }
+        else
+        {
+            return closest;
+        }
     }
 }

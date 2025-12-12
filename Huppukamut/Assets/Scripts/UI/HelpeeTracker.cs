@@ -5,21 +5,25 @@ public class HelpeeTracker : MonoBehaviour
 {
     public GameObject iconPrefab;
     private GameObject[] helpees;
+    private GameObject[] icons;
+
+    private Image imageGray;
+    private Image image;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         helpees = GameObject.FindGameObjectsWithTag("Helpee");
+        icons = new GameObject[helpees.Length];
+
         for (int i = 0; i < helpees.Length; i++)
         {
             HelpeeUI hui = helpees[i].transform.GetComponentInChildren<HelpeeUI>();
 
             GameObject o = Instantiate(iconPrefab, gameObject.transform);
 
-            Image imageGray = o.GetComponent<Image>();
+            GetIconComponents(o);
             imageGray.sprite = hui.iconGray;
-
-            Image image = o.transform.GetComponentsInChildren<Image>()[1];
             image.sprite = hui.icon;
 
             RectTransform rec = o.GetComponent<RectTransform>();
@@ -32,6 +36,7 @@ public class HelpeeTracker : MonoBehaviour
             {
                 rec.anchoredPosition = new Vector2(100, 0 + ((i - 5) * 100));
             }
+            icons[i] = o;
 
             image.gameObject.SetActive(false);
         }
@@ -41,5 +46,24 @@ public class HelpeeTracker : MonoBehaviour
     void Update()
     {
         //
+    }
+
+    public void GetIconComponents(GameObject icon)
+    {
+        imageGray = icon.GetComponent<Image>();
+        image = icon.transform.Find("Image").GetComponent<Image>();
+    }
+
+    public void HelpeeRescued(GameObject helpee)
+    {
+        for (int i = 0; i < helpees.Length; i++)
+        {
+            if (helpees[i] == helpee)
+            {
+                GameObject c = icons[i];
+                GetIconComponents(c);
+                image.gameObject.SetActive(true);
+            }
+        }
     }
 }

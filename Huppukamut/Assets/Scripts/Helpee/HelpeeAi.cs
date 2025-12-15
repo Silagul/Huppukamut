@@ -29,6 +29,7 @@ public class HelpeeAi : MonoBehaviour
     public GameObject goal;
     public NavMeshAgent agent;
     public GameObject canvas;
+    public HelpeeCollection helpeeCollection;
 
     private CapsuleCollider capsuleCollider;
     private Rigidbody rb;
@@ -98,6 +99,7 @@ public class HelpeeAi : MonoBehaviour
                         transform.GetComponentInChildren<Animator>().SetTrigger("Pose");
                         HelpeeTracker helpeeTracker = GameObject.Find("Autettavat").GetComponent<HelpeeTracker>();
                         helpeeTracker.HelpeeRescued(gameObject);
+                        helpeeCollection.CharcterRescued(GetComponent<CharacterMoveAnimations>().animator.gameObject.name);
                         ScoreManager.instance.AddPoint(2000);
                         ticking = true;
                     }

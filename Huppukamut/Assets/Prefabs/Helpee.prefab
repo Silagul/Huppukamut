@@ -332,6 +332,7 @@ MonoBehaviour:
   goal: {fileID: 0}
   agent: {fileID: 0}
   canvas: {fileID: 0}
+  helpeeCollection: {fileID: 11400000, guid: c20a15eead1549d4aa082ef079913992, type: 2}
 --- !u!114 &5274789608826869332
 MonoBehaviour:
   m_ObjectHideFlags: 0

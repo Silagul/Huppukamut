@@ -4291,6 +4291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HelpeeTracker
   iconPrefab: {fileID: 777307135565667920, guid: e32adff1956a7184fa3fe3cddbf3aba0, type: 3}
   numberRescued: 0
+  playerChoices: {fileID: 11400000, guid: ef336de8cfe00024a96ff2e776dbe108, type: 2}
 --- !u!1 &649537903
 GameObject:
   m_ObjectHideFlags: 0
@@ -7543,10 +7544,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1557792273}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 163770717}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: PauseFunction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11223,6 +11224,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   characters: []
   playerChoices: {fileID: 11400000, guid: ef336de8cfe00024a96ff2e776dbe108, type: 2}
+  helpeeCollection: {fileID: 11400000, guid: c20a15eead1549d4aa082ef079913992, type: 2}
   icon: {fileID: 0}
   maxStamina: 100
   stamina: 0

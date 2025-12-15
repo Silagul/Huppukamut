@@ -5,6 +5,7 @@ public class HelpeeTracker : MonoBehaviour
 {
     public GameObject iconPrefab;
     public int numberRescued = 0;
+    public PlayerChoices playerChoices;
 
     private GameObject[] helpees;
     private GameObject[] icons;
@@ -16,6 +17,18 @@ public class HelpeeTracker : MonoBehaviour
     void Start()
     {
         helpees = GameObject.FindGameObjectsWithTag("Helpee");
+
+        foreach (GameObject h in helpees)
+        {
+            GameObject character = h.GetComponent<CharacterMoveAnimations>().animator.gameObject;
+            if (character.name == playerChoices.characterName)
+            {
+                h.SetActive(false);
+            }
+        }
+
+        helpees = GameObject.FindGameObjectsWithTag("Helpee");
+        print(helpees.Length);
         icons = new GameObject[helpees.Length];
 
         for (int i = 0; i < helpees.Length; i++)

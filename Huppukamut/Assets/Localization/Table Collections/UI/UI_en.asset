@@ -265,6 +265,10 @@ MonoBehaviour:
     m_Localized: Next Song
     m_Metadata:
       m_Items: []
+  - m_Id: 20283689346478080
+    m_Localized: Select Character
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

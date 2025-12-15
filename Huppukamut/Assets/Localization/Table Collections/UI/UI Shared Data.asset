@@ -183,6 +183,10 @@ MonoBehaviour:
     m_Key: Next_Song
     m_Metadata:
       m_Items: []
+  - m_Id: 20283689346478080
+    m_Key: select_character
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -12,6 +12,7 @@ public class PlayerStamina : MonoBehaviour
     public Animator animator;
     public GameObject[] characters;
     public PlayerChoices playerChoices;
+    public HelpeeCollection helpeeCollection;
     public Image icon;
     public float maxStamina;
     public float stamina;
@@ -48,6 +49,8 @@ public class PlayerStamina : MonoBehaviour
         {
             characters[i] = animators[i].gameObject;
         }
+        helpeeCollection.ListCharacters(characters);
+
         foreach (GameObject character in characters)
         {
             if (character.gameObject.name != playerChoices.characterName)
@@ -58,6 +61,7 @@ public class PlayerStamina : MonoBehaviour
             {
                 animator = character.GetComponent<Animator>();
                 icon.sprite = character.GetComponent<HelpeeUI>().icon;
+                helpeeCollection.CharcterRescued(character.name);
             }
         }
         switch (animator.GetParameter(6).name)

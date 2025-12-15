@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 11545330169819136
-    m_Localized: "\xC4\xE4nenvoimakkuus"
+    m_Localized: Musiikin voimakkuus
     m_Metadata:
       m_Items: []
   - m_Id: 12709207997820928
@@ -230,6 +230,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 20283689346478080
     m_Localized: Valitse Hahmo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20310570853838848
+    m_Localized: Efekti voimakkuus
     m_Metadata:
       m_Items: []
   references:

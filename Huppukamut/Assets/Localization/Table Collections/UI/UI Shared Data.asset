@@ -187,6 +187,10 @@ MonoBehaviour:
     m_Key: select_character
     m_Metadata:
       m_Items: []
+  - m_Id: 20310570853838848
+    m_Key: Volume_Scale_SFX
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

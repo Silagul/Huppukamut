@@ -7,10 +7,10 @@ public class VolumeSliderSync : MonoBehaviour
 
     private void Start()
     {
-        if (MusicVolumeManager.Instance != null)
+        if (AudioVolumeManager.Instance != null)
         {
             // Set slider to saved value (without triggering OnValueChanged yet)
-            musicSlider.SetValueWithoutNotify(MusicVolumeManager.Instance.GetVolume());
+            musicSlider.SetValueWithoutNotify(AudioVolumeManager.Instance.GetMusicVolume());
         }
         else
         {
@@ -19,6 +19,6 @@ public class VolumeSliderSync : MonoBehaviour
 
         // Now set up the listener (only once)
         musicSlider.onValueChanged.RemoveAllListeners();
-        musicSlider.onValueChanged.AddListener(val => MusicVolumeManager.Instance.SetVolume(val));
+        musicSlider.onValueChanged.AddListener(val => AudioVolumeManager.Instance.SetMusicVolume(val));
     }
 }

@@ -61,7 +61,7 @@ public class LevelMusicPlayer : MonoBehaviour
             return;
 
         // Live volume sync (instant slider response)
-        masterVolume = MusicVolumeManager.Instance != null ? MusicVolumeManager.Instance.GetVolume() : 1f;
+        masterVolume = AudioVolumeManager.Instance != null ? AudioVolumeManager.Instance.GetMusicVolume() : 1f;
         audioSource.volume = masterVolume * fadeAlpha;
     }
 

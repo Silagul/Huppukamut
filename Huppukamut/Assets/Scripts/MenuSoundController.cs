@@ -108,7 +108,7 @@ public class MenuSoundController : MonoBehaviour
     private void ApplyVolume()
     {
         audioSource.volume =
-            fadeMultiplier * MusicVolumeManager.Instance.GetVolume();
+            fadeMultiplier * AudioVolumeManager.Instance.GetMusicVolume();
     }
 
     // KUTSUTAAN SLIDERISTA

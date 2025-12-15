@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7762607944953800436}
+  - component: {fileID: 238270282711584585}
   - component: {fileID: 6993403078754210593}
   - component: {fileID: 1247929031265493775}
   m_Layer: 0
@@ -33,6 +34,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &238270282711584585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006191315611611164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798e08669330b1849b6f8b0ec166cad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicVolumeManager
+  musicVolume: 1
+  sfxVolume: 1
 --- !u!114 &6993403078754210593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,6 +70,7 @@ MonoBehaviour:
   landSound: {fileID: 0}
   helpFriendVariations:
   - {fileID: 8300000, guid: 606684ce611396a4b8152f960d9a9d16, type: 3}
+  uiClick: {fileID: 8300000, guid: b9364a7c8b2af894e8e482ec237cca54, type: 3}
   sfxVolume: 1
 --- !u!82 &1247929031265493775
 AudioSource:

@@ -12,7 +12,6 @@ public class MenuMusicController : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
 
     private readonly string[] menuScenes = { "Main Menu", "Character Select" };
-
     private bool isMusicAlreadyPlaying = false;
 
     private void Awake()
@@ -38,7 +37,7 @@ public class MenuMusicController : MonoBehaviour
 
     private IEnumerator InitialCheck()
     {
-        yield return null; // Wait one frame so active scene is valid
+        yield return null;
         EvaluateCurrentScene();
     }
 
@@ -60,7 +59,6 @@ public class MenuMusicController : MonoBehaviour
                 StartCoroutine(FadeIn());
                 isMusicAlreadyPlaying = true;
             }
-            // Already playing → seamless transition (no restart!)
         }
         else
         {
@@ -78,43 +76,48 @@ public class MenuMusicController : MonoBehaviour
         audioSource.volume = 0f;
         audioSource.Play();
 
-        float targetVolume = MusicVolumeManager.Instance.GetVolume();
+        float targetVolume = AudioVolumeManager.Instance != null
+            ? AudioVolumeManager.Instance.GetMusicVolume()
+            : 1f;
 
-        while (audioSource.volume < targetVolume)
+        float timer = 0f;
+        while (timer < fadeDuration)
         {
-            audioSource.volume += Time.unscaledDeltaTime / fadeDuration;
-            if (audioSource.volume > targetVolume)
-                audioSource.volume = targetVolume;
+            timer += Time.unscaledDeltaTime;
+            audioSource.volume = Mathf.Lerp(0f, targetVolume, timer / fadeDuration);
             yield return null;
         }
-
         audioSource.volume = targetVolume;
     }
 
     private IEnumerator FadeOutAndDestroy()
     {
-        float currentVolume = audioSource.volume;
+        float startVolume = audioSource.volume;
+        float timer = 0f;
 
-        while (audioSource.volume > 0f)
+        while (timer < fadeDuration)
         {
-            audioSource.volume -= currentVolume * Time.unscaledDeltaTime / fadeDuration;
+            timer += Time.unscaledDeltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, 0f, timer / fadeDuration);
             yield return null;
         }
 
         audioSource.Stop();
-        audioSource.volume = MusicVolumeManager.Instance.GetVolume(); // reset
+        audioSource.volume = AudioVolumeManager.Instance != null
+            ? AudioVolumeManager.Instance.GetMusicVolume()
+            : 1f;
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
         if (Instance == this) Instance = null;
-
         Destroy(gameObject);
     }
 
-    // Called whenever the slider changes
     public void UpdateVolume()
     {
-        if (audioSource != null)
-            audioSource.volume = MusicVolumeManager.Instance.GetVolume();
+        if (audioSource != null && AudioVolumeManager.Instance != null)
+        {
+            audioSource.volume = AudioVolumeManager.Instance.GetMusicVolume();
+        }
     }
 
     private void OnDestroy()

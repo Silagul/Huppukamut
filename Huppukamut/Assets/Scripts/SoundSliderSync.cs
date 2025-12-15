@@ -1,32 +1,53 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundSliderSync : MonoBehaviour
+public class VolumeSlider : MonoBehaviour
 {
+    public enum VolumeType { Music, SFX }
+
+    [SerializeField] private VolumeType volumeType;
     [SerializeField] private Slider slider;
+
+    private void Reset()
+    {
+        slider = GetComponent<Slider>();
+    }
 
     private void Start()
     {
-        Debug.Log("SoundSliderSync Start");
-
-        if (SoundVolumeManager.Instance == null)
+        if (slider == null)
         {
-            Debug.LogError("❌ SoundVolumeManager.Instance = NULL");
+            Debug.LogError("Slider component missing on VolumeSlider!");
             return;
         }
 
-        float saved = SoundVolumeManager.Instance.GetVolume();
-        Debug.Log("Loaded SFX volume: " + saved);
+        if (AudioVolumeManager.Instance == null)
+        {
+            Debug.LogWarning("AudioVolumeManager not found yet — will try again next frame.");
+            Invoke(nameof(InitializeSlider), 0.1f);
+            return;
+        }
 
-        slider.SetValueWithoutNotify(saved);
-
-        slider.onValueChanged.RemoveAllListeners();
-        slider.onValueChanged.AddListener(OnSliderChanged);
+        InitializeSlider();
     }
 
-    private void OnSliderChanged(float value)
+    private void InitializeSlider()
     {
-        Debug.Log("🎚 Slider changed to: " + value);
-        SoundVolumeManager.Instance.SetVolume(value);
+        float current = volumeType == VolumeType.Music
+            ? AudioVolumeManager.Instance.GetMusicVolume()
+            : AudioVolumeManager.Instance.GetSFXVolume();
+
+        slider.SetValueWithoutNotify(current);
+
+        slider.onValueChanged.RemoveAllListeners();
+        slider.onValueChanged.AddListener(OnValueChanged);
+    }
+
+    private void OnValueChanged(float value)
+    {
+        if (volumeType == VolumeType.Music)
+            AudioVolumeManager.Instance.SetMusicVolume(value);
+        else
+            AudioVolumeManager.Instance.SetSFXVolume(value);
     }
 }

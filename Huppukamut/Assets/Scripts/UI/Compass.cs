@@ -1,5 +1,5 @@
-using UnityEditor;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
+//using UnityEditor;
+//using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 
 public class Compass : MonoBehaviour

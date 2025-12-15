@@ -18,12 +18,12 @@ public class HelpeeTracker : MonoBehaviour
     {
         helpees = GameObject.FindGameObjectsWithTag("Helpee");
 
-        foreach (GameObject h in helpees)
+        for (int i = 0; i < helpees.Length; i++)
         {
-            GameObject character = h.GetComponent<CharacterMoveAnimations>().animator.gameObject;
+            GameObject character = helpees[i].transform.GetComponentInChildren<Animator>().gameObject;
             if (character.name == playerChoices.characterName)
             {
-                h.SetActive(false);
+                helpees[i].SetActive(false);
             }
         }
 

@@ -43,6 +43,8 @@ public class AudioVolumeManager : MonoBehaviour
 
         // Update menu music (add gameplay music controller here if you have one)
         MenuMusicController.Instance?.UpdateVolume();
+        EndingMusicController.Instance?.UpdateVolume();   // ← ADD THIS
+        // LevelMusicPlayer.Instance?.UpdateVolume();     // If you want level music to respond too
     }
 
     public void SetSFXVolume(float volume)

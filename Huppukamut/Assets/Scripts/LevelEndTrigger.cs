@@ -23,6 +23,16 @@ public class LevelEndTrigger : MonoBehaviour
 
         alreadyTriggered = true;
 
+        // 🔥 PLAY HELPING FRIEND CHEER SOUND IMMEDIATELY 🔥
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayHelpFriend();
+        }
+        else
+        {
+            Debug.LogWarning("SoundManager.instance is NULL - no helping sound played!");
+        }
+
         // Play all particle systems that are children of this trigger object (once)
         foreach (var particle in GetComponentsInChildren<ParticleSystem>())
         {
@@ -60,7 +70,7 @@ public class LevelEndTrigger : MonoBehaviour
             anim.SetBool("Grounded", true);
 
             anim.SetTrigger(victoryTriggerName);
-            StartCoroutine(PlayHelpingAfterVictory(anim));
+            StartCoroutine(PlayHelpingAnimationAfterDelay(anim));
         }
 
         // Reset gliding flag + freeze Z
@@ -77,7 +87,7 @@ public class LevelEndTrigger : MonoBehaviour
         StartCoroutine(LoadNextScene());
     }
 
-    private IEnumerator PlayHelpingAfterVictory(Animator anim)
+    private IEnumerator PlayHelpingAnimationAfterDelay(Animator anim)
     {
         yield return new WaitForSeconds(1.5f);
         anim.SetTrigger(helpingTriggerName);

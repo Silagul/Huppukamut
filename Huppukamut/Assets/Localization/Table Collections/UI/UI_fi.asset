@@ -236,6 +236,10 @@ MonoBehaviour:
     m_Localized: Efekti voimakkuus
     m_Metadata:
       m_Items: []
+  - m_Id: 20632368859262976
+    m_Localized: "Kiitos ett\xE4 pelasit!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

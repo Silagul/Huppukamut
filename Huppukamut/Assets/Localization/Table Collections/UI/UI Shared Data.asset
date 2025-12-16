@@ -191,6 +191,10 @@ MonoBehaviour:
     m_Key: Volume_Scale_SFX
     m_Metadata:
       m_Items: []
+  - m_Id: 20632368859262976
+    m_Key: Thanks
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

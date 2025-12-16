@@ -37,6 +37,13 @@ public class PauseMenu : MonoBehaviour
         timer.Instance.Pause();
     }
 
+        public void HelpFunction()
+    {
+        helpMenu.SetActive(true);
+        Time.timeScale = 0f;
+        timer.Instance.Pause();
+    }
+
     public void Resume()
     {
         Time.timeScale = 1f;

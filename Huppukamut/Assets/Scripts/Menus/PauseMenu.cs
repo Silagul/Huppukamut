@@ -36,8 +36,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         timer.Instance.Pause();
     }
-
-        public void HelpFunction()
+    
+    public void HelpFunction()
     {
         helpMenu.SetActive(true);
         Time.timeScale = 0f;

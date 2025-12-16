@@ -1,156 +1,65 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
-public class EndingMusicController : MonoBehaviour
+public class EndingMusicPlayer : MonoBehaviour
 {
-    public static EndingMusicController Instance;
-
-    [Header("Settings")]
+    [Header("Music Clip")]
     [SerializeField] private AudioClip endingMusicClip;
-    [SerializeField] private float fadeInDuration = 2.5f;
-    [SerializeField] private float fadeOutDuration = 2f;
+
+    [Header("Optional Fade In")]
+    [SerializeField] private bool fadeInOnStart = true;
+    [SerializeField] private float fadeDuration = 2.5f;
 
     private AudioSource audioSource;
-    private bool hasStartedPlaying = false;
-    private const string EndingSceneName = "EndingScene"; // Change if needed
+    private float fadeAlpha = 0f; // 0 = silent, 1 = full volume
 
     private void Awake()
     {
-        // --- ROBUST SINGLETON: Prevent duplicates aggressively ---
-        if (Instance != null && Instance != this)
-        {
-            // Duplicate detected → destroy THIS object immediately
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        // Get the AudioSource ONCE and keep it
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = endingMusicClip;
         audioSource.loop = true;
         audioSource.playOnAwake = false;
-        audioSource.volume = 0f; // Start silent
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        audioSource.volume = 0f;
     }
 
     private void Start()
     {
-        CheckAndStartMusicIfInEndingScene();
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == EndingSceneName)
-        {
-            CheckAndStartMusicIfInEndingScene();
-        }
-        else if (hasStartedPlaying)
-        {
-            // Left the ending scene → fade out and die
-            StopAllCoroutines();
-            StartCoroutine(FadeOutAndDestroy());
-        }
-    }
-
-    private void CheckAndStartMusicIfInEndingScene()
-    {
-        if (!hasStartedPlaying && SceneManager.GetActiveScene().name == EndingSceneName)
-        {
-            StartCoroutine(FadeInMusic());
-            hasStartedPlaying = true;
-        }
-    }
-
-    private IEnumerator FadeInMusic()
-    {
         if (endingMusicClip == null)
         {
-            Debug.LogWarning("EndingMusicController: No ending music clip assigned!");
-            yield break;
+            Debug.LogWarning("EndingMusicPlayer: No clip assigned!");
+            return;
         }
 
-        // --- CRITICAL: Always get the LATEST volume from manager ---
-        float targetVolume = AudioVolumeManager.Instance != null
-            ? AudioVolumeManager.Instance.GetMusicVolume()
-            : 1f;
-
-        audioSource.volume = 0f;
         audioSource.Play();
 
-        float timer = 0f;
-        while (timer < fadeInDuration)
+        if (fadeInOnStart)
         {
-            timer += Time.unscaledDeltaTime;
-            audioSource.volume = Mathf.Lerp(0f, targetVolume, timer / fadeInDuration);
-
-            // Live update if player changes volume during fade-in
-            targetVolume = AudioVolumeManager.Instance != null
-                ? AudioVolumeManager.Instance.GetMusicVolume()
-                : 1f;
-
-            yield return null;
+            fadeAlpha = 0f;
+            StartCoroutine(FadeIn());
         }
-
-        // Final snap to correct volume
-        audioSource.volume = targetVolume;
-    }
-
-    private IEnumerator FadeOutAndDestroy()
-    {
-        float startVolume = audioSource.volume;
-        float timer = 0f;
-
-        while (timer < fadeOutDuration)
+        else
         {
-            timer += Time.unscaledDeltaTime;
-            audioSource.volume = Mathf.Lerp(startVolume, 0f, timer / fadeOutDuration);
-            yield return null;
+            fadeAlpha = 1f;
         }
-
-        audioSource.Stop();
-
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        if (Instance == this) Instance = null;
-        Destroy(gameObject);
     }
 
-    // Called by AudioVolumeManager when slider changes
-    public void UpdateVolume()
-    {
-        if (audioSource == null || AudioVolumeManager.Instance == null) return;
-
-        float newVolume = AudioVolumeManager.Instance.GetMusicVolume();
-
-        // Instantly apply new volume (even during fade)
-        // This overrides whatever the fade coroutine is doing
-        audioSource.volume = newVolume;
-    }
-
-    // Backup: Ensure volume stays correct every frame
     private void Update()
     {
-        if (hasStartedPlaying && audioSource.isPlaying && AudioVolumeManager.Instance != null)
-        {
-            float currentSavedVolume = AudioVolumeManager.Instance.GetMusicVolume();
-            if (!Mathf.Approximately(audioSource.volume, currentSavedVolume))
-            {
-                // Only override if not in middle of fade-out (fade-out goes to 0)
-                if (audioSource.volume > 0.01f || currentSavedVolume > 0f)
-                {
-                    audioSource.volume = currentSavedVolume;
-                }
-            }
-        }
+        // Instantly follows the music volume slider
+        float masterVolume = AudioVolumeManager.Instance != null 
+            ? AudioVolumeManager.Instance.GetMusicVolume() 
+            : 1f;
+
+        audioSource.volume = masterVolume * fadeAlpha;
     }
 
-    private void OnDestroy()
+    private System.Collections.IEnumerator FadeIn()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        while (fadeAlpha < 1f)
+        {
+            fadeAlpha += Time.unscaledDeltaTime / fadeDuration;
+            if (fadeAlpha > 1f) fadeAlpha = 1f;
+            yield return null;
+        }
     }
 }

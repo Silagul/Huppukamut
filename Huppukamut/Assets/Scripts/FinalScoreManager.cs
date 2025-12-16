@@ -35,13 +35,9 @@ public class FinalScoreManager : MonoBehaviour
             timeBonusText.text = timeBonus.ToString("N0");
 
         // 3. Friends count
-        int actualFriendsHelped = 0;
-        for (int i = 0; i < helpeeCollection.rescued.Length; i++)
-        {
-            if (helpeeCollection.rescued[i]) actualFriendsHelped++;
-        }
+        int actualFriendsHelped = helpeeCollection.number;
 
-        int displayedFriends = Mathf.Max(0, actualFriendsHelped - 1);
+        int displayedFriends = Mathf.Max(0, actualFriendsHelped);
         int displayedFriendsBonus = displayedFriends * 2000;
 
         if (friendsText != null)
@@ -49,12 +45,12 @@ public class FinalScoreManager : MonoBehaviour
 
         // 4. Collectibles: subtract only the DISPLAYED friends bonus
         int rawScoreFromManager = ScoreManager.instance?.CurrentScore ?? 0;
-        int cleanCollectiblePoints = Mathf.Max(0, rawScoreFromManager - displayedFriendsBonus);
+        int cleanCollectiblePoints = Mathf.Max(0, rawScoreFromManager);
 
-        int collectedItemsCount = cleanCollectiblePoints / 200;
+        int collectedItemsCount = cleanCollectiblePoints / 250;
 
         if (collectiblesText != null)
-            collectiblesText.text = $"{collectedItemsCount} × 200 = {cleanCollectiblePoints.ToString("N0")}";
+            collectiblesText.text = $"{collectedItemsCount} × 250 = {cleanCollectiblePoints:N0}";
 
         // 5. Final score = time + displayed friends + clean collectibles → round to 50
         int total = timeBonus + displayedFriendsBonus + cleanCollectiblePoints;

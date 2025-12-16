@@ -100,7 +100,7 @@ public class HelpeeAi : MonoBehaviour
                         HelpeeTracker helpeeTracker = GameObject.Find("Autettavat").GetComponent<HelpeeTracker>();
                         helpeeTracker.HelpeeRescued(gameObject);
                         helpeeCollection.CharcterRescued(GetComponent<CharacterMoveAnimations>().animator.gameObject.name);
-                        ScoreManager.instance.AddPoint(2000);
+                        //ScoreManager.instance.AddPoint(2000);
                         ticking = true;
                     }
                 }

@@ -5,7 +5,7 @@ public class HelpeeCollection : ScriptableObject
 {
     public string[] characters = new string[6];
     public bool[] rescued = new bool[6];
-    //public int number = 0;
+    public int number;
 
     public void ListCharacters(GameObject[] ch)
     {
@@ -18,6 +18,8 @@ public class HelpeeCollection : ScriptableObject
         {
             rescued[i] = false;
         }
+
+        number = -1;
     }
     
     public void CharcterRescued(string charName)
@@ -27,7 +29,7 @@ public class HelpeeCollection : ScriptableObject
             if (characters[i] == charName)
             {
                 rescued[i] = true;
-                //number++;
+                number++;
             }
         }
     }

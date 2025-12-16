@@ -147,11 +147,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 601773871}
+  - {fileID: 1381918548}
+  - {fileID: 650838068}
   - {fileID: 1683233757}
   - {fileID: 1438973061}
-  - {fileID: 650838068}
-  - {fileID: 1381918548}
+  - {fileID: 601773871}
   m_Father: {fileID: 871675910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2081,8 +2081,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   timeText: {fileID: 1683233759}
-  scoreText: {fileID: 1438973062}
-  finalScoreText: {fileID: 0}
+  friendsText: {fileID: 1381918550}
+  timeBonusText: {fileID: 1438973062}
+  collectiblesText: {fileID: 650838070}
+  finalScoreText: {fileID: 601773872}
+  helpeeCollection: {fileID: 11400000, guid: c20a15eead1549d4aa082ef079913992, type: 2}
 --- !u!1001 &863539620
 PrefabInstance:
   m_ObjectHideFlags: 0
